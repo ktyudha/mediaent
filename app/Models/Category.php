@@ -13,4 +13,9 @@ class Category extends Model
     const HIBURAN = 2;
 
     protected $fillable = ['name'];
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }
