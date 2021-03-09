@@ -16,6 +16,11 @@ class Video extends Model
         'description',
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
