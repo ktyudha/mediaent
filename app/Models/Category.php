@@ -11,6 +11,7 @@ class Category extends Model
 
     const LIFESTYLE = 1;
     const HIBURAN = 2;
+    const TEKNOLOGI = 3;
 
     protected $fillable = ['name'];
 

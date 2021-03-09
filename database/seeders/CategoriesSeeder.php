@@ -17,6 +17,7 @@ class CategoriesSeeder extends Seeder
         Category::create(
             ['name' => 'Lifestyle'],
             ['name' => 'Hiburan'],
+            ['name' => 'Teknologi'],
         );
     }
 }
