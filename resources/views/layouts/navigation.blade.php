@@ -35,6 +35,12 @@
                     </x-slot>
 
                     <x-slot name="content">
+                        @hasanyrole('admin|author')
+                        <x-dropdown-link :href="route('admin.home')">
+                            Admin Page
+                        </x-dropdown-link>
+                        @endhasanyrole
+
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
