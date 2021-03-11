@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.home');
-})->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::post('/author/add', [HomeController::class, 'addAuthor'])->name('author.add');
+Route::post('/author/remove/{email}', [HomeController::class, 'removeAuthor'])->name('author.remove');
