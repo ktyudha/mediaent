@@ -20,7 +20,7 @@ class HomeController extends Controller
             'email' => 'required|string|email|max:255|exists:users,email'
         ]);
 
-        $user = User::where('email', $validated)->first();
+        $user = User::where('email', $request->email)->first();
         $user->assignRole('author');
 
         return redirect()->back();
