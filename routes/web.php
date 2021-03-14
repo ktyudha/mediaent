@@ -21,6 +21,10 @@ Route::get('/detail', function () {
     return view('detail');
 })->name('detail');
 
+Route::get('/admin_artikel', function () {
+    return view('admin_artikel');
+})->name('admin_artikel');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
