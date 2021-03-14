@@ -17,12 +17,16 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/about-us', function () {
-    return view('about');
-})->name('about');
+Route::get('/detail', function () {
+    return view('detail');
+})->name('detail');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/admin_artikel', function () {
+    return view('admin_artikel');
+})->name('admin_artikel');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
