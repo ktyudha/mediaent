@@ -25,6 +25,10 @@ Route::get('/admin_artikel', function () {
     return view('admin_artikel');
 })->name('admin_artikel');
 
+Route::get('/admin_video', function () {
+    return view('admin_video');
+})->name('admin_video');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

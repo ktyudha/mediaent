@@ -1,11 +1,4 @@
-<x-app-layout>
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Home') }}
-        </h2>
-    </x-slot> --}}
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -47,6 +40,12 @@
     <script src="carousel.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 </head>
+<x-app-layout>
+    {{-- <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Home') }}
+        </h2>
+    </x-slot> --}}
 
 <div class="leading-normal tracking-normal text-white gradient rounded-b-3xl" style="font-family: 'Source Sans Pro', sans-serif;">
 
@@ -396,14 +395,14 @@
                             <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
                                 <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
                                 <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                    <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">Eksplore</h5>
+                                    <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">Exsplore</h5>
                                 </div>
                             </div>
                             <div class="md:flex-grow-0 py-2 px-2">
                                 <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
                                 <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland
                                     craft beer.</p>
-                                <a class="text-blue-500 inline-flex items-center mt-4">Eksplore Selengkapnya
+                                <a class="text-blue-500 inline-flex items-center mt-4">Explore Selengkapnya
                                         <svg
                                             class="w-4 h-4 ml-2"
                                             viewbox="0 0 24 24"
@@ -856,6 +855,6 @@
         }
     </script>
 </body>
-
-</html>
 </x-app-layout>
+</html>
+

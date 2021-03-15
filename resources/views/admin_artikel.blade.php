@@ -38,7 +38,7 @@
                 <i class="fas fa-sign-out-alt mr-3"></i>
                 Back Home
             </a>
-            <a href="tables.html" class="flex items-center text-white py-4 pl-6 nav-item">
+            <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Artikel
             </a>
@@ -109,7 +109,7 @@
                     <i class="fas fa-back mr-3"></i>
                     Dashboard
                 </a>
-                <a href="tables.html" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
+                <a href="tables.html" class="flex items-center text-white py-2 pl-4 nav-item">
                     <i class="fas fa-table mr-3"></i>
                     Table Artikel
                 </a>
@@ -150,25 +150,33 @@
                     </p>
 
                     <div class="leading-loose">
-                            <form class="p-10 bg-white rounded shadow-xl">
-                                <div class="">
-                                    <label class="block text-sm text-gray-600" for="judul">Judul</label>
-                                    <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="judul" name="judul" type="text" required="" placeholder="Judul" aria-label="judul">
-                                </div>
-                                <div class="mt-2">
-                                    <label class="block text-sm text-gray-600" for="">Keterangan</label>
-                                    <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="keterangan" name="keterangan" type="text" required="" placeholder="Keterangan" aria-label="keterangan">
-                                </div>
-                                <div class="mt-2">
-                                    <label class=" block text-sm text-gray-600" for="message">Deskripsi</label>
-                                    <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="deskripsi" name="deskripsi" rows="6" required="" placeholder="Deskripsi/Isi Artikel" aria-label="deskripsi"></textarea>
-                                </div>
-                                <div class="mt-6">
-                                    <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-
+                        <form class="p-10 bg-white rounded shadow-xl">
+                            <div class="">
+                                <label class="block text-sm text-gray-600" for="judul">Judul</label>
+                                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="judul" name="judul" type="text" required="" placeholder="Judul" aria-label="judul">
+                            </div>
+                            <div class="">
+                                <label class="block text-sm text-gray-600" for="judul">Kategori</label>
+                                <select class="uppercase w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" name="kategori" placeholder="Kategori">
+                                    <option value="teknologi">teknologi</option>
+                                    <option value="explore">explore</option>
+                                    <option value="lifestyle">lifestyle</option>
+                                    <option value="hiburan">hiburan</option>
+                                </select>
+                            </div>
+                            <div class="mt-2">
+                                <label class="block text-sm text-gray-600" for="foto">Foto</label>
+                                <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="foto" name="foto" type="file" required="" aria-label="foto">
+                            </div>
+                            <div class="mt-2">
+                                <label class=" block text-sm text-gray-600" for="deskripsi">Deskripsi</label>
+                                <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="deskripsi" name="deskripsi" rows="6" required="" placeholder="Deskripsi/Isi Artikel" aria-label="deskripsi"></textarea>
+                            </div>
+                            <div class="mt-6">
+                                <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
             </main>
