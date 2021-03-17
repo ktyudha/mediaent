@@ -16,12 +16,78 @@
 	::selection{background-color: aliceblue}
 	</style>
 </head>
-<body class="bg-white font-sans leading-normal tracking-normal">
-
-
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <nav x-data="{ open: false }" id="header" class="text-black bg-gray-300 fixed w-full z-30 top-0 text-white">
+            <div id="navbody" class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+                <div class="pl-4 flex items-center">
+                    <a class="toggleColour flex flex-row" href="{{ route('home') }}">
+                        <img id="navlogo" class="h-20 duration-700 ease-in-out" src="ent.png" alt="">
+                        <div id="navtitle" class="text-black mx-5 py-5 font-bold text-2xl lg:text-4xl">Media ENT</div>
+                    </a>
+                </div>
+                <div class="block lg:hidden pr-4">
+                    <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            <svg
+                                class="fill-current h-6 w-6"
+                                viewbox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>Menu</title>
+                                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+                            </svg>
+                    </button>
+                </div>
+                <div id="nav-content" class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 text-black p-4 lg:p-0 z-20">
+                    <ul class="list-reset lg:flex justify-end flex-1 items-center">
+                        <li class="mr-3">
+                            <x-nav-link>
+                                <button class="hover:text-gray-100 mx-auto py-2 px-4 inline-block lg:mx-0 hover:no-underline font-medium focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
+                                    HOME
+                                </button>
+                            </x-nav-link>
+                        </li>
+                        <li class="mr-3">
+                            <x-nav-link>
+                                <button class="hover:text-gray-100 mx-auto py-2 px-4 inline-block lg:mx-0 hover:no-underline font-medium focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
+                                    ABOUT
+                                </button>
+                            </x-nav-link>
+                        </li>
+                            @if (Route::has('login'))
+                            @auth
+                                <li class="mr-3">
+                                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('login')">
+                                            <button class="bg-white mx-auto lg:mx-0 hover:no-underline text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                                DASHBOARD
+                                            </button>
+                                        </x-nav-link>
+                                    </li>
+                                @else
+                                    @if (Route::has('register'))
+                                    <li class="mr-3">
+                                        <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
+                                            <button class=" hover:text-gray-100 mx-auto py-2 px-4 inline-block lg:mx-0 hover:no-underline font-medium focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
+                                                REGISTER
+                                            </button>
+                                        </x-nav-link>
+                                    </li>
+                                    @endif
+                                    <li class="mr-3">
+                                        <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
+                                            <button id="navAction" class="mx-auto lg:mx-0 hover:no-underline bg-white text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                                LOGIN
+                                            </button>
+                                        </x-nav-link>
+                                    </li>
+                                @endif
+                            @endif
+                    </ul>
+                </div>
+        </div>
+        <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+    </nav>
 	<!--Title-->
 	<div class="text-center pt-16 md:pt-32">
-		<p class="uppercase text-sm md:text-base text-green-500 font-bold">08 APRIL 2019 <span class="text-gray-900">/</span> Surabaya</p>
+		<p class="uppercase text-sm md:text-base text-blue-500 font-bold">08 MARET 2021 <span class="text-gray-900">/</span> Surabaya</p>
 	</div>
 
 	<!--image-->
@@ -39,7 +105,7 @@
 
 				<!--Lead Para-->
 				<p class="text-2xl md:text-3xl mb-5">
-					<a class="text-center text-gray-800 hover:text-green-500 no-underline border-b-2 border-green-500" href="https://www.tailwindcss.com">DISINI JUDULNYA YA KHOIRON</a>
+					<a class="text-center text-gray-800 hover:text-gray-500 border-b-2 border-blue-500">DISINI JUDULNYA YA KHOIRON</a>
 				</p>
 
 				<p class="py-6">The basic blog page layout is available and all using the default Tailwind CSS classes (although there are a few hardcoded style tags). If you are going to use this in your project, you will want to convert the classes into components.</p>
@@ -51,161 +117,11 @@
 					<li class="py-3">Morbi varius posuere blandit. Praesent gravida bibendum neque eget commodo. Duis auctor ornare mauris, eu accumsan odio viverra in. Proin sagittis maximus pharetra. Nullam lorem mauris, faucibus ut odio tempus, ultrices aliquet ex. Nam id quam eget ipsum luctus hendrerit. Ut eros magna, eleifend ac ornare vulputate, pretium nec felis.</li>
 					<li class="py-3">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc vitae pretium elit. Cras leo mauris, tristique in risus ac, tristique rutrum velit. Mauris accumsan tempor felis vitae gravida. Cras egestas convallis malesuada. Etiam ac ante id tortor vulputate pretium. Maecenas vel sapien suscipit, elementum odio et, consequat tellus.</li>
 				</ol>
-
-				<blockquote class="border-l-4 border-green-500 italic my-8 pl-8 md:pl-12">Example of blockquote - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.</blockquote>
-
-				<p class="py-6">Example code block:</p>
-				<pre class="bg-gray-900 rounded text-white font-mono text-base p-4">
-					<code class="break-words whitespace-pre-wrap">
-                        &lt;header class="site-header outer"&gt;
-                        &lt;div class="inner"&gt;
-
-                        &lt;/div&gt;
-                        &lt;/header&gt;
-					</code>
-				</pre>
-
-
-				<!--/ Post Content-->
-
-			</div>
-
-
-				<!--Subscribe-->
-				<div class="container font-sans bg-green-100 rounded mt-8 p-4 md:p-24 text-center">
-					<h2 class="font-bold break-normal text-2xl md:text-4xl">Subscribe to Ghostwind CSS</h2>
-					<h3 class="font-bold break-normal font-normal text-gray-600 text-base md:text-xl">Get the latest posts delivered right to your inbox</h3>
-					<div class="w-full text-center pt-4">
-						<form action="#">
-							<div class="max-w-sm mx-auto p-1 pr-0 flex flex-wrap items-center">
-								<input type="email" placeholder="youremail@example.com" class="flex-1 appearance-none rounded shadow p-3 text-gray-600 mr-2 focus:outline-none">
-								<button type="submit" class="flex-1 mt-4 md:mt-0 block md:inline-block appearance-none bg-green-500 text-white text-base font-semibold tracking-wider uppercase py-4 rounded shadow hover:bg-green-400">Subscribe</button>
-							</div>
-						</form>
-					</div>
-				</div>
-				<!-- /Subscribe-->
-
-
-				<!--Author-->
-				<div class="flex w-full items-center font-sans p-8 md:p-24">
-					<img class="w-10 h-10 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-					<div class="flex-1">
-						<p class="text-base font-bold text-base md:text-xl leading-none">Ghostwind CSS</p>
-						<p class="text-gray-600 text-xs md:text-base">Tailwind CSS version of Ghost's Casper theme by <a class="text-gray-800 hover:text-green-500 no-underline border-b-2 border-green-500" href="https://www.tailwindtoolbox.com">TailwindToolbox.com</a></p>
-					</div>
-					<div class="justify-end">
-						<button class="bg-transparent border border-gray-500 hover:border-green-500 text-xs text-gray-500 hover:text-green-500 font-bold py-2 px-4 rounded-full">Read More</button>
-					</div>
-				</div>
-				<!--/Author-->
-
-		</div>
-
-
-	</div>
-
-
-
-
-	<div class="bg-gray-200">
-
-		<div class="container w-full max-w-6xl mx-auto px-2 py-8">
-			<div class="flex flex-wrap -mx-2">
-				<div class="w-full md:w-1/3 px-2 pb-12">
-					<div class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
-						<a href="#" class="no-underline hover:no-underline">
-								<img src="https://source.unsplash.com/_AjqGGafofE/400x200" class="h-48 w-full rounded-t shadow-lg">
-								<div class="p-6 h-auto md:h-48">
-									<p class="text-gray-600 text-xs md:text-sm">GETTING STARTED</p>
-									<div class="font-bold text-xl text-gray-900">Lorem ipsum dolor sit amet.</div>
-									<p class="text-gray-800 font-serif text-base mb-5">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-									</p>
-								</div>
-								<div class="flex items-center justify-between inset-x-0 bottom-0 p-6">
-									<img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-									<p class="text-gray-600 text-xs md:text-sm">2 MIN READ</p>
-								</div>
-						</a>
-					</div>
-				</div>
-				<div class="w-full md:w-1/3 px-2 pb-12">
-					<div class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
-						<a href="#" class="no-underline hover:no-underline">
-								<img src="https://source.unsplash.com/_AjqGGafofE/400x200" class="h-48 w-full rounded-t shadow">
-								<div class="p-6 h-auto md:h-48">
-									<p class="text-gray-600 text-xs md:text-sm">UNDERWATER</p>
-									<div class="font-bold text-xl text-gray-900">Biolumini algae diatomeae ecology.</div>
-									<p class="text-gray-800 font-serif text-base mb-5">
-										Lorem ipsum dolor sit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
-									</p>
-								</div>
-								<div class="flex items-center justify-between inset-x-0 bottom-0 p-6">
-									<img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-									<p class="text-gray-600 text-xs md:text-sm">4 MIN READ</p>
-								</div>
-						</a>
-					</div>
-				</div>
-				<div class="w-full md:w-1/3 px-2 pb-12">
-					<div class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
-						<a href="#" class="no-underline hover:no-underline">
-								<img src="https://source.unsplash.com/DEa8_vxKlEo/400x200" class="h-48 w-full rounded-t shadow">
-								<div class="p-6 h-auto md:h-48">
-									<p class="text-gray-600 text-xs md:text-sm">FOREST</p>
-									<div class="font-bold text-xl text-gray-900">What is life but a teardrop in the eye of infinity?</div>
-									<p class="text-gray-800 font-serif text-base mb-5">
-										Mollis pretium integer eros et dui orci, lectus nec elit sagittis neque. Dignissim ac nullam semper aliquet volutpat, ut scelerisque.
-									</p>
-								</div>
-								<div class="flex items-center justify-between inset-x-0 bottom-0 p-6">
-									<img class="w-8 h-8 rounded-full mr-4" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-									<p class="text-gray-600 text-xs md:text-sm">7 MIN READ</p>
-								</div>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-
-
-<script>
-	/* Progress bar */
-	//Source: https://alligator.io/js/progress-bar-javascript-css-variables/
-	var h = document.documentElement,
-		  b = document.body,
-		  st = 'scrollTop',
-		  sh = 'scrollHeight',
-		  progress = document.querySelector('#progress'),
-		  scroll;
-	var scrollpos = window.scrollY;
-	var header = document.getElementById("header");
-
-	document.addEventListener('scroll', function() {
-
-		/*Refresh scroll % width*/
-		scroll = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
-		progress.style.setProperty('--scroll', scroll + '%');
-
-		/*Apply classes for slide in bar*/
-		scrollpos = window.scrollY;
-
-    if(scrollpos > 100){
-      header.classList.remove("hidden");
-	  header.classList.remove("fadeOutUp");
-	  header.classList.add("slideInDown");
-    }
-    else {
-	  header.classList.remove("slideInDown");
-      header.classList.add("fadeOutUp");
-	  header.classList.add("hidden");
-    }
-
-	});
-
-</script>
-
+            </div>
+        </div>
+    </div>
+    <footer class="w-full text-center uppercase bg-gray-200 p-4">
+        BY <a target="_blank" href="https://davidgrzyb.com" class="underline">Media ENT- 2021</a>.
+    </footer>
 </body>
 </html>

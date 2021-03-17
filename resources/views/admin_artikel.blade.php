@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
     <!-- Tailwind -->
@@ -46,7 +45,7 @@
                 <i class="fas fa-tablet-alt mr-3"></i>
                 Table Video
             </a>
-            <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="calendar.html" class="active-nav-link flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-calendar mr-3"></i>
                 Calendar
             </a>

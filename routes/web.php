@@ -29,9 +29,17 @@ Route::get('/admin_video', function () {
     return view('admin_video');
 })->name('admin_video');
 
+Route::get('/admin_calendar', function () {
+    return view('admin_calendar');
+})->name('admin_calendar');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/kategori', function () {
+    return view('kategori');
+})->name('kategori');
 
 Route::get('/about', function () {
     return view('about');
