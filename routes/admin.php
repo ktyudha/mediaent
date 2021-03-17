@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,7 @@ use App\Http\Controllers\Admin\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::post('/author/add', [HomeController::class, 'addAuthor'])->name('author.add');
-Route::post('/author/remove/{email}', [HomeController::class, 'removeAuthor'])->name('author.remove');
+
+Route::get('/author', [AuthorController::class, 'index'])->name('author');
+Route::post('/author/add', [AuthorController::class, 'add'])->name('author.add');
+Route::post('/author/remove/{email}', [AuthorController::class, 'remove'])->name('author.remove');

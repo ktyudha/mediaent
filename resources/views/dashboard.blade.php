@@ -38,6 +38,12 @@
                 <i class="fas fa-sign-out-alt mr-3"></i>
                 Back Home
             </a>
+            @role('admin')
+            <a href="tabs.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                <i class="fas fa-address-book mr-3"></i>
+                Add Author
+            </a>
+            @endrole
             <a href="tables.html" class="flex items-center text-white py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Artikel
@@ -89,7 +95,6 @@
                     </x-dropdown>
                 </div>
                 @endauth
-
             </div>
         </header>
 
@@ -125,7 +130,7 @@
                     <i class="fas fa-calendar mr-3"></i>
                     Calendar
                 </a>
-                <a :href="route('logout') class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <a :href="route('logout')" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <form method="POST" action="{{ route('logout') }}" class=" bg-gray-200">
                         @csrf
                         <x-dropdown-link :href="route('logout')"
