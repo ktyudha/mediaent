@@ -17,7 +17,7 @@ class AuthorController extends Controller
 
     public function add(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'email' => 'required|string|email|max:255|exists:users,email'
         ]);
 

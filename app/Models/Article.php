@@ -10,6 +10,8 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
+        'category_id',
         'title',
         'slug',
         'body',
@@ -23,6 +25,11 @@ class Article extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function thumbnail()
+    {
+        return $this->morphOne(Image::class, 'imageable');
     }
 
     public function images()
