@@ -10,7 +10,6 @@
     </title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <meta name="author" content="" />
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <link rel="stylesheet" href="carousel.css">
@@ -128,7 +127,6 @@
             Popular Posts
         </div>
     </div>
-
 </div>
 
 <body class="leading-normal tracking-normal text-white bg-gray-200">
@@ -534,7 +532,6 @@
                 <div class="flex-1 mb-6 text-black">
                     <a class="text-blue-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl" href="#">
                         <!--Icon from: http://www.potlabicons.com/ -->
-                        <svg class="h-8 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512.005 512.005">
                             <rect
                                 fill="#3333E0"
                                 x="16.539"
@@ -545,7 +542,7 @@
                             <path
                                 class="plane-take-off"
                                 d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z "/>
-                        </svg> FOOTER
+                        </svg> MEDIA ENT
                     </a>
                 </div>
                 <div class="flex-1">
@@ -607,14 +604,6 @@
     </footer>
     <!-- Vue JS -->
 
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                message: 'Hello Vue!'
-            }
-        })
-    </script>
     <script>
         export default {
             data() {
