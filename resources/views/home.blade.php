@@ -310,8 +310,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </section>
@@ -381,7 +379,6 @@
                                     </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -415,11 +412,9 @@
                                     </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
-
             <section class="text-gray-600 body-font overflow-hidden">
                 <div class="px-1 py-2 mx-auto">
                     <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
@@ -449,7 +444,6 @@
                                     </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -483,7 +477,6 @@
                                     </a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </section>
