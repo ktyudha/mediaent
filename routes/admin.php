@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\AuthorController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/author', [AuthorController::class, 'index'])->name('author');
-Route::post('/author/add', [AuthorController::class, 'add'])->name('author.add');
-Route::post('/author/remove/{email}', [AuthorController::class, 'remove'])->name('author.remove');
+Route::middleware(['role:admin'])->group(function () {
+    Route::get('/author', [AuthorController::class, 'index'])->name('author');
+    Route::post('/author/add', [AuthorController::class, 'add'])->name('author.add');
+    Route::post('/author/remove/{email}', [AuthorController::class, 'remove'])->name('author.remove');
+});

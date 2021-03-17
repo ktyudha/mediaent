@@ -22,7 +22,9 @@ class AuthorController extends Controller
         ]);
 
         $user = User::where('email', $request->email)->first();
-        $user->assignRole('author');
+        if (!$user->hasRole('author')) {
+            $user->assignRole('author');
+        }
 
         return redirect()->back();
     }
