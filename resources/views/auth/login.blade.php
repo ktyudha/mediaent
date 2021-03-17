@@ -54,9 +54,7 @@
                 @endif
 
                 <x-button class="ml-3">
-                    <a href="{{ route('dashboard') }}">
                     {{ __('Log in') }}
-                    </a>
                 </x-button>
             </div>
         </form>
