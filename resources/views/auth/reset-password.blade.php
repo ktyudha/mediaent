@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="{{ asset('ent.png') }}" />
             </a>
         </x-slot>
 
@@ -11,7 +11,10 @@
 
         <form method="POST" action="{{ route('password.update') }}" novalidate>
             @csrf
-
+            {{-- title --}}
+            <div class="items-center text-center text-xl font-bold">
+                RESET PASSWORD
+            </div>
             <!-- Password Reset Token -->
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 

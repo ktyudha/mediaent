@@ -2,9 +2,10 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="{{ asset('ent.png') }}" />
             </a>
         </x-slot>
+
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -14,7 +15,10 @@
 
         <form method="POST" action="{{ route('login') }}" novalidate>
             @csrf
-
+            {{-- title --}}
+            <div class="items-center text-center text-xl font-bold">
+                LOGIN
+            </div>
             <!-- Email Address -->
             <div>
                 <x-label for="email" :value="__('Email')" />
