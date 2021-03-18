@@ -10,6 +10,10 @@
 
     <!-- Tailwind -->
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- CKEditor 5 -->
+    <script src="https://cdn.ckeditor.com/ckeditor5/26.0.0/classic/ckeditor.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
@@ -201,12 +205,15 @@
                     </p>
 
                     <div class="leading-loose">
-                        <form class="px-10 pt-8 pb-10 bg-white rounded shadow-xl" enctype="multipart/form-data">
+                        <form action="" class="px-10 pt-8 pb-10 bg-white rounded shadow-xl"
+                            enctype="multipart/form-data" method="post">
+                            @csrf
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="title">Judul</label>
                                 <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
                                     name="title" type="text" required="" placeholder="Masukkan judul artikel"
                                     aria-label="title">
+                                <x-validation-message name="title" />
                             </div>
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="category">Pilih Kategori</label>
@@ -217,17 +224,20 @@
                                     <option value="3">Teknologi</option>
                                     <option value="4">Explore</option>
                                 </select>
+                                <x-validation-message name="category" />
                             </div>
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="image">Foto</label>
                                 <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="image"
                                     aria-label="image" name="image" type="file" accept="image/*" required>
+                                <x-validation-message name="image" />
                             </div>
                             <div class="mt-2">
                                 <label class=" block text-sm text-gray-600" for="body">Isi Artikel</label>
                                 <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="body"
-                                    name="deskripsi" rows="6" placeholder="Masukkan isi artikel" aria-label="body"
+                                    name="body" placeholder="Masukkan isi artikel" aria-label="body"
                                     required></textarea>
+                                <x-validation-message name="body" />
                             </div>
                             <div class="mt-6">
                                 <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
@@ -245,6 +255,14 @@
         </div>
 
     </div>
+
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#body' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 
     <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
