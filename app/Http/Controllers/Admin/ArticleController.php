@@ -27,19 +27,36 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
+        $request->validate([
+            'title' => 'required|string|max:255|unique:articles',
+            'category' => 'required|exists:categories,id',
+            'thumbnail' => 'required|mimes:jpg,bmp,png',
             'body' => 'required|string|max:5000'
         ]);
+
+        $slug = Str::slug($request->title);
 
         $article = Article::create([
             'user_id' => auth()->user()->id,
             'title' => $request->title,
-            'slug' => Str::slug($request->title),
+            'slug' => $slug,
+            'category_id' => $request->category,
             'body' => $request->body,
         ]);
 
-        return redirect()->route('admin.article.show', compact('article'));
+        // thumbnail store
+        $extension = $request->file('thumbnail')->extension();
+        $name = $slug . '.' . $extension;
+        $path = $request->file('thumbnail')->storeAs(
+            'public/images', $name
+        );
+
+        $article->thumbnail()->create([
+            'url' => $path
+        ]);
+
+        // return redirect()->route('admin.article.show', compact('article'));
+        return redirect()->back();
     }
 
     /**

@@ -205,38 +205,38 @@
                     </p>
 
                     <div class="leading-loose">
-                        <form action="" class="px-10 pt-8 pb-10 bg-white rounded shadow-xl"
-                            enctype="multipart/form-data" method="post">
+                        <form method="POST" action="{{ route('admin.article.store') }}" class="px-10 pt-8 pb-10 bg-white rounded shadow-xl"
+                            enctype="multipart/form-data" novalidate>
                             @csrf
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="title">Judul</label>
                                 <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
-                                    name="title" type="text" required="" placeholder="Masukkan judul artikel"
-                                    aria-label="title">
+                                    name="title" type="text" value="{{ old('title') }}" placeholder="Masukkan judul artikel"
+                                    aria-label="title" required>
                                 <x-validation-message name="title" />
                             </div>
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="category">Pilih Kategori</label>
                                 <select class="uppercase w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
                                     name="category">
-                                    <option value="1">Lifestyle</option>
-                                    <option value="2">Hiburan</option>
-                                    <option value="3">Teknologi</option>
-                                    <option value="4">Explore</option>
+                                    <option value="1" {{ old("category") == 1 ? "selected" : "" }}>Lifestyle</option>
+                                    <option value="2" {{ old("category") == 2 ? "selected" : "" }}>Hiburan</option>
+                                    <option value="3" {{ old("category") == 3 ? "selected" : "" }}>Teknologi</option>
+                                    <option value="4" {{ old("category") == 4 ? "selected" : "" }}>Explore</option>
                                 </select>
                                 <x-validation-message name="category" />
                             </div>
                             <div class="mt-2">
-                                <label class="block text-sm text-gray-600" for="image">Foto</label>
-                                <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="image"
-                                    aria-label="image" name="image" type="file" accept="image/*" required>
-                                <x-validation-message name="image" />
+                                <label class="block text-sm text-gray-600" for="thumbnail">Foto</label>
+                                <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="thumbnail"
+                                    aria-label="thumbnail" name="thumbnail" type="file" accept="image/*" required>
+                                <x-validation-message name="thumbnail" />
                             </div>
                             <div class="mt-2">
                                 <label class=" block text-sm text-gray-600" for="body">Isi Artikel</label>
                                 <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="body"
                                     name="body" placeholder="Masukkan isi artikel" aria-label="body"
-                                    required></textarea>
+                                    required>{{ old('body') }}</textarea>
                                 <x-validation-message name="body" />
                             </div>
                             <div class="mt-6">
