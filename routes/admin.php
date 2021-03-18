@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\ArticleController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['role:admin'])->group(function () {
     Route::get('/author', [AuthorController::class, 'index'])->name('author');
@@ -24,4 +24,4 @@ Route::middleware(['role:admin'])->group(function () {
     Route::post('/author/remove/{email}', [AuthorController::class, 'remove'])->name('author.remove');
 });
 
-Route::resource('article', ArticleController::class)->except('index');
+Route::resource('article', ArticleController::class)->except('show');

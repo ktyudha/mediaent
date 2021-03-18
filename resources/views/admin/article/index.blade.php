@@ -10,10 +10,6 @@
 
     <!-- Tailwind -->
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-
-    <!-- CKEditor 5 -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/26.0.0/classic/ckeditor.js"></script>
-
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
@@ -56,10 +52,11 @@
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
-            <button
+            <a
+                href="{{ route("admin.article.create") }}"
                 class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
-                <i class="fas fa-plus mr-3"></i> New Article
-            </button>
+                <i class="fas fa-plus mr-3"></i> New Artikel
+            </a>
             <button
                 class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
                 <i class="fas fa-plus mr-3"></i> New Video
@@ -77,7 +74,7 @@
                 Manage Author
             </a>
             @endrole
-            <a href="{{ route('admin.article.index') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ route('admin.article.index') }}" class="flex items-center text-white py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Artikel
             </a>
@@ -153,15 +150,7 @@
                     <i class="fas fa-back mr-3"></i>
                     Dashboard
                 </a>
-                @role('admin')
-                <a href="{{ route('admin.author') }}"
-                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                    <i class="fas fa-tablet-alt mr-3"></i>
-                    Manage Author
-                </a>
-                @endrole
-                <a href="{{ route('admin.article.index') }}"
-                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <a href="{{ route('admin.article.index') }}" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
                     <i class="fas fa-table mr-3"></i>
                     Table Artikel
                 </a>
@@ -201,49 +190,33 @@
             <main class="w-full flex-grow p-6">
                 <div class="w-full mt-6">
                     <p class="text-xl pb-3 flex items-center">
-                        <i class="fas fa-list mr-3"></i> New Article
+                        <i class="fas fa-list mr-3"></i> Table Artikle
                     </p>
-
-                    <div class="leading-loose">
-                        <form method="POST" action="{{ route('admin.article.store') }}" class="px-10 pt-8 pb-10 bg-white rounded shadow-xl"
-                            enctype="multipart/form-data" novalidate>
-                            @csrf
-                            <div class="mt-2">
-                                <label class="block text-sm text-gray-600" for="title">Judul</label>
-                                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
-                                    name="title" type="text" value="{{ old('title') }}" placeholder="Masukkan judul artikel"
-                                    aria-label="title" required>
-                                <x-validation-message name="title" />
-                            </div>
-                            <div class="mt-2">
-                                <label class="block text-sm text-gray-600" for="category">Pilih Kategori</label>
-                                <select class="uppercase w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
-                                    name="category">
-                                    <option value="1" {{ old("category") == 1 ? "selected" : "" }}>Lifestyle</option>
-                                    <option value="2" {{ old("category") == 2 ? "selected" : "" }}>Hiburan</option>
-                                    <option value="3" {{ old("category") == 3 ? "selected" : "" }}>Teknologi</option>
-                                    <option value="4" {{ old("category") == 4 ? "selected" : "" }}>Explore</option>
-                                </select>
-                                <x-validation-message name="category" />
-                            </div>
-                            <div class="mt-2">
-                                <label class="block text-sm text-gray-600" for="thumbnail">Foto</label>
-                                <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="thumbnail"
-                                    aria-label="thumbnail" name="thumbnail" type="file" accept="image/*" required>
-                                <x-validation-message name="thumbnail" />
-                            </div>
-                            <div class="mt-2">
-                                <label class=" block text-sm text-gray-600" for="body">Isi Artikel</label>
-                                <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="body"
-                                    name="body" placeholder="Masukkan isi artikel" aria-label="body"
-                                    required>{{ old('body') }}</textarea>
-                                <x-validation-message name="body" />
-                            </div>
-                            <div class="mt-6">
-                                <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
-                                    type="submit">Submit</button>
-                            </div>
-                        </form>
+                    <div class="bg-white overflow-auto">
+                        <table class="min-w-full bg-white">
+                            <thead class="bg-gray-800 text-white">
+                                <tr>
+                                    <th class="w-1/5 text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
+                                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Tanggal</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Kategori</th>
+                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Action</td>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-700">
+                                <tr>
+                                    <td class="w-1/5 text-left py-3 px-4">1.</td>
+                                    <td class="w-1/3 text-left py-3 px-4">11-02-2021</td>
+                                    <td class="text-left py-3 px-4">Teknologi</td>
+                                    <td class="text-left py-3 px-4"></td>
+                                </tr>
+                                <tr class="bg-gray-200">
+                                    <td class="w-1/5 text-left py-3 px-4">2.</td>
+                                    <td class="w-1/3 text-left py-3 px-4">11-03-2021</td>
+                                    <td class="text-left py-3 px-4">Hiburan</td>
+                                    <td class="text-left py-3 px-4"></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
@@ -255,14 +228,6 @@
         </div>
 
     </div>
-
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#body' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
 
     <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>

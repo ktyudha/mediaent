@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,13 +18,11 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/{article}', [ArticleController::class, 'index'])->name('article.show');
+
 Route::get('/detail', function () {
     return view('detail');
 })->name('detail');
-
-Route::get('/admin_artikel', function () {
-    return view('admin_artikel');
-})->name('admin_artikel');
 
 Route::get('/admin_video', function () {
     return view('admin_video');

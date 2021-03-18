@@ -73,7 +73,7 @@
                 Manage Author
             </a>
             @endrole
-            <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ route('admin.article.index') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Artikel
             </a>
@@ -156,7 +156,7 @@
                     Manage Author
                 </a>
                 @endrole
-                <a href="tables.html"
+                <a href="{{ route('admin.article.index') }}"
                     class="flex items-center opacity-75 hover:opacity-100 text-white py-2 pl-4 nav-item">
                     <i class="fas fa-table mr-3"></i>
                     Table Artikel
