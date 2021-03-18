@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
     <link rel="stylesheet" href="carousel.css">
+
     <style>
         .gradient {
             background: linear-gradient(90deg, #037e9c 0%, #064ca7 100%);
@@ -38,6 +39,17 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="carousel.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    
+    {{-- carousel --}}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+	<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
+
 </head>
 <x-app-layout>
     {{-- <x-slot name="header">
@@ -52,80 +64,31 @@
     <div class="py-12"></div>
     <div class="mx-10 mt-3 ">
         <!-- fitur carousel -->
-        <div class="bg-white carousel relative container mx-auto " style="max-width:1600px;">
-            <div class="carousel-inner relative overflow-hidden w-full">
-                <figure>
-                    <!--Slide 1-->
-                    <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-                    <div class="carousel-item absolute opacity-0 rounded-lg" style="height:50vh;">
-                        <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url('');">
-                            <div class="container mx-auto">
-                                <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                                    <p class="text-black text-2xl my-4">Stripy Zig Zag Jigsaw Pillow and Duvet Set</p>
-                                    <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
+        <div class="w-full mx-auto my-8 bg-white">
+            <div id="slider" class="swiper-container w-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg-cover bg-center" style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');">
+                        <div class="mx-auto pt-32 pb-0">
+                            <div class="w-full">
+                                <div class="py-3 px-6 md:px-10 md:py-6 mt-32 bg-gray-900 bg-opacity-60">
+                                    <a href=""><h2 class="text-2xl text-gray-100 leading-tight" style="font-family: Niconne, cursive;">ini adalah judul artikel slider </h2></a>
+                                    <p class="text-md mt-2 font-light">ini adalah deskripsi singkat judul</p>
                                 </div>
-                            </div>
-
+                                </div>
                         </div>
                     </div>
-                    <label for="carousel-3" class="duration-700 prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-                    <label for="carousel-2" class="duration-700 next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
-                    <!--Slide 2-->
-                    <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-                    <div class="carousel-item absolute opacity-0 bg-cover bg-right" style="height:50vh;">
-                        <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-right" style="background-image: url();">
-
-                            <div class="container mx-auto">
-                                <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                                    <p class="text-black text-2xl my-4">Real Bamboo Wall Clock</p>
-                                    <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <label for="carousel-1" class="duration-700 prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-                    <label for="carousel-3" class="duration-700 next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
-                    <!--Slide 3-->
-                    <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-                    <div class="carousel-item absolute opacity-0" style="height:50vh;">
-                        <div class="block h-full w-full mx-auto flex pt-6 md:pt-0 md:items-center bg-cover bg-bottom" style="background-image: url();">
-
-                            <div class="container mx-auto">
-                                <div class="flex flex-col w-full lg:w-1/2 md:ml-16 items-center md:items-start px-6 tracking-wide">
-                                    <p class="text-black text-2xl my-4">Brown and blue hardbound book</p>
-                                    <a class="text-xl inline-block no-underline border-b border-gray-600 leading-relaxed hover:text-black hover:border-black" href="#">view product</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <label for="carousel-2" class=" duration-700 prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-                    <label for="carousel-1" class="duration-700 next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-gray-900  leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-
-                    <!-- indikator slide-->
-                    <ol class="carousel-indicators">
-                        <li class="inline-block mr-3">
-                            <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
-                        </li>
-                        <li class="inline-block mr-3">
-                            <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
-                        </li>
-                        <li class="inline-block mr-3">
-                            <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-gray-400 hover:text-gray-900">•</label>
-                        </li>
-                    </ol>
-                </figure>
+                </div>
+                <div class="duration-700 hidden absolute md:flex swiper-button-prev bg-white hover:bg-gray-700 w-12 h-12 text-xs rounded-full text-gray-700 hover:text-gray-100"></div>
+                <div class="duration-700 hidden absolute md:flex swiper-button-next bg-white hover:bg-gray-700 w-12 h-12 text-xs rounded-full text-gray-700 hover:text-gray-100"></div>
+                <div class="swiper-pagination"></div>
             </div>
         </div>
-    </div>
-    <!-- end carousel -->
+        <!-- end carousel -->
     <div class="mx-auto items-center">
         <div class="pt-7 text-center pb-40 font-bold text-gray-300 text-3xl">
             Popular Posts
         </div>
+    </div>
     </div>
 </div>
 
@@ -313,207 +276,62 @@
             </div>
         </div>
     </section>
-    <!-- Featured Post 2 -->
-    <div class="px-0 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-        <!--Left Col-->
-        <div class="ml-0 flex flex-col w-full md:w-1/3 justify-center items-start text-center md:text-left">
-            <div class="bg-white mb-2 ml-5 sm:ml-10 sm:mr-3 mr-5 max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md">
-                <img class="object-cover w-full h-41" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-
-                <div class="p-6">
-                    <div>
-                        <span class="text-xs font-medium text-blue-600 uppercase">Kategori</span>
-                        <a href="#" class="block mt-2 text-2xl font-semibold text-gray-800 hover:text-gray-600 hover:underline">Ini adalah judul featured</a>
-                        <p class="mt-2 text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie parturient et sem ipsum volutpat vel. Natoque sem et aliquam mauris egestas quam volutpat viverra. In pretium nec senectus erat. Et malesuada lobortis.</p>
+    
+    <!-- 2/3 -->
+    <div class="container flex flex-wrap mx-auto ">
+        <div class="w-full xl:w-2/3 mb-5">
+            <section class="text-gray-600 body-font">
+                <div class="container px-5 mx-auto">
+                    <div class="flex flex-wrap w-full mb-20">
+                        <div class="lg:w-1/2 w-full mb-4 lg:mb-0">
+                            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis quis amet dolor </h1>
+                            <div class="h-1 w-20 bg-indigo-500 rounded"></div>
+                        </div>
+                        <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore nesciunt cupiditate, quidem temporibus commodi excepturi laboriosam cumque impedit voluptate officia sequi dolores consequuntur iure nobis aspernatur itaque deleniti
+                            iusto modi!</p>
                     </div>
-
-                    <div class="mt-2 mb-0">
-                        <div class="flex items-center flex-col md:text-left">
-                            <div class="items-center flex hover:text-gray-700 text-gray-400">
-                                <a href="#" class=" inline-block font-semibold">Selengkapnya
-                                        <svg
-                                            class="inline-block h-5 w-5 "
-                                            viewbox="0 0 24 24"
-                                            fill="none"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <line x1="5" y1="12" x2="19" y2="12"/>
-                                            <polyline points="12 5 19 12 12 19"/></svg>
-                                    </a>
+                    <div class="flex flex-wrap -m-4">
+                        <div class="md:w-1/2 p-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/720x400" alt="content">
+                                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
+                                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/721x401" alt="content">
+                                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
+                                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/722x402" alt="content">
+                                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
+                                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-4">
+                            <div class="bg-white p-4 rounded-lg">
+                                <img class="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403" alt="content">
+                                <h3 class="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
+                                <h2 class="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
+                                <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-        <!--Right Col-->
-        <div class="w-full md:w-2/3 py-6 md:text-left text-center md:overflow-auto h-90">
-            <section class="text-gray-600 body-font overflow-hidden">
-                <div class="px-1 py-2 mx-auto">
-                    <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                        <div class="flex flex-wrap md:flex-nowrap">
-                            <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                                <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                                <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                    <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">teknologi</h5>
-                                </div>
-                            </div>
-                            <div class="md:flex-grow-0 py-2 px-2">
-                                <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                                <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland
-                                    craft beer.</p>
-                                <a class="text-blue-500 inline-flex items-center mt-4">Teknologi Selengkapnya
-                                        <svg
-                                            class="w-4 h-4 ml-2"
-                                            viewbox="0 0 24 24"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M5 12h14"></path>
-                                            <path d="M12 5l7 7-7 7"></path>
-                                        </svg>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="text-gray-600 body-font overflow-hidden">
-                <div class="px-1 py-2 mx-auto">
-                    <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                        <div class="flex flex-wrap md:flex-nowrap">
-                            <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                                <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                                <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                    <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">Exsplore</h5>
-                                </div>
-                            </div>
-                            <div class="md:flex-grow-0 py-2 px-2">
-                                <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                                <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland
-                                    craft beer.</p>
-                                <a class="text-blue-500 inline-flex items-center mt-4">Explore Selengkapnya
-                                        <svg
-                                            class="w-4 h-4 ml-2"
-                                            viewbox="0 0 24 24"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M5 12h14"></path>
-                                            <path d="M12 5l7 7-7 7"></path>
-                                        </svg>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="text-gray-600 body-font overflow-hidden">
-                <div class="px-1 py-2 mx-auto">
-                    <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                        <div class="flex flex-wrap md:flex-nowrap">
-                            <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                                <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                                <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                    <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">Lifestyle</h5>
-                                </div>
-                            </div>
-                            <div class="md:flex-grow-0 py-2 px-2">
-                                <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                                <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland
-                                    craft beer.</p>
-                                <a class="text-blue-500 inline-flex items-center mt-4">Lifestyle Selengkapnya
-                                        <svg
-                                            class="w-4 h-4 ml-2"
-                                            viewbox="0 0 24 24"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M5 12h14"></path>
-                                            <path d="M12 5l7 7-7 7"></path>
-                                        </svg>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="text-gray-600 body-font overflow-hidden">
-                <div class="px-1 py-2 mx-auto">
-                    <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                        <div class="flex flex-wrap md:flex-nowrap">
-                            <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                                <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                                <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                    <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">hiburan</h5>
-                                </div>
-                            </div>
-                            <div class="md:flex-grow-0 py-2 px-2">
-                                <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                                <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland
-                                    craft beer.</p>
-                                <a class="text-blue-500 inline-flex items-center mt-4">Hiburan Selengkapnya
-                                        <svg
-                                            class="w-4 h-4 ml-2"
-                                            viewbox="0 0 24 24"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M5 12h14"></path>
-                                            <path d="M12 5l7 7-7 7"></path>
-                                        </svg>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="text-gray-600 body-font overflow-hidden">
-                <div class="px-1 py-2 mx-auto">
-                    <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                        <div class="flex flex-wrap md:flex-nowrap">
-                            <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                                <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                                <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                    <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">VIDEO</h5>
-                                </div>
-                            </div>
-                            <div class="md:flex-grow-0 py-2 px-2">
-                                <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                                <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland
-                                    craft beer.</p>
-                                <a class="text-blue-500 inline-flex items-center mt-4">Video Selengkapnya
-                                        <svg
-                                            class="w-4 h-4 ml-2"
-                                            viewbox="0 0 24 24"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            fill="none"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M5 12h14"></path>
-                                            <path d="M12 5l7 7-7 7"></path>
-                                        </svg>
-                                    </a>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
+        <div class="w-full xl:w-1/3">
+            <input type="text" id="" name="" placeholder="Search . ." class="px-4 py-2 shadow-lg w-full bg-white rounded-lg border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            <div>
+                <div class="bg-white rounded-lg my-5 py-2 px-4 shadow-lg text-gray-800 font-bold text-2xl text-center">Recents Posts</div>
+            </div>
         </div>
     </div>
     <!-- Recents post -->
@@ -835,6 +653,31 @@
             }
             return false;
         }
+    </script>
+
+    {{-- carousel --}}
+    <script>
+        var mySwiper = new Swiper ('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        })
     </script>
 </body>
 </x-app-layout>

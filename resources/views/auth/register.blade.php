@@ -2,7 +2,8 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="{{ asset('ent.png') }}" />
+                
             </a>
         </x-slot>
 
@@ -11,7 +12,10 @@
 
         <form method="POST" action="{{ route('register') }}" novalidate>
             @csrf
-
+            {{-- title --}}
+            <div class="items-center text-center text-xl font-bold">
+                REGISTER
+            </div>
             <!-- Name -->
             <div>
                 <x-label for="name" :value="__('Name')" />
