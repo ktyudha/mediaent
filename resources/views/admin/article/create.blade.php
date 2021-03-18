@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,25 +12,52 @@
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
-        .font-family-karla { font-family: karla; }
-        .bg-sidebar { background: #3d68ff; }
-        .cta-btn { color: #3d68ff; }
-        .upgrade-btn { background: #1947ee; }
-        .upgrade-btn:hover { background: #0038fd; }
-        .active-nav-link { background: #1947ee; }
-        .nav-item:hover { background: #1947ee; }
-        .account-link:hover { background: #3d68ff; }
+
+        .font-family-karla {
+            font-family: karla;
+        }
+
+        .bg-sidebar {
+            background: #3d68ff;
+        }
+
+        .cta-btn {
+            color: #3d68ff;
+        }
+
+        .upgrade-btn {
+            background: #1947ee;
+        }
+
+        .upgrade-btn:hover {
+            background: #0038fd;
+        }
+
+        .active-nav-link {
+            background: #1947ee;
+        }
+
+        .nav-item:hover {
+            background: #1947ee;
+        }
+
+        .account-link:hover {
+            background: #3d68ff;
+        }
     </style>
 </head>
+
 <body class="bg-gray-100 font-family-karla flex">
 
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
             <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
-            <button class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
-                <i class="fas fa-plus mr-3"></i> New Artikel
+            <button
+                class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+                <i class="fas fa-plus mr-3"></i> New Article
             </button>
-            <button class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+            <button
+                class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
                 <i class="fas fa-plus mr-3"></i> New Video
             </button>
         </div>
@@ -38,6 +66,13 @@
                 <i class="fas fa-sign-out-alt mr-3"></i>
                 Back Home
             </a>
+            @role('admin')
+            <a href="{{ route('admin.author') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                <i class="fas fa-address-book mr-3"></i>
+                Manage Author
+            </a>
+            @endrole
             <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Artikel
@@ -46,7 +81,8 @@
                 <i class="fas fa-tablet-alt mr-3"></i>
                 Table Video
             </a>
-            <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="calendar.html"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-calendar mr-3"></i>
                 Calendar
             </a>
@@ -63,12 +99,16 @@
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
                     <x-dropdown align="right" width="48">
                         <x-slot name="trigger">
-                            <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                            <button
+                                class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
                                 <div>{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd"
+                                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                            clip-rule="evenodd" />
                                     </svg>
                                 </div>
                             </button>
@@ -79,8 +119,7 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                                <x-dropdown-link :href="route('logout')"
-                                        onclick="event.preventDefault();
+                                <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                     {{ __('Log out') }}
                                 </x-dropdown-link>
@@ -105,31 +144,43 @@
 
             <!-- Dropdown Nav -->
             <nav :class="isOpen ? 'flex': 'hidden'" class="flex flex-col pt-4">
-                <a href="index.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <a href="index.html"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-back mr-3"></i>
                     Dashboard
                 </a>
-                <a href="tables.html" class="flex items-center text-white py-2 pl-4 nav-item">
+                @role('admin')
+                <a href="{{ route('admin.author') }}"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <i class="fas fa-tablet-alt mr-3"></i>
+                    Manage Author
+                </a>
+                @endrole
+                <a href="tables.html"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-table mr-3"></i>
                     Table Artikel
                 </a>
-                <a href="tabs.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <a href="tabs.html"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-tablet-alt mr-3"></i>
                     Table video
                 </a>
-                <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <a href="forms.html"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-align-left mr-3"></i>
                     Forms
                 </a>
-                <a href="calendar.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <a href="calendar.html"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-calendar mr-3"></i>
                     Calendar
                 </a>
-                <a :href="route('logout') class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <a :href="route('logout') class=" flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4
+                    nav-item">
                     <form method="POST" action="{{ route('logout') }}" class=" bg-gray-200">
                         @csrf
-                        <x-dropdown-link :href="route('logout')"
-                                onclick="event.preventDefault();
+                        <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                             this.closest('form').submit();">
                             <i class="text-black fas fa-sign-out-alt mr-3"></i>
                             LOG OUT
@@ -146,34 +197,41 @@
             <main class="w-full flex-grow p-6">
                 <div class="w-full mt-6">
                     <p class="text-xl pb-3 flex items-center">
-                        <i class="fas fa-list mr-3"></i> Input Artikel
+                        <i class="fas fa-list mr-3"></i> New Article
                     </p>
 
                     <div class="leading-loose">
-                        <form class="p-10 bg-white rounded shadow-xl">
-                            <div class="">
-                                <label class="block text-sm text-gray-600" for="judul">Judul</label>
-                                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="judul" name="judul" type="text" required="" placeholder="Judul" aria-label="judul">
+                        <form class="px-10 pt-8 pb-10 bg-white rounded shadow-xl" enctype="multipart/form-data">
+                            <div class="mt-2">
+                                <label class="block text-sm text-gray-600" for="title">Judul</label>
+                                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
+                                    name="title" type="text" required="" placeholder="Masukkan judul artikel"
+                                    aria-label="title">
                             </div>
-                            <div class="">
-                                <label class="block text-sm text-gray-600" for="judul">Kategori</label>
-                                <select class="uppercase w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" name="kategori" placeholder="Kategori">
-                                    <option value="teknologi">teknologi</option>
-                                    <option value="explore">explore</option>
-                                    <option value="lifestyle">lifestyle</option>
-                                    <option value="hiburan">hiburan</option>
+                            <div class="mt-2">
+                                <label class="block text-sm text-gray-600" for="category">Pilih Kategori</label>
+                                <select class="uppercase w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+                                    name="category">
+                                    <option value="1">Lifestyle</option>
+                                    <option value="2">Hiburan</option>
+                                    <option value="3">Teknologi</option>
+                                    <option value="4">Explore</option>
                                 </select>
                             </div>
                             <div class="mt-2">
-                                <label class="block text-sm text-gray-600" for="foto">Foto</label>
-                                <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="foto" name="foto" type="file" required="" aria-label="foto">
+                                <label class="block text-sm text-gray-600" for="image">Foto</label>
+                                <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="image"
+                                    aria-label="image" name="image" type="file" accept="image/*" required>
                             </div>
                             <div class="mt-2">
-                                <label class=" block text-sm text-gray-600" for="deskripsi">Deskripsi</label>
-                                <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="deskripsi" name="deskripsi" rows="6" required="" placeholder="Deskripsi/Isi Artikel" aria-label="deskripsi"></textarea>
+                                <label class=" block text-sm text-gray-600" for="body">Isi Artikel</label>
+                                <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="body"
+                                    name="deskripsi" rows="6" placeholder="Masukkan isi artikel" aria-label="body"
+                                    required></textarea>
                             </div>
                             <div class="mt-6">
-                                <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Submit</button>
+                                <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
+                                    type="submit">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -191,6 +249,8 @@
     <!-- AlpineJS -->
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+        integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </body>
+
 </html>

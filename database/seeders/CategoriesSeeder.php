@@ -18,6 +18,7 @@ class CategoriesSeeder extends Seeder
             ['name' => 'Lifestyle'],
             ['name' => 'Hiburan'],
             ['name' => 'Teknologi'],
+            ['name' => 'Explore'],
         );
     }
 }

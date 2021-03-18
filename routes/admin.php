@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\AuthorController;
+use App\Http\Controllers\Admin\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::middleware(['role:admin'])->group(function () {
     Route::post('/author/add', [AuthorController::class, 'add'])->name('author.add');
     Route::post('/author/remove/{email}', [AuthorController::class, 'remove'])->name('author.remove');
 });
+
+Route::resource('article', ArticleController::class)->except('index');
