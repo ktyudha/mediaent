@@ -51,7 +51,7 @@
 
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
-            <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+            <a href="{{ route('admin.home') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
             <a
                 href="{{ route("admin.article.create") }}"
                 class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
@@ -63,7 +63,7 @@
             </button>
         </div>
         <nav class="text-white text-base font-semibold pt-3">
-            <a href="index.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ route('home') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-sign-out-alt mr-3"></i>
                 Back Home
             </a>
@@ -136,7 +136,7 @@
         <!-- Mobile Header & Nav -->
         <header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+                <a href="{{ route('admin.home') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
                 <button @click="isOpen = !isOpen" class="text-white text-3xl focus:outline-none">
                     <i x-show="!isOpen" class="fas fa-bars"></i>
                     <i x-show="isOpen" class="fas fa-times"></i>
@@ -192,29 +192,47 @@
                     <p class="text-xl pb-3 flex items-center">
                         <i class="fas fa-list mr-3"></i> Table Artikle
                     </p>
-                    <div class="bg-white overflow-auto">
-                        <table class="min-w-full bg-white">
-                            <thead class="bg-gray-800 text-white">
-                                <tr>
-                                    <th class="w-1/5 text-left py-3 px-4 uppercase font-semibold text-sm">No</th>
-                                    <th class="w-1/3 text-left py-3 px-4 uppercase font-semibold text-sm">Tanggal</th>
-                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Kategori</th>
-                                    <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Action</td>
+                    <div class="bg-white shadow-md rounded my-6">
+                        <table class="min-w-max w-full table-auto">
+                            <thead>
+                                <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                                    <th class="py-3 px-6 text-left">No.</th>
+                                    <th class="py-3 px-6 text-left">Title</th>
+                                    <th class="py-3 px-6 text-left">Tanggal</th>
+                                    <th class="py-3 px-6 text-left">Kategori</th>
+                                    <th class="py-3 px-6 text-center">Actions</th>
                                 </tr>
                             </thead>
-                            <tbody class="text-gray-700">
-                                <tr>
-                                    <td class="w-1/5 text-left py-3 px-4">1.</td>
-                                    <td class="w-1/3 text-left py-3 px-4">11-02-2021</td>
-                                    <td class="text-left py-3 px-4">Teknologi</td>
-                                    <td class="text-left py-3 px-4"></td>
+                            <tbody class="text-gray-600 text-sm font-light">
+                                @foreach($articles as $article)
+                                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">
+                                        {{ $loop->iteration }}
+                                    </td>
+                                    <td class="py-3 px-6">
+                                        <a href="{{ route('article.show', $article) }}">{{ $article->title }}</a>
+                                    </td>
+                                    <td class="py-3 px-6">
+                                        {{ $article->created_at }}
+                                    </td>
+                                    <td class="py-3 px-6">
+                                        {{ $article->category->name }}
+                                    </td>
+                                    <td class="py-3 px-6 text-center">
+                                        <div class="flex item-center justify-center">
+                                            <a href="{{ route('admin.article.edit', $article) }}" class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">Edit</a>
+                                            <form method="POST"
+                                                action="{{ route('admin.article.destroy', $article) }}"
+                                                onclick="return confirm('Are you sure?')" novalidate>
+                                                @csrf
+                                                @method('DELETE')
+
+                                                <x-button>Remove</x-button>
+                                            </form>
+                                        </div>
+                                    </td>
                                 </tr>
-                                <tr class="bg-gray-200">
-                                    <td class="w-1/5 text-left py-3 px-4">2.</td>
-                                    <td class="w-1/3 text-left py-3 px-4">11-03-2021</td>
-                                    <td class="text-left py-3 px-4">Hiburan</td>
-                                    <td class="text-left py-3 px-4"></td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
