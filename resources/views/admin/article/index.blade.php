@@ -196,10 +196,10 @@
                         <table class="min-w-max w-full table-auto">
                             <thead>
                                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                    <th class="py-3 px-6 text-left">No.</th>
-                                    <th class="py-3 px-6 text-left">Title</th>
-                                    <th class="py-3 px-6 text-left">Tanggal</th>
-                                    <th class="py-3 px-6 text-left">Kategori</th>
+                                    <th class="py-3 px-6 text-center">No.</th>
+                                    <th class="py-3 px-6 text-center">Title</th>
+                                    <th class="py-3 px-6 text-center">Tanggal</th>
+                                    <th class="py-3 px-6 text-center">Kategori</th>
                                     <th class="py-3 px-6 text-center">Actions</th>
                                 </tr>
                             </thead>
@@ -209,13 +209,16 @@
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         {{ $loop->iteration }}
                                     </td>
-                                    <td class="py-3 px-6">
-                                        <a href="{{ route('article.show', $article) }}">{{ $article->title }}</a>
+                                    <td class="py-3 px-6 text-center">
+                                        <a href="{{ route('article.show', $article) }}" class="hover:underline">
+                                            <i class="fas fa-angle-right"></i>
+                                            {{ $article->title }}
+                                        </a>
                                     </td>
-                                    <td class="py-3 px-6">
+                                    <td class="py-3 px-6 text-center">
                                         {{ $article->created_at }}
                                     </td>
-                                    <td class="py-3 px-6">
+                                    <td class="py-3 px-6 text-center">
                                         {{ $article->category->name }}
                                     </td>
                                     <td class="py-3 px-6 text-center">
