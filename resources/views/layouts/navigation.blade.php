@@ -20,10 +20,10 @@
             <ul class="list-reset lg:flex justify-end flex-1 items-center">
                 <li class="mr-3">
                     <x-nav-link>
-                        <button id="navlink"
+                        <a href="{{ route('home') }}" id="navlink"
                             class="text-white hover:text-gray-100 mx-auto py-2 px-4 inline-block lg:mx-0 hover:no-underline font-medium focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
                             HOME
-                        </button>
+                        </a>
                     </x-nav-link>
                 </li>
                 <li class="mr-3">
@@ -93,7 +93,7 @@
                         </button>
                     </x-nav-link>
                 </li>
-                @endif
+                @endauth
             </ul>
         </div>
     </div>
