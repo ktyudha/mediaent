@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/{article}', [ArticleController::class, 'index'])->name('article.show');
+Route::get('/article/{article}', [ArticleController::class, 'show'])->name('article.show');
 
 Route::get('/detail', function () {
     return view('detail');
