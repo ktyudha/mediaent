@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
+    <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
     <!-- Tailwind -->
@@ -80,7 +81,8 @@
                 Manage Author
             </a>
             @endrole
-            <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ route('admin.article.index') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Article
             </a>
@@ -143,7 +145,8 @@
         <!-- Mobile Header & Nav -->
         <header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+                <a href="{{ route('admin.home') }}"
+                    class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
                 <button @click="isOpen = !isOpen" class="text-white text-3xl focus:outline-none">
                     <i x-show="!isOpen" class="fas fa-bars"></i>
                     <i x-show="isOpen" class="fas fa-times"></i>
@@ -163,7 +166,7 @@
                     New Article
                 </a>
                 <a href="{{ route('admin.video.create') }}"
-                    class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-video mr-3"></i>
                     New Video
                 </a>
@@ -209,16 +212,20 @@
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
                 <div class="w-full mt-6">
-                    <h1 class="text-3xl text-black pb-6"><i class="fas fa-video mr-3"></i>New Video</h1>
+                    <h1 class="text-3xl text-black pb-6"><i class="fas fa-newspaper mr-3"></i>Edit Video</h1>
 
                     <div class="leading-loose">
-                        <form method="POST" action="{{ route('admin.video.store') }}"
+                        <form method="POST" action="{{ route('admin.video.update', $video) }}"
                             class="px-10 pt-8 pb-10 bg-white rounded shadow-xl" novalidate>
                             @csrf
+                            @method('PATCH')
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="title">Judul</label>
-                                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
+                                {{-- <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
                                     name="title" type="text" value="{{ old('title') }}"
+                                placeholder="Masukkan judul artikel" aria-label="title" required> --}}
+                                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
+                                    name="title" type="text" value="{{ $video->title }}"
                                     placeholder="Masukkan judul video" aria-label="title" required>
                                 <x-validation-message name="title" />
                             </div>
@@ -226,25 +233,37 @@
                                 <label class="block text-sm text-gray-600" for="category">Pilih Kategori</label>
                                 <select class="uppercase w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
                                     name="category">
-                                    <option value="1" {{ old("category") == 1 ? "selected" : "" }}>Lifestyle</option>
+                                    {{-- <option value="1" {{ old("category") == 1 ? "selected" : "" }}>Lifestyle
+                                    </option>
                                     <option value="2" {{ old("category") == 2 ? "selected" : "" }}>Hiburan</option>
                                     <option value="3" {{ old("category") == 3 ? "selected" : "" }}>Teknologi</option>
-                                    <option value="4" {{ old("category") == 4 ? "selected" : "" }}>Explore</option>
+                                    <option value="4" {{ old("category") == 4 ? "selected" : "" }}>Explore</option> --}}
+                                    <option value="1" {{ $video->category->id == 1 ? "selected" : "" }}>Lifestyle
+                                    </option>
+                                    <option value="2" {{ $video->category->id  == 2 ? "selected" : "" }}>Hiburan
+                                    </option>
+                                    <option value="3" {{ $video->category->id  == 3 ? "selected" : "" }}>Teknologi
+                                    </option>
+                                    <option value="4" {{ $video->category->id  == 4 ? "selected" : "" }}>Explore
+                                    </option>
                                 </select>
                                 <x-validation-message name="category" />
                             </div>
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="url">URL Video</label>
-                                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="url" name="url"
-                                    type="url" value="{{ old('url') }}" placeholder="Masukkan url video"
-                                    aria-label="url" required>
+                                <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="url"
+                                    aria-label="url" name="url" type="url" value="{{ $video->url }}"
+                                    placeholder="Masukkan url video" required>
                                 <x-validation-message name="url" />
                             </div>
                             <div class="mt-2">
                                 <label class=" block text-sm text-gray-600" for="description">Deskripsi Video</label>
+                                {{-- <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="body"
+                                    name="body" placeholder="Masukkan isi artikel" aria-label="body"
+                                    required>{{ old('body') }}</textarea> --}}
                                 <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="description"
                                     name="description" placeholder="Masukkan deskripsi video" aria-label="description"
-                                    required>{{ old('description') }}</textarea>
+                                    required>{{ $video->description }}</textarea>
                                 <x-validation-message name="description" />
                             </div>
                             <div class="mt-6">

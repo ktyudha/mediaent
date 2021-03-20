@@ -97,7 +97,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        $validated = $request->validate([
+        $request->validate([
             // harus dibenerin
             // 'title' => 'required|string|max:255|unique:articles',
             'title' => 'required|string|max:255',
