@@ -255,6 +255,8 @@
                             </div>
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="thumbnail">Foto</label>
+                                <img src="{{ Storage::url($article->thumbnail->url) }}"
+                                    class="object-cover h-24 w-24" alt="img-{{ $article->slug }}">
                                 <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="thumbnail"
                                     aria-label="thumbnail" name="thumbnail" type="file" accept="image/*" required>
                                 <x-validation-message name="thumbnail" />
