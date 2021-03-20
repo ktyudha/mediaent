@@ -221,11 +221,8 @@
                             @method('PATCH')
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="title">Judul</label>
-                                {{-- <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
-                                    name="title" type="text" value="{{ old('title') }}"
-                                placeholder="Masukkan judul artikel" aria-label="title" required> --}}
                                 <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
-                                    name="title" type="text" value="{{ $video->title }}"
+                                    name="title" type="text" value="{{ old('title') ?? $video->title }}"
                                     placeholder="Masukkan judul video" aria-label="title" required>
                                 <x-validation-message name="title" />
                             </div>
@@ -233,18 +230,17 @@
                                 <label class="block text-sm text-gray-600" for="category">Pilih Kategori</label>
                                 <select class="uppercase w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
                                     name="category">
-                                    {{-- <option value="1" {{ old("category") == 1 ? "selected" : "" }}>Lifestyle
+                                    <option value="1"
+                                        {{ (old('category') ?? $video->category->id) == 1 ? "selected" : "" }}>Lifestyle
                                     </option>
-                                    <option value="2" {{ old("category") == 2 ? "selected" : "" }}>Hiburan</option>
-                                    <option value="3" {{ old("category") == 3 ? "selected" : "" }}>Teknologi</option>
-                                    <option value="4" {{ old("category") == 4 ? "selected" : "" }}>Explore</option> --}}
-                                    <option value="1" {{ $video->category->id == 1 ? "selected" : "" }}>Lifestyle
+                                    <option value="2"
+                                        {{ (old('category') ?? $video->category->id) == 2 ? "selected" : "" }}>Hiburan
                                     </option>
-                                    <option value="2" {{ $video->category->id  == 2 ? "selected" : "" }}>Hiburan
+                                    <option value="3"
+                                        {{ (old('category') ?? $video->category->id) == 3 ? "selected" : "" }}>Teknologi
                                     </option>
-                                    <option value="3" {{ $video->category->id  == 3 ? "selected" : "" }}>Teknologi
-                                    </option>
-                                    <option value="4" {{ $video->category->id  == 4 ? "selected" : "" }}>Explore
+                                    <option value="4"
+                                        {{ (old('category') ?? $video->category->id) == 4 ? "selected" : "" }}>Explore
                                     </option>
                                 </select>
                                 <x-validation-message name="category" />
@@ -252,18 +248,15 @@
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="url">URL Video</label>
                                 <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="url"
-                                    aria-label="url" name="url" type="url" value="{{ $video->url }}"
+                                    aria-label="url" name="url" type="url" value="{{ old('url') ?? $video->url }}"
                                     placeholder="Masukkan url video" required>
                                 <x-validation-message name="url" />
                             </div>
                             <div class="mt-2">
                                 <label class=" block text-sm text-gray-600" for="description">Deskripsi Video</label>
-                                {{-- <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="body"
-                                    name="body" placeholder="Masukkan isi artikel" aria-label="body"
-                                    required>{{ old('body') }}</textarea> --}}
                                 <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="description"
                                     name="description" placeholder="Masukkan deskripsi video" aria-label="description"
-                                    required>{{ $video->description }}</textarea>
+                                    required>{{ old('description') ?? $video->description }}</textarea>
                                 <x-validation-message name="description" />
                             </div>
                             <div class="mt-6">

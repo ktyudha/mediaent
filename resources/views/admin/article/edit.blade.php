@@ -225,11 +225,8 @@
                             @method('PATCH')
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="title">Judul</label>
-                                {{-- <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
-                                    name="title" type="text" value="{{ old('title') }}"
-                                placeholder="Masukkan judul artikel" aria-label="title" required> --}}
                                 <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="title"
-                                    name="title" type="text" value="{{ $article->title }}"
+                                    name="title" type="text" value="{{ old('title') ?? $article->title }}"
                                     placeholder="Masukkan judul artikel" aria-label="title" required>
                                 <x-validation-message name="title" />
                             </div>
@@ -237,38 +234,38 @@
                                 <label class="block text-sm text-gray-600" for="category">Pilih Kategori</label>
                                 <select class="uppercase w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
                                     name="category">
-                                    {{-- <option value="1" {{ old("category") == 1 ? "selected" : "" }}>Lifestyle
+                                    <option value="1"
+                                        {{ (old('category') ?? $article->category->id) == 1 ? "selected" : "" }}>
+                                        Lifestyle
                                     </option>
-                                    <option value="2" {{ old("category") == 2 ? "selected" : "" }}>Hiburan</option>
-                                    <option value="3" {{ old("category") == 3 ? "selected" : "" }}>Teknologi</option>
-                                    <option value="4" {{ old("category") == 4 ? "selected" : "" }}>Explore</option> --}}
-                                    <option value="1" {{ $article->category->id == 1 ? "selected" : "" }}>Lifestyle
+                                    <option value="2"
+                                        {{ (old('category') ?? $article->category->id) == 2 ? "selected" : "" }}>
+                                        Hiburan
                                     </option>
-                                    <option value="2" {{ $article->category->id  == 2 ? "selected" : "" }}>Hiburan
+                                    <option value="3"
+                                        {{ (old('category') ?? $article->category->id) == 3 ? "selected" : "" }}>
+                                        Teknologi
                                     </option>
-                                    <option value="3" {{ $article->category->id  == 3 ? "selected" : "" }}>Teknologi
-                                    </option>
-                                    <option value="4" {{ $article->category->id  == 4 ? "selected" : "" }}>Explore
+                                    <option value="4"
+                                        {{ (old('category') ?? $article->category->id) == 4 ? "selected" : "" }}>
+                                        Explore
                                     </option>
                                 </select>
                                 <x-validation-message name="category" />
                             </div>
                             <div class="mt-2">
                                 <label class="block text-sm text-gray-600" for="thumbnail">Foto</label>
-                                <img src="{{ Storage::url($article->thumbnail->url) }}"
-                                    class="object-cover h-24 w-24" alt="img-{{ $article->slug }}">
+                                <img src="{{ Storage::url($article->thumbnail->url) }}" class="object-cover h-24 w-24"
+                                    alt="img-{{ $article->slug }}">
                                 <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="thumbnail"
-                                    aria-label="thumbnail" name="thumbnail" type="file" accept="image/*" required>
+                                    aria-label="thumbnail" name="thumbnail" type="file" accept="image/*">
                                 <x-validation-message name="thumbnail" />
                             </div>
                             <div class="mt-2">
                                 <label class=" block text-sm text-gray-600" for="body">Isi Artikel</label>
-                                {{-- <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="body"
-                                    name="body" placeholder="Masukkan isi artikel" aria-label="body"
-                                    required>{{ old('body') }}</textarea> --}}
                                 <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="body"
                                     name="body" placeholder="Masukkan isi artikel" aria-label="body"
-                                    required>{{ $article->body }}</textarea>
+                                    required>{{ old('body') ?? $article->body }}</textarea>
                                 <x-validation-message name="body" />
                             </div>
                             <div class="mt-6">
