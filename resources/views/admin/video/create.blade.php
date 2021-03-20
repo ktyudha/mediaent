@@ -153,11 +153,6 @@
                     <i class="fas fa-tablet-alt mr-3"></i>
                     Table video
                 </a>
-                <a href="forms.html"
-                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                    <i class="fas fa-align-left mr-3"></i>
-                    Forms
-                </a>
                 <a href="{{ route('admin.calendar') }}l"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-calendar mr-3"></i>
