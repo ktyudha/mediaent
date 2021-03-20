@@ -145,21 +145,39 @@
             <nav :class="isOpen ? 'flex': 'hidden'" class="flex flex-col pt-4">
                 <a href="{{ route('admin.home') }}"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                    <i class="fas fa-back mr-3"></i>
+                    <i class="fas fa-chart-bar mr-3"></i>
                     Dashboard
                 </a>
-                <a href="{{ route('admin.article.index') }}" class="flex items-center text-white py-2 pl-4 nav-item">
+                <a href="{{ route('admin.article.create') }}"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <i class="fas fa-newspaper mr-3"></i>
+                    New Article
+                </a>
+                <a href="{{ route('admin.video.create') }}"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <i class="fas fa-video mr-3"></i>
+                    New Video
+                </a>
+                @role('admin')
+                <a href="{{ route('admin.author') }}"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <i class="fas fa-tools mr-3"></i>
+                    Manage Author
+                </a>
+                @endrole
+                <a href="{{ route('admin.article.index') }}"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-table mr-3"></i>
                     Table Article
                 </a>
                 <a href="{{ route('admin.video.index') }}"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                    <i class="fas fa-tablet-alt mr-3"></i>
+                    <i class="fas fa-table mr-3"></i>
                     Table video
                 </a>
                 <a href="{{ route('admin.calendar') }}"
-                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                    <i class="fas fa-calendar mr-3"></i>
+                    class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    <i class="fas fa-calendar-alt mr-3"></i>
                     Calendar
                 </a>
                 <a :href="route('logout') class=" flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4
