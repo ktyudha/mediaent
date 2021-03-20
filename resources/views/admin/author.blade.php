@@ -68,9 +68,14 @@
                 <i class="fas fa-sign-out-alt mr-3"></i>
                 Back Home
             </a>
+            <a href="{{ route('admin.home') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                <i class="fas fa-chart-bar mr-3"></i>
+                Dashboard
+            </a>
             @role('admin')
-            <a href="{{ route('admin.author') }}" class="flex items-center text-white py-4 pl-6 nav-item">
-                <i class="fas fa-address-book mr-3"></i>
+            <a href="{{ route('admin.author') }}" class="active-nav-link flex items-center text-white py-4 pl-6 nav-item">
+                <i class="fas fa-tools mr-3"></i>
                 Manage Author
             </a>
             @endrole
@@ -80,12 +85,12 @@
                 Table Article
             </a>
             <a href="{{ route('admin.video.index') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-tablet-alt mr-3"></i>
+                <i class="fas fa-table mr-3"></i>
                 Table Video
             </a>
             <a href="{{ route('admin.calendar') }}"
                 class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-calendar mr-3"></i>
+                <i class="fas fa-calendar-alt mr-3"></i>
                 Calendar
             </a>
         </nav>
