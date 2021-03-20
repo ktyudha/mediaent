@@ -69,7 +69,7 @@
                     @auth
                     @hasanyrole('admin|author')
                     <li class="mr-3">
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('login')">
+                        <x-nav-link :href="route('admin.home')" :active="request()->routeIs('login')">
                             <button
                                 class="bg-white mx-auto lg:mx-0 hover:no-underline text-gray-800 font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                 DASHBOARD
@@ -83,7 +83,7 @@
                                 <button
                                     class="flex items-center text-sm font-medium focus:outline-none focus:text-gray-600 transition duration-150 ease-in-out">
                                     <div>{{ Auth::user()->name }}</div>
-    
+
                                     <div class="ml-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 20 20">
@@ -94,12 +94,12 @@
                                     </div>
                                 </button>
                             </x-slot>
-    
+
                             <x-slot name="content">
                                 <!-- Authentication -->
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
-    
+
                                     <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
                                                             this.closest('form').submit();">
                                         {{ __('Log out') }}

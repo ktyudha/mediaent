@@ -63,8 +63,7 @@ class ArticleController extends Controller
             'url' => $path
         ]);
 
-        // return redirect()->route('admin.article.show', compact('article'));
-        return redirect()->route('admin.article.index');
+        return redirect()->route('article.show', compact('article'));
     }
 
     /**

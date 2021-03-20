@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\Admin\ArticleController;
 
@@ -27,3 +28,9 @@ Route::middleware(['role:admin'])->group(function () {
 });
 
 Route::resource('article', ArticleController::class)->except('show');
+
+Route::resource('video', VideoController::class)->except('show');
+
+Route::get('/calendar', function () {
+    return view('admin.calendar');
+})->name('calendar');

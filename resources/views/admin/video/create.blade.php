@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <meta name="author" content="David Grzyb">
     <meta name="description" content="">
 
     <!-- Tailwind -->
@@ -53,7 +52,7 @@
         <div class="p-6">
             <a href="{{ route('admin.home') }}"
                 class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
-            <a href="{{ route("admin.article.create") }}"
+            <a href="{{ route('admin.article.create') }}"
                 class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
                 <i class="fas fa-plus mr-3"></i> New Article
             </a>
@@ -63,19 +62,11 @@
             </a>
         </div>
         <nav class="text-white text-base font-semibold pt-3">
-            <a href="{{ route('home') }}"
-                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ route('home') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-sign-out-alt mr-3"></i>
                 Back Home
             </a>
-            @role('admin')
-            <a href="{{ route('admin.author') }}"
-                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-address-book mr-3"></i>
-                Manage Author
-            </a>
-            @endrole
-            <a href="{{ route('admin.article.index') }}" class="flex items-center text-white py-4 pl-6 nav-item">
+            <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Article
             </a>
@@ -137,8 +128,7 @@
         <!-- Mobile Header & Nav -->
         <header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden">
             <div class="flex items-center justify-between">
-                <a href="{{ route('admin.home') }}"
-                    class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+                <a href="index.html" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
                 <button @click="isOpen = !isOpen" class="text-white text-3xl focus:outline-none">
                     <i x-show="!isOpen" class="fas fa-bars"></i>
                     <i x-show="isOpen" class="fas fa-times"></i>
@@ -147,13 +137,12 @@
 
             <!-- Dropdown Nav -->
             <nav :class="isOpen ? 'flex': 'hidden'" class="flex flex-col pt-4">
-                <a href="index.html"
+                <a href="{{ route('admin.home') }}"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-back mr-3"></i>
                     Dashboard
                 </a>
-                <a href="{{ route('admin.article.index') }}"
-                    class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
+                <a href="{{ route('admin.article.index') }}" class="flex items-center text-white py-2 pl-4 nav-item">
                     <i class="fas fa-table mr-3"></i>
                     Table Article
                 </a>
@@ -167,7 +156,7 @@
                     <i class="fas fa-align-left mr-3"></i>
                     Forms
                 </a>
-                <a href="{{ route('admin.calendar') }}"
+                <a href="{{ route('admin.calendar') }}l"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-calendar mr-3"></i>
                     Calendar
@@ -193,54 +182,42 @@
             <main class="w-full flex-grow p-6">
                 <div class="w-full mt-6">
                     <p class="text-xl pb-3 flex items-center">
-                        <i class="fas fa-list mr-3"></i> Table Artikle
+                        <i class="fas fa-list mr-3"></i> New Video
                     </p>
-                    <div class="bg-white shadow-md rounded my-6">
-                        <table class="min-w-max w-full table-auto">
-                            <thead>
-                                <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                    <th class="py-3 px-6 text-center">No.</th>
-                                    <th class="py-3 px-6 text-center">Title</th>
-                                    <th class="py-3 px-6 text-center">Tanggal</th>
-                                    <th class="py-3 px-6 text-center">Kategori</th>
-                                    <th class="py-3 px-6 text-center">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-gray-600 text-sm font-light">
-                                @foreach($articles as $article)
-                                <tr class="border-b border-gray-200 hover:bg-gray-100">
-                                    <td class="py-3 px-6 text-left whitespace-nowrap">
-                                        {{ $loop->iteration }}
-                                    </td>
-                                    <td class="py-3 px-6 text-center">
-                                        <a href="{{ route('article.show', $article) }}" class="hover:underline">
-                                            <i class="fas fa-angle-right"></i>
-                                            {{ $article->title }}
-                                        </a>
-                                    </td>
-                                    <td class="py-3 px-6 text-center">
-                                        {{ $article->created_at }}
-                                    </td>
-                                    <td class="py-3 px-6 text-center">
-                                        {{ $article->category->name }}
-                                    </td>
-                                    <td class="py-3 px-6 text-center">
-                                        <div class="flex item-center justify-center">
-                                            <a href="{{ route('admin.article.edit', $article) }}"
-                                                class="inline-flex items-center px-4 py-2 mr-1 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">Edit</a>
-                                            <form method="POST" action="{{ route('admin.article.destroy', $article) }}"
-                                                onclick="return confirm('Are you sure?')" novalidate>
-                                                @csrf
-                                                @method('DELETE')
 
-                                                <x-button>Remove</x-button>
-                                            </form>
-                                        </div>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                    <div class="leading-loose">
+                        <form class="px-10 pt-8 pb-10 bg-white rounded shadow-xl">
+                            <div class="mt-2">
+                                <label class="block text-sm text-gray-600" for="judul">Judul</label>
+                                <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="judul"
+                                    name="judul" type="text" required="" placeholder="Judul" aria-label="judul">
+                            </div>
+                            <div class="mt-2">
+                                <label class="block text-sm text-gray-600" for="judul">Kategori</label>
+                                <select class="uppercase w-full px-5 py-1 text-gray-700 bg-gray-200 rounded"
+                                    name="kategori" placeholder="Kategori">
+                                    <option value="teknologi">teknologi</option>
+                                    <option value="explore">explore</option>
+                                    <option value="lifestyle">lifestyle</option>
+                                    <option value="hiburan">hiburan</option>
+                                </select>
+                            </div>
+                            <div class="mt-2">
+                                <label class="block text-sm text-gray-600" for="video">Video</label>
+                                <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="video"
+                                    name="video" type="file" required="" aria-label="video">
+                            </div>
+                            <div class="mt-2">
+                                <label class=" block text-sm text-gray-600" for="deskripsi">Deskripsi</label>
+                                <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="deskripsi"
+                                    name="deskripsi" rows="6" required="" placeholder="Deskrips Video"
+                                    aria-label="deskripsi"></textarea>
+                            </div>
+                            <div class="mt-6">
+                                <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded"
+                                    type="submit">Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
