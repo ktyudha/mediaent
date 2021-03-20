@@ -79,8 +79,7 @@
                 <i class="fas fa-table mr-3"></i>
                 Table Article
             </a>
-            <a href="{{ route('admin.video.index') }}"
-                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ route('admin.video.index') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-tablet-alt mr-3"></i>
                 Table Video
             </a>
@@ -194,7 +193,7 @@
             <main class="w-full flex-grow p-6">
                 <div class="w-full mt-6">
                     <p class="text-xl pb-3 flex items-center">
-                        <i class="fas fa-list mr-3"></i> Table Article
+                        <i class="fas fa-list mr-3"></i> Table Video
                     </p>
                     <div class="bg-white shadow-md rounded my-6">
                         <table class="min-w-max w-full table-auto">
@@ -208,28 +207,28 @@
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 text-sm font-light">
-                                @foreach($articles as $article)
+                                @foreach($videos as $video)
                                 <tr class="border-b border-gray-200 hover:bg-gray-100">
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         {{ $loop->iteration }}
                                     </td>
                                     <td class="py-3 px-6 text-center">
-                                        <a href="{{ route('article.show', $article) }}" class="hover:underline">
+                                        <a href="" class="hover:underline">
                                             <i class="fas fa-angle-right"></i>
-                                            {{ $article->title }}
+                                            {{ $video->title }}
                                         </a>
                                     </td>
                                     <td class="py-3 px-6 text-center">
-                                        {{ $article->created_at }}
+                                        {{ $video->created_at }}
                                     </td>
                                     <td class="py-3 px-6 text-center">
-                                        {{ $article->category->name }}
+                                        {{ $video->category->name }}
                                     </td>
                                     <td class="py-3 px-6 text-center">
                                         <div class="flex item-center justify-center">
-                                            <a href="{{ route('admin.article.edit', $article) }}"
+                                            <a href="{{ route('admin.video.edit', $video) }}"
                                                 class="inline-flex items-center px-4 py-2 mr-1 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">Edit</a>
-                                            <form method="POST" action="{{ route('admin.article.destroy', $article) }}"
+                                            <form method="POST" action="{{ route('admin.video.destroy', $video) }}"
                                                 onclick="return confirm('Are you sure?')" novalidate>
                                                 @csrf
                                                 @method('DELETE')

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Video;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,9 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        $videos = Video::with('category')->get('id', 'title', 'created_at');
+        $videos = Video::all();
+        return view('admin.video.index', compact('videos'));
     }
 
     /**
