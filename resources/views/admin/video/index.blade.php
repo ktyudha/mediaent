@@ -152,6 +152,13 @@
                     <i class="fas fa-back mr-3"></i>
                     Dashboard
                 </a>
+                @role('admin')
+                <a href="{{ route('admin.author') }}"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    <i class="fas fa-tablet-alt mr-3"></i>
+                    Manage Author
+                </a>
+                @endrole
                 <a href="{{ route('admin.article.index') }}"
                     class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
                     <i class="fas fa-table mr-3"></i>
