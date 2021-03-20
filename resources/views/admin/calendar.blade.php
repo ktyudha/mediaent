@@ -71,6 +71,13 @@
                 <i class="fas fa-sign-out-alt mr-3" href=""></i>
                 Back Home
             </a>
+            @role('admin')
+            <a href="{{ route('admin.author') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                <i class="fas fa-address-book mr-3"></i>
+                Manage Author
+            </a>
+            @endrole
             <a href="{{ route('admin.article.index') }}"
                 class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
