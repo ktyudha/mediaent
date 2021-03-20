@@ -211,7 +211,7 @@
 
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
-                <h1 class="text-3xl text-black pb-6">Calendar</h1>
+                <h1 class="text-3xl text-black pb-6"><i class="fas fa-calendar-alt mr-3"></i>Calendar</h1>
 
                 <div class="w-full">
                     <!-- source: https://tailwindcomponents.com/component/calendar-ui-with-tailwindcss-and-alpinejs -->

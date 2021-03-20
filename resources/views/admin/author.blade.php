@@ -209,9 +209,8 @@
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
                 <div class="w-full mt-6">
-                    <p class="text-xl pb-3 flex items-center">
-                        <i class="fas fa-list mr-3"></i> Manage Author
-                    </p>
+                    <h1 class="text-3xl text-black pb-6"><i class="fas fa-tools mr-3"></i>Manage Author</h1>
+
                     <div class="bg-white">
                         <div class="p-6 bg-white border-b border-gray-200">
                             <form method="POST" action="{{ route('admin.author.add') }}" novalidate>

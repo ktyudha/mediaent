@@ -209,9 +209,8 @@
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
                 <div class="w-full mt-6">
-                    <p class="text-xl pb-3 flex items-center">
-                        <i class="fas fa-list mr-3"></i> Table Video
-                    </p>
+                    <h1 class="text-3xl text-black pb-6"><i class="fas fa-table mr-3"></i>Table Video</h1>
+
                     <div class="bg-white shadow-md rounded my-6">
                         <table class="min-w-max w-full table-auto">
                             <thead>

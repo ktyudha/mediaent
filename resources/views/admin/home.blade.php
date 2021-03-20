@@ -68,8 +68,7 @@
                 <i class="fas fa-sign-out-alt mr-3"></i>
                 Back Home
             </a>
-            <a href="{{ route('admin.home') }}"
-                class="active-nav-link flex items-center text-white py-4 pl-6 nav-item">
+            <a href="{{ route('admin.home') }}" class="active-nav-link flex items-center text-white py-4 pl-6 nav-item">
                 <i class="fas fa-chart-bar mr-3"></i>
                 Dashboard
             </a>
@@ -85,7 +84,8 @@
                 <i class="fas fa-table mr-3"></i>
                 Table Article
             </a>
-            <a href="{{ route('admin.video.index') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ route('admin.video.index') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Video
             </a>
@@ -209,7 +209,7 @@
 
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
-                <h1 class="text-3xl text-black pb-6">Dashboard</h1>
+                <h1 class="text-3xl text-black pb-6"><i class="fas fa-chart-bar mr-3"></i>Dashboard</h1>
 
             </main>
 
