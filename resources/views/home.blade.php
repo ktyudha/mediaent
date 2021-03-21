@@ -96,7 +96,7 @@
             <!-- end carousel -->
             <div class="mx-auto items-center">
                 <div class="text-center pb-40 font-bold text-gray-300 text-3xl">
-                    Popular Posts
+                    Relatest Posts
                 </div>
             </div>
         </div>
