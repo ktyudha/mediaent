@@ -277,7 +277,7 @@
                                         </button>
                                     </a>
                                 </div>
-                                
+
                                 <div class="h-1 w-20 bg-indigo-500 rounded"></div>
                             </div>
                             {{-- <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Kategori ini memuat tips seputar lifestyle</p> --}}
@@ -352,7 +352,7 @@
                                         </button>
                                     </a>
                                 </div>
-                                
+
                                 <div class="h-1 w-20 bg-indigo-500 rounded"></div>
                             </div>
                             {{-- <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Kategori ini memuat tips seputar lifestyle</p> --}}
@@ -426,7 +426,7 @@
                                         </button>
                                     </a>
                                 </div>
-                                
+
                                 <div class="h-1 w-20 bg-indigo-500 rounded"></div>
                             </div>
                             {{-- <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Kategori ini memuat tips seputar lifestyle</p> --}}
@@ -501,7 +501,7 @@
                                         </button>
                                     </a>
                                 </div>
-                                
+
                                 <div class="h-1 w-20 bg-indigo-500 rounded"></div>
                             </div>
                             {{-- <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Kategori ini memuat tips seputar lifestyle</p> --}}
@@ -582,22 +582,7 @@
                             <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">1</div>
                             <div class="flex-grow flex items-center flex-row">
                               <div class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center" style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');">
-                                
-                              </div>
-                              <div class="mx-4 mt-6 sm:mt-0">
-                                <h2 class="font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas Akses Pendidikan Tinggi Vokasi di Luar Negeri, PENS Jalin Kerja Sama dengan KBRI Jepang</h2>
-                            </div>
-                            </div>
-                          </div>
-                          
-                          <div class="flex relative py-2 border-b items-center w-full mx-auto">
-                            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
-                              <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
-                            </div>
-                            <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">1</div>
-                            <div class="flex-grow flex items-center flex-row">
-                              <div class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center" style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');">
-                                
+
                               </div>
                               <div class="mx-4 mt-6 sm:mt-0">
                                 <h2 class="font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas Akses Pendidikan Tinggi Vokasi di Luar Negeri, PENS Jalin Kerja Sama dengan KBRI Jepang</h2>
@@ -612,7 +597,7 @@
                             <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">1</div>
                             <div class="flex-grow flex items-center flex-row">
                               <div class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center" style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');">
-                                
+
                               </div>
                               <div class="mx-4 mt-6 sm:mt-0">
                                 <h2 class="font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas Akses Pendidikan Tinggi Vokasi di Luar Negeri, PENS Jalin Kerja Sama dengan KBRI Jepang</h2>
@@ -627,7 +612,22 @@
                             <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">1</div>
                             <div class="flex-grow flex items-center flex-row">
                               <div class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center" style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');">
-                                
+
+                              </div>
+                              <div class="mx-4 mt-6 sm:mt-0">
+                                <h2 class="font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas Akses Pendidikan Tinggi Vokasi di Luar Negeri, PENS Jalin Kerja Sama dengan KBRI Jepang</h2>
+                            </div>
+                            </div>
+                          </div>
+
+                          <div class="flex relative py-2 border-b items-center w-full mx-auto">
+                            <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+                              <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                            </div>
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">1</div>
+                            <div class="flex-grow flex items-center flex-row">
+                              <div class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center" style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');">
+
                               </div>
                               <div class="mx-4 mt-6 sm:mt-0">
                                 <h2 class="font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas Akses Pendidikan Tinggi Vokasi di Luar Negeri, PENS Jalin Kerja Sama dengan KBRI Jepang</h2>
@@ -640,211 +640,6 @@
             </div>
         </div>
         <!-- Recents post -->
-
-        <!-- Featured Post 2 -->
-<div class="px-0 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-    <!--Left Col-->
-    <div class="ml-0 flex flex-col w-full md:w-1/3 justify-center items-start text-center md:text-left">
-        <div class="bg-white mb-2 ml-5 sm:ml-10 sm:mr-3 mr-5 max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md">
-            <img class="object-cover w-full h-41" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-
-            <div class="p-6">
-                <div>
-                    <span class="text-xs font-medium text-blue-600 uppercase">Kategori</span>
-                    <a href="#" class="block mt-2 text-2xl font-semibold text-gray-800 hover:text-gray-600 hover:underline">Ini adalah judul featured</a>
-                    <p class="mt-2 text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie parturient et sem ipsum volutpat vel. Natoque sem et aliquam mauris egestas quam volutpat viverra. In pretium nec senectus erat. Et malesuada lobortis.</p>
-                </div>
-
-                <div class="mt-2 mb-0">
-                    <div class="flex items-center flex-col md:text-left">
-                        <div class="items-center flex hover:text-gray-700 text-gray-400">
-                            <a href="#" class=" inline-block font-semibold">Selengkapnya
-                                    <svg
-                                        class="inline-block h-5 w-5 "
-                                        viewbox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <line x1="5" y1="12" x2="19" y2="12"/>
-                                        <polyline points="12 5 19 12 12 19"/></svg>
-                                </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Right Col-->
-    <div class="w-full md:w-2/3 py-6 md:text-left text-center md:overflow-auto h-90">
-        <section class="text-gray-600 body-font overflow-hidden">
-            <div class="px-1 py-2 mx-auto">
-                <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                    <div class="flex flex-wrap md:flex-nowrap">
-                        <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                            <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                            <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">teknologi</h5>
-                            </div>
-                        </div>
-                        <div class="md:flex-grow-0 py-2 px-2">
-                            <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                            <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft
-                                beer.</p>
-                            <a class="text-blue-500 inline-flex items-center mt-4">Teknologi Selengkapnya
-                                    <svg
-                                        class="w-4 h-4 ml-2"
-                                        viewbox="0 0 24 24"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        fill="none"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M5 12h14"></path>
-                                        <path d="M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="text-gray-600 body-font overflow-hidden">
-            <div class="px-1 py-2 mx-auto">
-                <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                    <div class="flex flex-wrap md:flex-nowrap">
-                        <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                            <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                            <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">Exsplore</h5>
-                            </div>
-                        </div>
-                        <div class="md:flex-grow-0 py-2 px-2">
-                            <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                            <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft
-                                beer.</p>
-                            <a class="text-blue-500 inline-flex items-center mt-4">Explore Selengkapnya
-                                    <svg
-                                        class="w-4 h-4 ml-2"
-                                        viewbox="0 0 24 24"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        fill="none"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M5 12h14"></path>
-                                        <path d="M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="text-gray-600 body-font overflow-hidden">
-            <div class="px-1 py-2 mx-auto">
-                <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                    <div class="flex flex-wrap md:flex-nowrap">
-                        <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                            <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                            <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">Lifestyle</h5>
-                            </div>
-                        </div>
-                        <div class="md:flex-grow-0 py-2 px-2">
-                            <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                            <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft
-                                beer.</p>
-                            <a class="text-blue-500 inline-flex items-center mt-4">Lifestyle Selengkapnya
-                                    <svg
-                                        class="w-4 h-4 ml-2"
-                                        viewbox="0 0 24 24"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        fill="none"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M5 12h14"></path>
-                                        <path d="M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="text-gray-600 body-font overflow-hidden">
-            <div class="px-1 py-2 mx-auto">
-                <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                    <div class="flex flex-wrap md:flex-nowrap">
-                        <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                            <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                            <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">hiburan</h5>
-                            </div>
-                        </div>
-                        <div class="md:flex-grow-0 py-2 px-2">
-                            <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                            <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft
-                                beer.</p>
-                            <a class="text-blue-500 inline-flex items-center mt-4">Hiburan Selengkapnya
-                                    <svg
-                                        class="w-4 h-4 ml-2"
-                                        viewbox="0 0 24 24"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        fill="none"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M5 12h14"></path>
-                                        <path d="M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="text-gray-600 body-font overflow-hidden">
-            <div class="px-1 py-2 mx-auto">
-                <div class="my-2 ml-2 mr-10 divide-y-2 divide-gray-100 bg-white rounded-lg">
-                    <div class="flex flex-wrap md:flex-nowrap">
-                        <div class="md:w-64 md:mb-0 mb-6 md:flex-shrink-0 flex flex-col max-w-2xl mx-auto overflow-hidden">
-                            <img class="object-cover w-full h-90 rounded-l-lg" src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Article">
-                            <div class="w-56 -mt-10 overflow-hidden bg-white rounded-tl-lg rounded-bl-lg rounded-tr-lg shadow-lg md:w-64">
-                                <h5 class="border-solid border-2 border-light-blue-700 py-1 font-medium tracking-wide text-center shadow-lg text-gray-800 uppercase">VIDEO</h5>
-                            </div>
-                        </div>
-                        <div class="md:flex-grow-0 py-2 px-2">
-                            <h2 class="text-xl font-bold text-gray-900 title-font mb-2">Bitters hashtag waistcoat fashion axe chia unicorn</h2>
-                            <p class="leading-relaxed">Glossier echo park pug, church-key sartorial biodiesel vexillologist pop-up snackwave ramps cornhole. Marfa 3 wolf moon party messenger bag selfies, poke vaporware kombucha lumbersexual pork belly polaroid hoodie portland craft
-                                beer.</p>
-                            <a class="text-blue-500 inline-flex items-center mt-4">Video Selengkapnya
-                                    <svg
-                                        class="w-4 h-4 ml-2"
-                                        viewbox="0 0 24 24"
-                                        stroke="currentColor"
-                                        stroke-width="2"
-                                        fill="none"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="M5 12h14"></path>
-                                        <path d="M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </div>
-</div>
-<!-- Recents post -->
 
         <!--Footer-->
         <footer class="bg-white">
