@@ -15,7 +15,7 @@
                             style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');">
                             <div class="mx-auto pt-32 pb-0">
                                 <div class="w-full">
-                                    <div class="py-10 px-6 md:px-10 md:py-6 mt-32 bg-gray-900 bg-opacity-60">
+                                    <div class="py-20 px-6 md:px-10 md:py-20 mt-32 bg-gray-900 bg-opacity-60">
                                         <a href="">
                                             <h2 class="text-2xl text-gray-100 leading-tight"
                                                 style="font-family: Niconne, cursive;">ini adalah judul artikel slider
