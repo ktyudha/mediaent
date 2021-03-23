@@ -32,4 +32,8 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+Route::get('/coba', function () {
+    return view('coba');
+})->name('coba');
+
 require __DIR__.'/auth.php';
