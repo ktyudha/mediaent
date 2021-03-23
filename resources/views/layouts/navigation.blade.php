@@ -1,29 +1,3 @@
-<div class="leading-normal tracking-normal text-white gradient rounded-b-3xl" style="font-family: 'Source Sans Pro', sans-serif;">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/tailwind.css">
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="carousel.css">
-
-    <style>
-        .gradient {
-            background: linear-gradient(90deg, #037e9c 0%, #064ca7 100%);
-        }
-        .hover-gradient {
-            background: linear-gradient(90deg, #064ca7 0%, #037e9c 100%);
-        }
-        .foto{
-            height: 200px;
-            weight: 200px;
-        }
-
-    </style>
-    <script src="tailwind.config.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="carousel.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js" charset="utf-8"></script>
 <nav x-data="{ open: false }" id="header" class=" fixed w-full z-30 top-0 text-white">
     <div id="navbody" class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div class="pl-4 flex items-center">
