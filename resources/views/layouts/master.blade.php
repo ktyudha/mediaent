@@ -61,87 +61,69 @@
  @yield('konten')
 
         <!--Footer-->
-        <footer class="bg-white">
-            <div class="container mx-auto px-8">
+        <footer>
+            <div class="gradient h-6 w-full rounded-t"></div>
+            <div class="mx-auto lg:px-48 px-6 bg-gray-800">
                 <div class="w-full flex flex-col md:flex-row py-6">
-                    <div class="flex-1 mb-6 text-black">
+                    <div class="flex-2 mb-6 text-black flex md:px-10 flex-row">
                         <a class="text-blue-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
                             href="#">
-                            <!--Icon from: http://www.potlabicons.com/ -->
-                            <rect fill="#3333E0" x="16.539" y="425.626" width="479.767" height="50.502"
-                                transform="matrix(1,0,0,1,0,0)" />
-                            <path class="plane-take-off"
-                                d=" M 510.7 189.151 C 505.271 168.95 484.565 156.956 464.365 162.385 L 330.156 198.367 L 155.924 35.878 L 107.19 49.008 L 211.729 230.183 L 86.232 263.767 L 36.614 224.754 L 0 234.603 L 45.957 314.27 L 65.274 347.727 L 105.802 336.869 L 240.011 300.886 L 349.726 271.469 L 483.935 235.486 C 504.134 230.057 516.129 209.352 510.7 189.151 Z " />
-                            </svg> MEDIA ENT
+                                <!-- <img src="{{ asset('ent.png') }}" /> -->
+                                <img class="md:h-48 md:mx-auto" src="https://ent.pens.ac.id/img/logos/LogoENTs2.png" />
                         </a>
+                        <div class="px-4 text-2xl md:text-4xl sm:text-4xl text-gray-300 my-auto font-bold"><a href="">Media ENT</a></div>
                     </div>
                     <div class="flex-1">
-                        <p class="uppercase text-gray-500 md:mb-6">Links</p>
-                        <ul class="list-reset mb-6">
+                        <p class="uppercase text-gray-300 font-bold text-2xl md:mb-6">KATEGORI</p>
+                        <ul class="list-reset mb-6 ">
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                                 <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
+                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Lifestyle</a>
+                            </li>
+                            
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#"
+                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Hiburan</a>
                             </li>
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                                 <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
+                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Teknologi</a>
                             </li>
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                                 <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">Support</a>
+                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Explore</a>
                             </li>
                         </ul>
                     </div>
                     <div class="flex-1">
-                        <p class="uppercase text-gray-500 md:mb-6">Legal</p>
+                        <p class="uppercase  text-gray-300 text-2xl font-bold md:mb-6">Social</p>
                         <ul class="list-reset mb-6">
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                                 <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">Terms</a>
+                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Facebook</a>
+                            </li>
+                            
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#"
+                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Youtube</a>
                             </li>
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                                 <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">Privacy</a>
+                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Instagram</a>
+                            </li>
+                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
+                                <a href="#"
+                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Twitter</a>
                             </li>
                         </ul>
                     </div>
                     <div class="flex-1">
-                        <p class="uppercase text-gray-500 md:mb-6">Social</p>
-                        <ul class="list-reset mb-6">
-                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">Facebook</a>
-                            </li>
-                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">Linkedin</a>
-                            </li>
-                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">Twitter</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="flex-1">
-                        <p class="uppercase text-gray-500 md:mb-6">Company</p>
-                        <ul class="list-reset mb-6">
-                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">Official
-                                    Blog</a>
-                            </li>
-                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">About
-                                    Us</a>
-                            </li>
-                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
-                                    class="no-underline hover:underline text-gray-800 hover:text-pink-500">Contact</a>
-                            </li>
-                        </ul>
+                        <iframe class="rounded-lg mb-3" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6920240024924!2d112.79156701420449!3d-7.275841773517125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa10ea2ae883%3A0xbe22c55d60ef09c7!2sPoliteknik%20Elektronika%20Negeri%20Surabaya!5e0!3m2!1sid!2sid!4v1616598265447!5m2!1sid!2sid" width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <div class="text-semibold text-lg text-gray-300"> Jl. Raya ITS, Keputih, Kec. Sukolilo, Kota SBY, Jawa Timur 60111</div>
                     </div>
                 </div>
             </div>
+           <div class="py-2 bg-gray-900 text-gray-400 text-center text-md">Copyright &copy 2021 MediaEnt. All Rights Reserved</div>
         </footer>
         <!-- Vue JS -->
 

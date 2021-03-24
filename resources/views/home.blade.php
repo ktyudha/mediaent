@@ -374,11 +374,11 @@
                         {{-- kategori hiburan --}}
                         
                         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
-                            <div class="w-full h-2 rounded-t-md bg-red-500"></div>
+                            <div class="w-full h-2 rounded-t-md bg-pink-500"></div>
                             {{-- link kategori --}}
                             <a href=""> 
                             <div
-                                class="bg-white flex text-2xl font-bold text-red-500 uppercase px-4 py-1 border-b border-gray-300">Hiburan</div>
+                                class="bg-white flex text-2xl font-bold text-pink-500 uppercase px-4 py-1 border-b border-gray-300">Hiburan</div>
                             </a>
                             
                                 <div class="md:flex-row flex-wrap lg:flex-col flex">
@@ -475,11 +475,11 @@
                         {{-- kategori lifestyle --}}
 
                         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
-                            <div class="w-full h-2 rounded-t-md bg-indigo-500"></div>
+                            <div class="w-full h-2 rounded-t-md bg-yellow-500"></div>
                             {{-- link kategori --}}
                             <a href=""> 
                             <div
-                                class="bg-white flex text-2xl font-bold text-indigo-500 uppercase px-4 py-1 border-b border-gray-300">Lifestyle</div>
+                                class="bg-white flex text-2xl font-bold text-yellow-500 uppercase px-4 py-1 border-b border-gray-300">Explore</div>
                             </a>
                             
                                 <div class="md:flex-row flex-wrap lg:flex-col flex">
@@ -678,114 +678,7 @@
                     </div>
                 </div>
 
-                {{-- kategori hiburan --}}
-                <div class="container px-5 mx-auto py-7">
-                    <div class="flex flex-wrap w-full mb-3">
-                        <div class="lg:w-1/2 w-full mb-4 lg:mb-0">
-                            <div>
-                                <a href="#" class="flex group">
-                                    <button
-                                        class="duration-700 flex sm:text-4xl text-3xl font-medium title-font mb-2 text-indigo-800 group-hover:text-indigo-300 border-b-blue-300">Teknologi
-                                        <svg
-                                            class="flex mx-5 my-auto flex h-10 w-10"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewbox="0 0 24 24"
-                                            stroke="currentColor">
-                                            <path
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                                stroke-width="2"
-                                                d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                                        </svg>
-                                    </button>
-                                </a>
-                            </div>
-
-                            <div class="h-1 w-20 bg-indigo-500 rounded"></div>
-                        </div>
-                        {{-- <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">Kategori ini memuat tips seputar lifestyle</p> --}}
-                    </div>
-                    <div class="flex flex-wrap -m-4">
-                        <div class="md:w-1/2 p-4 group">
-                            <a href="#">
-                                <div
-                                    class="duration-700 bg-white p-4 rounded-lg group-hover:shadow-2xl shadow-md">
-                                    <img
-                                        class="h-40 rounded w-full object-cover object-center mb-6"
-                                        src="https://dummyimage.com/720x400"
-                                        alt="content">
-                                    <h3
-                                        class="tracking-widest text-indigo-500 text-xs font-medium title-font text-uppercase">Kategori
-                                    </h3>
-                                    <a href="#" class="hover:underline">
-                                        <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Ini adalah judul</h2>
-                                    </a>
-                                    <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit
-                                        waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="md:w-1/2 p-4 group">
-                            <a href="#">
-                                <div
-                                    class="duration-700 bg-white p-4 rounded-lg group-hover:shadow-2xl shadow-md">
-                                    <img
-                                        class="h-40 rounded w-full object-cover object-center mb-6"
-                                        src="https://dummyimage.com/720x400"
-                                        alt="content">
-                                    <h3
-                                        class="tracking-widest text-indigo-500 text-xs font-medium title-font text-uppercase">Kategori
-                                    </h3>
-                                    <a href="#" class="hover:underline">
-                                        <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Ini adalah judul</h2>
-                                    </a>
-                                    <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit
-                                        waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="md:w-1/2 p-4 group">
-                            <a href="#">
-                                <div
-                                    class="duration-700 bg-white p-4 rounded-lg group-hover:shadow-2xl shadow-md">
-                                    <img
-                                        class="h-40 rounded w-full object-cover object-center mb-6"
-                                        src="https://dummyimage.com/720x400"
-                                        alt="content">
-                                    <h3
-                                        class="tracking-widest text-indigo-500 text-xs font-medium title-font text-uppercase">Kategori
-                                    </h3>
-                                    <a href="#" class="hover:underline">
-                                        <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Ini adalah judul</h2>
-                                    </a>
-                                    <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit
-                                        waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="md:w-1/2 p-4 group">
-                            <a href="#">
-                                <div
-                                    class="duration-700 bg-white p-4 rounded-lg group-hover:shadow-2xl shadow-md">
-                                    <img
-                                        class="h-40 rounded w-full object-cover object-center mb-6"
-                                        src="https://dummyimage.com/720x400"
-                                        alt="content">
-                                    <h3
-                                        class="tracking-widest text-indigo-500 text-xs font-medium title-font text-uppercase">Kategori
-                                    </h3>
-                                    <a href="#" class="hover:underline">
-                                        <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Ini adalah judul</h2>
-                                    </a>
-                                    <p class="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit
-                                        waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+                
             </section>
         </div>
 
@@ -816,15 +709,15 @@
                                     class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center"
                                     style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');"></div>
                                 <div class="mx-4 mt-6 sm:mt-0">
-                                    <h2
-                                        class="font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas
+                                    <a href=""><h2
+                                        class="duration-700 hover:font-bold font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas
                                         Akses Pendidikan Tinggi Vokasi di Luar Negeri, PENS Jalin Kerja Sama dengan KBRI
-                                        Jepang</h2>
+                                        Jepang</h2></a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex relative py-2 border-b items-center w-full mx-auto">
+                        <div class="flex relative py-2 items-center border-b w-full mx-auto">
                             <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
                                 <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
                             </div>
@@ -835,15 +728,15 @@
                                     class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center"
                                     style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');"></div>
                                 <div class="mx-4 mt-6 sm:mt-0">
-                                    <h2
-                                        class="font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas
+                                    <a href=""><h2
+                                        class="duration-700 hover:font-bold font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas
                                         Akses Pendidikan Tinggi Vokasi di Luar Negeri, PENS Jalin Kerja Sama dengan KBRI
-                                        Jepang</h2>
+                                        Jepang</h2></a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex relative py-2 border-b items-center w-full mx-auto">
+                        <div class="flex relative py-2 items-center border-b w-full mx-auto">
                             <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
                                 <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
                             </div>
@@ -854,15 +747,15 @@
                                     class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center"
                                     style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');"></div>
                                 <div class="mx-4 mt-6 sm:mt-0">
-                                    <h2
-                                        class="font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas
+                                    <a href=""><h2
+                                        class="duration-700 hover:font-bold font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas
                                         Akses Pendidikan Tinggi Vokasi di Luar Negeri, PENS Jalin Kerja Sama dengan KBRI
-                                        Jepang</h2>
+                                        Jepang</h2></a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="flex relative py-2 border-b items-center w-full mx-auto">
+                        <div class="flex relative py-2 items-center border-b w-full mx-auto">
                             <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
                                 <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
                             </div>
@@ -873,10 +766,10 @@
                                     class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center"
                                     style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');"></div>
                                 <div class="mx-4 mt-6 sm:mt-0">
-                                    <h2
-                                        class="font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas
+                                    <a href=""><h2
+                                        class="duration-700 hover:font-bold font-medium title-font my-auto text-gray-900 mb-1 text-md md:text-xl">Perluas
                                         Akses Pendidikan Tinggi Vokasi di Luar Negeri, PENS Jalin Kerja Sama dengan KBRI
-                                        Jepang</h2>
+                                        Jepang</h2></a>
                                 </div>
                             </div>
                         </div>
@@ -885,9 +778,7 @@
             </div>
         </div>
     </div>
-    <!-- Recents post -->
 
 </div>
 </div>
-<!-- Recents post -->
 @endsection
