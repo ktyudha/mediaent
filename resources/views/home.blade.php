@@ -1,12 +1,7 @@
 @extends('layouts.master') @section('konten')
-<<<<<<<< HEAD
 <x-app-layout>
 <div
     class="leading-normal tracking-normal text-white -m-6 gradient rounded-b-3xl"
-=======
-
-<div class="leading-normal tracking-normal text-white -m-6 gradient rounded-b-3xl"
->>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
     style="font-family: 'Source Sans Pro', sans-serif;">
 
     <!--Hero-->
@@ -75,7 +70,7 @@
                                 waistcoat.
                             </p>
                             <div class="flex items-center flex-wrap ">
-                                <a href="">
+                                <a href="{{ route('article.show', $article) }}">
                                     <button id="btn-selengkapnya"
                                         class="gradient hover:bg-gray-700 hover:text-indigo-300 inline-flex mx-auto lg:mx-0 hover:no-underline text-gray-300 font-bold rounded-full lg:mt-0 text-center py-1 px-3 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                         Selengkapnya
@@ -128,39 +123,11 @@
                         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                             <div class="w-full h-2 rounded-t-md bg-blue-500"></div>
                             {{-- link kategori --}}
-<<<<<<< HEAD
-                            <a href="">
-                            <div
-                                class="bg-white flex text-2xl font-bold text-blue-500 uppercase px-4 py-1 border-b border-gray-300">Lifestyle</div>
-                            </a>
-
-                                <div class="md:flex-row flex-wrap lg:flex-col flex">
-                                    <div class="w-full xl:w-full ">
-                                        <a href="#">
-                                            <div
-                                                class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
-                                                <img
-                                                    class="h-49 rounded w-full object-cover object-center mb-6"
-                                                    src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg"
-                                                    alt="content">
-                                                <h3
-                                                    class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Kategori
-                                                </h3>
-                                                <a href="#" class="hover:underline">
-                                                    <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul Ini adalah judulIni adalah judul 2 baris 2 baris</h2>
-                                                </a>
-                                                <p class="leading-relaxed text-lg">Fingerstache flexitarian street art 8-bit
-                                                    waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-=======
                             <a href="{{ route('category.show', 1) }}">
                                 <div
                                     class="bg-white flex text-2xl font-bold text-blue-500 uppercase px-4 py-1 border-b border-gray-300">
                                     Lifestyle</div>
                             </a>
->>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
 
                             <div class="md:flex-row flex-wrap lg:flex-col flex">
                                 <div class="w-full xl:w-full ">
@@ -190,40 +157,6 @@
 
                                 <div class="w-full mx-auto bg-white rounded-b-lg text-gray-600 body-font">
 
-<<<<<<< HEAD
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- kategori hiburan --}}
-
-                        <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
-                            <div class="w-full h-2 rounded-t-md bg-pink-500"></div>
-                            {{-- link kategori --}}
-                            <a href="">
-                            <div
-                                class="bg-white flex text-2xl font-bold text-pink-500 uppercase px-4 py-1 border-b border-gray-300">Hiburan</div>
-                            </a>
-
-                                <div class="md:flex-row flex-wrap lg:flex-col flex">
-                                    <div class="w-full xl:w-full ">
-                                        <a href="#">
-                                            <div
-                                                class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
-                                                <img
-                                                    class="h-49 rounded w-full object-cover object-center mb-6"
-                                                    src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg"
-                                                    alt="content">
-                                                <h3
-                                                    class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Kategori
-                                                </h3>
-                                                <a href="#" class="hover:underline">
-                                                    <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul Ini adalah judulIni adalah judul 2 baris 2 baris</h2>
-                                                </a>
-                                                <p class="leading-relaxed text-lg">Fingerstache flexitarian street art 8-bit
-                                                    waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                                            </div>
-=======
                                     <div class="flex relative py-2 items-center border-t w-full mx-auto">
                                         <a href="">
                                             <div class="flex-grow flex items-center flex-row md:px-4 px-4">
@@ -235,7 +168,6 @@
                                                         class="font-bold title-font my-auto text-gray-900 mb-1 text-lg md:text-lg">
                                                         Perluas Akses Pendidikan Tinggi Vokasi di Luaru uuu Negeri, PENS
                                                         Jalin</h2>
->>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
                                         </a>
                                         <p class="font-medium text-md">by
                                             <a href="">Thania</a>
@@ -292,40 +224,9 @@
                 </div>
         </div>
 
-<<<<<<< HEAD
-                        <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
-                            <div class="w-full h-2 rounded-t-md bg-yellow-500"></div>
-                            {{-- link kategori --}}
-                            <a href="">
-                            <div
-                                class="bg-white flex text-2xl font-bold text-yellow-500 uppercase px-4 py-1 border-b border-gray-300">Explore</div>
-                            </a>
-
-                                <div class="md:flex-row flex-wrap lg:flex-col flex">
-                                    <div class="w-full xl:w-full ">
-                                        <a href="#">
-                                            <div
-                                                class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
-                                                <img
-                                                    class="h-49 rounded w-full object-cover object-center mb-6"
-                                                    src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg"
-                                                    alt="content">
-                                                <h3
-                                                    class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Kategori
-                                                </h3>
-                                                <a href="#" class="hover:underline">
-                                                    <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul Ini adalah judulIni adalah judul 2 baris 2 baris</h2>
-                                                </a>
-                                                <p class="leading-relaxed text-lg">Fingerstache flexitarian street art 8-bit
-                                                    waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-=======
     </div>
     </div>
     </div>
->>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
 
     {{-- kategori hiburan --}}
 
@@ -343,7 +244,7 @@
                     <div class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
                         <img class="h-49 rounded w-full object-cover object-center mb-6"
                             src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg" alt="content">
-                        <h3 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Kategori
+                        <h3 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Hiburan
                         </h3>
                         <a href="#" class="hover:underline">
                             <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul
@@ -365,40 +266,6 @@
                             <div class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 my-auto text-indigo-500 rounded-md inline-flex items-center justify-center"
                                 style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');">
                             </div>
-<<<<<<< HEAD
-                        </div>
-
-                        {{-- kategori tekno --}}
-
-                        <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
-                            <div class="w-full h-2 rounded-t-md bg-green-500"></div>
-                            {{-- link kategori --}}
-                            <a href="">
-                            <div
-                                class="bg-white flex text-2xl font-bold text-green-500 uppercase px-4 py-1 border-b border-gray-300">Teknologi</div>
-                            </a>
-
-                                <div class="md:flex-row flex-wrap lg:flex-col flex">
-                                    <div class="w-full xl:w-full ">
-                                        <a href="#">
-                                            <div
-                                                class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
-                                                <img
-                                                    class="h-49 rounded w-full object-cover object-center mb-6"
-                                                    src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg"
-                                                    alt="content">
-                                                <h3
-                                                    class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Kategori
-                                                </h3>
-                                                <a href="#" class="hover:underline">
-                                                    <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul Ini adalah judulIni adalah judul 2 baris 2 baris</h2>
-                                                </a>
-                                                <p class="leading-relaxed text-lg">Fingerstache flexitarian street art 8-bit
-                                                    waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                                            </div>
-                                        </a>
-                                    </div>
-=======
                             <div class="mx-4 mt-6 sm:mt-0">
                                 <h2 class="font-bold title-font my-auto text-gray-900 mb-1 text-lg md:text-lg">Perluas
                                     Akses Pendidikan Tinggi Vokasi di Luaru uuu Negeri, PENS Jalin</h2>
@@ -413,7 +280,6 @@
                 </div>
             </div>
         </div>
->>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
 
         <div class="flex relative py-2 items-center border-t w-full mx-auto">
             <a href="">
@@ -476,7 +342,7 @@
                     <div class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
                         <img class="h-49 rounded w-full object-cover object-center mb-6"
                             src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg" alt="content">
-                        <h3 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Kategori
+                        <h3 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Explore
                         </h3>
                         <a href="#" class="hover:underline">
                             <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul
@@ -513,10 +379,6 @@
             </div>
         </div>
 
-<<<<<<< HEAD
-
-            </section>
-=======
         <div class="flex relative py-2 items-center border-t w-full mx-auto">
             <a href="">
                 <div class="flex-grow flex items-center flex-row md:px-4 px-4">
@@ -534,7 +396,6 @@
                 |
                 <a href="">Kategori</a>
             </p>
->>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
         </div>
     </div>
     </div>
@@ -580,7 +441,7 @@
                     <div class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
                         <img class="h-49 rounded w-full object-cover object-center mb-6"
                             src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg" alt="content">
-                        <h3 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Kategori
+                        <h3 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Teknologi
                         </h3>
                         <a href="#" class="hover:underline">
                             <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul
@@ -708,13 +569,7 @@
     </div>
     </div>
 
-<<<<<<< HEAD
 </div>
 </div>
 </x-app-layout>
 @endsection
-=======
-    </div>
-    </div>
-    @endsection
->>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f

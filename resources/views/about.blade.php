@@ -811,7 +811,6 @@
                 </div>
               </div>
         </div>
-
     <script type="text/javascript">
         //santi
         //divisi
@@ -925,5 +924,4 @@
         }
       </script>
 </x-app-layout>
-</html>
 @endsection

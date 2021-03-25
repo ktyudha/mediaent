@@ -28,7 +28,7 @@
     <div id="navbody" class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
         <div class="pl-4 flex items-center">
             <a class="toggleColour flex flex-row text-white" href="{{ route('home') }}">
-                <img id="navlogo" class="h-20 duration-700 ease-in-out" src="ent.png" alt="">
+                <img id="navlogo" class="h-20 duration-700 ease-in-out" src="{{ asset('ent.png') }}" alt="">
                 <div id="navtitle" class="mx-5 py-5 font-bold text-2xl lg:text-4xl">Media ENT</div>
             </a>
         </div>
@@ -54,10 +54,10 @@
                 </li>
                 <li class="mr-3">
                     <x-nav-link>
-                        <button id="navlink"
+                        <a href="{{ route('about') }}" id="navlink"
                             class="text-white hover:text-gray-100 mx-auto py-2 px-4 inline-block lg:mx-0 hover:no-underline font-medium focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
                             ABOUT
-                        </button>
+                        </a>
                     </x-nav-link>
                 </li>
                 @auth
