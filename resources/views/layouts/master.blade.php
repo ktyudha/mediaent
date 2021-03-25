@@ -51,7 +51,7 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
 
 </head>
-<x-app-layout>
+
     {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Home') }}
@@ -80,7 +80,7 @@
                                 <a href="#"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Lifestyle</a>
                             </li>
-                            
+
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                                 <a href="#"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Hiburan</a>
@@ -102,7 +102,7 @@
                                 <a href="#"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Facebook</a>
                             </li>
-                            
+
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
                                 <a href="#"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Youtube</a>
@@ -137,10 +137,10 @@
         };
         </script>
         <!-- end Vue JS -->
-        
+
         {{-- script --}}
         @include('layouts.script');
     </body>
-</x-app-layout>
+
 
 </html>

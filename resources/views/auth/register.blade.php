@@ -3,7 +3,7 @@
         <x-slot name="logo">
             <a href="/">
                 <img src="{{ asset('ent.png') }}" />
-                
+
             </a>
         </x-slot>
 
