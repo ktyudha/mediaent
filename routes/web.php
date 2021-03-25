@@ -18,18 +18,10 @@ use App\Http\Controllers\Admin\ArticleController;
 
 Route::get('/', function () {
     $articles_recent = Article::with('category', 'thumbnail')->latest()->take(4)->get();
-    $articles_lifestyle = Article::with(['category' => function ($query) {
-        $query->where('id', 1);
-    }, 'thumbnail'])->latest()->take(4)->get();
-    $articles_hiburan = Article::with(['category' => function ($query) {
-        $query->where('id', 2);
-    }, 'thumbnail'])->latest()->take(4)->get();
-    $articles_teknologi = Article::with(['category' => function ($query) {
-        $query->where('id', 3);
-    }, 'thumbnail'])->latest()->take(4)->get();
-    $articles_explore = Article::with(['category' => function ($query) {
-        $query->where('id', 4);
-    }, 'thumbnail'])->latest()->take(4)->get();
+    $articles_lifestyle = Category::find(1)->articles()->latest()->take(4)->get();
+    $articles_hiburan = Category::find(2)->articles()->latest()->take(4)->get();
+    $articles_teknologi = Category::find(3)->articles()->latest()->take(4)->get();
+    $articles_explore = Category::find(4)->articles()->latest()->take(4)->get();
 
     return view('home', compact(['articles_recent', 'articles_lifestyle', 'articles_hiburan', 'articles_teknologi', 'articles_explore']));
 })->name('home');
