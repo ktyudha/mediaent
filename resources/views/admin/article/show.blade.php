@@ -156,8 +156,8 @@
 
                 <!--Lead Para-->
                 <p class="text-2xl md:text-3xl mb-5">
-                    <span
-                        class="text-center text-gray-800 hover:text-gray-500 border-b-2 border-blue-500">{{ $article->title }}</span>
+                    <spanp
+                        class="text-center text-gray-800 hover:text-gray-500 border-b-2 border-blue-500">{{ $article->title }}</spanp>
                 </p>
 
                 <!-- body -->
