@@ -10,7 +10,7 @@
                             <p class="text-white font-extrabold text-3xl md:text-5xl">
                                  NEW ARTIKEL
                             </p>
-                            <p class="text-xl md:text-2xl text-gray-200">Of Nama Kategori</p>
+                            <p class="text-xl md:text-2xl text-gray-200">Of {{ $articles[0]->category->name }}</p>
                     </div>
                 </div>
             </div>
@@ -23,13 +23,13 @@
                         <div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
                             <a href="post.html" class="flex flex-wrap no-underline hover:no-underline">
                                 <div class="w-full md:w-2/3 rounded-t">
-                                    <img src="https://source.unsplash.com/collection/494263/800x600" class="h-full w-full shadow">
+                                    <img src="{{ Storage::url($articles[0]->thumbnail->url) }}" class="h-full w-full shadow">
                                 </div>
 
                                 <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
                                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
                                         <p class="uppercase w-full text-gray-600 text-xs md:text-sm pt-6 px-6">surabaya</p>
-                                        <div class="tracking-widest w-full font-bold text-xl text-gray-900 px-6">Disini Judulnya Yang Pualing Baru Ya Ron</div>
+                                        <div class="tracking-widest w-full font-bold text-xl text-gray-900 px-6">{{ $articles[0]->title }}</div>
                                         <p class="text-gray-800 font-serif text-base px-6 mb-5">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ip Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
                                         </p>
@@ -37,12 +37,13 @@
 
                                     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
                                         <div class="flex items-center justify-between">
-                                            <p class="text-gray-600 text-xs md:text-sm">READ MORE</p></p>
+                                            <p class="text-gray-600 text-xs md:text-sm">READ MORE</p>
                                         </div>
                                     </div>
                                 </div>
                             </a>
                         </div>
+<<<<<<< HEAD
                         <!--/Lead Card-->
                         <div class="leading-normal tracking-normal text-white bg-gray-200">
                             {{-- scroll work --}}
@@ -159,10 +160,18 @@
                         <!--Posts Container-->
                         <div class="flex flex-wrap justify-between pt-12 -mx-6">
 
+=======
+
+                        <!--Posts Container-->
+                        <div class="flex flex-wrap justify-between pt-12 -mx-6">
+        
+                            @foreach ($articles->slice(1) as $article)
+>>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
                             <!--1/3 col -->
                             <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
                                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+<<<<<<< HEAD
                                         <img src="https://source.unsplash.com/collection/3106804/800x600" class="h-64 w-full rounded-t pb-6">
                                         <p class="tracking-widest uppercase w-full text-gray-600 text-xs md:text-sm px-6">surabaya</p>
                                         <div class="w-full font-bold text-xl text-gray-900 px-6">Disini Judulnya Ya Ron</div>
@@ -203,8 +212,11 @@
                                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
                                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                                         <img src="https://source.unsplash.com/collection/3106804/800x600" class="h-64 w-full rounded-t pb-6">
+=======
+                                        <img src="{{ Storage::url($article->thumbnail->url) }}" class="h-64 w-full object-cover rounded-t pb-6">
+>>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
                                         <p class="tracking-widest uppercase w-full text-gray-600 text-xs md:text-sm px-6">surabaya</p>
-                                        <div class="w-full font-bold text-xl text-gray-900 px-6">Disini Judulnya Ya Ron</div>
+                                        <div class="w-full font-bold text-xl text-gray-900 px-6">{{ $article->title }}</div>
                                         <p class="text-gray-800 font-serif text-base px-6 mb-5">
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ip Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
                                         </p>
@@ -216,10 +228,17 @@
                                     </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
 
 
+=======
+                            @endforeach
+                            
+                            <!-- yang paling lama sementara di comment -->
+        
+>>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
                             <!--1/2 col -->
-                            <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
+                            {{-- <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
                                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
                                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                                         <img src="https://source.unsplash.com/collection/3657445/800x600" class="h-full w-full rounded-t pb-6">
@@ -236,10 +255,15 @@
                                         <p class="text-gray-600 text-xs md:text-sm">READ MORE</p>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                             </div>
 
+=======
+                            </div> --}}
+        
+>>>>>>> 7ffa437f24eb9461503fa7ac7c57bfbadaea0c9f
                             <!--1/2 col -->
-                            <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
+                            {{-- <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
                                 <div class="flex-1 flex-row bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
                                     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                                         <img src="https://source.unsplash.com/collection/764827/800x600" class="h-full w-full rounded-t pb-6">
@@ -255,7 +279,7 @@
                                         <p class="text-gray-600 text-xs md:text-sm">READ MORE</p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <!--/ Post Content-->
                     </div>

@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ArticleController;
 
@@ -15,7 +17,21 @@ use App\Http\Controllers\Admin\ArticleController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $articles_recent = Article::with('category', 'thumbnail')->latest()->take(4)->get();
+    $articles_lifestyle = Article::with(['category' => function ($query) {
+        $query->where('id', 1);
+    }, 'thumbnail'])->latest()->take(4)->get();
+    $articles_hiburan = Article::with(['category' => function ($query) {
+        $query->where('id', 2);
+    }, 'thumbnail'])->latest()->take(4)->get();
+    $articles_teknologi = Article::with(['category' => function ($query) {
+        $query->where('id', 3);
+    }, 'thumbnail'])->latest()->take(4)->get();
+    $articles_explore = Article::with(['category' => function ($query) {
+        $query->where('id', 4);
+    }, 'thumbnail'])->latest()->take(4)->get();
+
+    return view('home', compact(['articles_recent', 'articles_lifestyle', 'articles_hiburan', 'articles_teknologi', 'articles_explore']));
 })->name('home');
 
 Route::get('/article/{article}', [ArticleController::class, 'show'])->name('article.show');
@@ -36,4 +52,10 @@ Route::get('/coba', function () {
     return view('coba');
 })->name('coba');
 
-require __DIR__.'/auth.php';
+Route::get('/category/{category}', function (Category $category) {
+    $articles = $category->articles()->latest()->get();
+
+    return view('kategori', compact('articles'));
+})->name('category.show');
+
+require __DIR__ . '/auth.php';
