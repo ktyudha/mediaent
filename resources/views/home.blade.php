@@ -1,5 +1,5 @@
 @extends('layouts.master') @section('konten')
-
+<x-app-layout>
 <div
     class="leading-normal tracking-normal text-white -m-6 gradient rounded-b-3xl"
     style="font-family: 'Source Sans Pro', sans-serif;">
@@ -274,11 +274,11 @@
                         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                             <div class="w-full h-2 rounded-t-md bg-blue-500"></div>
                             {{-- link kategori --}}
-                            <a href=""> 
+                            <a href="">
                             <div
                                 class="bg-white flex text-2xl font-bold text-blue-500 uppercase px-4 py-1 border-b border-gray-300">Lifestyle</div>
                             </a>
-                            
+
                                 <div class="md:flex-row flex-wrap lg:flex-col flex">
                                     <div class="w-full xl:w-full ">
                                         <a href="#">
@@ -370,17 +370,17 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         {{-- kategori hiburan --}}
-                        
+
                         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                             <div class="w-full h-2 rounded-t-md bg-pink-500"></div>
                             {{-- link kategori --}}
-                            <a href=""> 
+                            <a href="">
                             <div
                                 class="bg-white flex text-2xl font-bold text-pink-500 uppercase px-4 py-1 border-b border-gray-300">Hiburan</div>
                             </a>
-                            
+
                                 <div class="md:flex-row flex-wrap lg:flex-col flex">
                                     <div class="w-full xl:w-full ">
                                         <a href="#">
@@ -477,11 +477,11 @@
                         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                             <div class="w-full h-2 rounded-t-md bg-yellow-500"></div>
                             {{-- link kategori --}}
-                            <a href=""> 
+                            <a href="">
                             <div
                                 class="bg-white flex text-2xl font-bold text-yellow-500 uppercase px-4 py-1 border-b border-gray-300">Explore</div>
                             </a>
-                            
+
                                 <div class="md:flex-row flex-wrap lg:flex-col flex">
                                     <div class="w-full xl:w-full ">
                                         <a href="#">
@@ -573,17 +573,17 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         {{-- kategori tekno --}}
-                        
+
                         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                             <div class="w-full h-2 rounded-t-md bg-green-500"></div>
                             {{-- link kategori --}}
-                            <a href=""> 
+                            <a href="">
                             <div
                                 class="bg-white flex text-2xl font-bold text-green-500 uppercase px-4 py-1 border-b border-gray-300">Teknologi</div>
                             </a>
-                            
+
                                 <div class="md:flex-row flex-wrap lg:flex-col flex">
                                     <div class="w-full xl:w-full ">
                                         <a href="#">
@@ -678,7 +678,7 @@
                     </div>
                 </div>
 
-                
+
             </section>
         </div>
 
@@ -781,4 +781,5 @@
 
 </div>
 </div>
+</x-app-layout>
 @endsection

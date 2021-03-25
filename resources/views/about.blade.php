@@ -1,4 +1,5 @@
-
+@extends('layouts.master')
+@section('konten')
 
     <x-app-layout>
     <x-slot name="title">
@@ -80,7 +81,7 @@
         <!--Left Col-->
         <div class="ml-0 mt-5 flex flex-col w-full md:w-1/3 justify-center items-start text-center md:text-left">
             <div class="bg-white mb-2 ml-5 sm:ml-10 sm:mr-3 mr-5 max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md">
-                <img class="object-cover w-full h-41" src="" alt="ENT Crews">
+                <img class="object-cover w-full h-41" src="gen15.png" alt="ENT Crews">
                 <div class="p-6">
                     <div>
                         <a href="https://www.instagram.com/entcrews/" class="block mt-2 font-semibold text-gray-800 hover:text-gray-600 hover:underline">ENT CREWS GEN 15</a>
@@ -810,9 +811,6 @@
                 </div>
               </div>
         </div>
-        <footer class="w-full text-center uppercase bg-gray-300 p-4">
-            BY <a target="_blank" href="https://davidgrzyb.com" class="underline">Media ENT- 2021</a>.
-        </footer>
 
     <script type="text/javascript">
         //santi
@@ -928,3 +926,4 @@
       </script>
 </x-app-layout>
 </html>
+@endsection

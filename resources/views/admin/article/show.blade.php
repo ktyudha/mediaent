@@ -1,3 +1,4 @@
+<x-app-layout>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -167,9 +168,6 @@
             </div>
         </div>
     </div>
-    <footer class="w-full text-center uppercase bg-gray-200 p-4">
-        BY <a target="_blank" href="https://davidgrzyb.com" class="underline">Media ENT- 2021</a>.
-    </footer>
 </body>
-
+</x-app-layout>
 </html>

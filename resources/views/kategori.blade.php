@@ -1,6 +1,6 @@
 @extends('layouts.master')
-@section('konten') 
-
+@section('konten')
+<x-app-layout>
 <body class="leading-normal tracking-normal text-white -m-6 gradient rounded-b-3xl"
         style="font-family: 'Source Sans Pro', sans-serif;">
         <div class="gradient -m-6 h-96 rounded-b-3xl">
@@ -18,14 +18,14 @@
                 <div class="px-4 md:px-0 max-w-6xl mx-auto -mt-32">
                     <div class="mx-0 sm:mx-6">
                         <div class="bg-gray-200 w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
-        
+
                         <!--Lead Card-->
                         <div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
                             <a href="post.html" class="flex flex-wrap no-underline hover:no-underline">
                                 <div class="w-full md:w-2/3 rounded-t">
                                     <img src="https://source.unsplash.com/collection/494263/800x600" class="h-full w-full shadow">
                                 </div>
-        
+
                                 <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
                                     <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
                                         <p class="uppercase w-full text-gray-600 text-xs md:text-sm pt-6 px-6">surabaya</p>
@@ -34,7 +34,7 @@
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ip Aliquam at ipsum eu nunc commodo posuere et sit amet ligula.
                                         </p>
                                     </div>
-        
+
                                     <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
                                         <div class="flex items-center justify-between">
                                             <p class="text-gray-600 text-xs md:text-sm">READ MORE</p></p>
@@ -50,7 +50,7 @@
                             <section class="text-gray-500 body-font flex flex-wrap">
                                 <div class="px-5 pb-4 pt-0 mx-auto">
                                     <div class="flex flex-wrap">
-                                        
+
                                         <div class="group p-4 md:w-1/2 ">
                                             <div
                                                 class="bg-white group-hover:shadow-2xl duration-700 group-hover:border-gray-900 h-full shadow-md border-opacity-60 rounded-lg overflow-hidden">
@@ -79,7 +79,7 @@
                                                                 </svg>
                                                             </button>
                                                         </a>
-                    
+
                                                         <span
                                                             class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                                                             <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
@@ -100,7 +100,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                    
+
                                         <div class="group p-4 md:w-1/2 ">
                                             <div
                                                 class="bg-white group-hover:shadow-2xl duration-700 group-hover:border-gray-900 h-full shadow-md border-opacity-60 rounded-lg overflow-hidden">
@@ -129,7 +129,7 @@
                                                                 </svg>
                                                             </button>
                                                         </a>
-                    
+
                                                         <span
                                                             class="text-gray-400 mr-3 inline-flex items-center lg:ml-auto md:ml-0 ml-auto leading-none text-sm pr-3 py-1 border-r-2 border-gray-200">
                                                             <svg class="w-4 h-4 mr-1" stroke="currentColor" stroke-width="2" fill="none"
@@ -150,15 +150,15 @@
                                                 </div>
                                             </div>
                                         </div>
-                    
-                                        
+
+
                                     </div>
                                 </div>
                             </section>
                         </div>
                         <!--Posts Container-->
                         <div class="flex flex-wrap justify-between pt-12 -mx-6">
-        
+
                             <!--1/3 col -->
                             <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
@@ -177,8 +177,8 @@
                                     </div>
                                 </div>
                             </div>
-        
-        
+
+
                             <!--1/3 col -->
                             <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
@@ -197,7 +197,7 @@
                                     </div>
                                 </div>
                             </div>
-        
+
                             <!--1/3 col -->
                             <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
@@ -216,8 +216,8 @@
                                     </div>
                                 </div>
                             </div>
-        
-        
+
+
                             <!--1/2 col -->
                             <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
                                 <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
@@ -237,7 +237,7 @@
                                     </div>
                                 </div>
                             </div>
-        
+
                             <!--1/2 col -->
                             <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
                                 <div class="flex-1 flex-row bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
@@ -261,9 +261,7 @@
                     </div>
                 </div>
             </div>
-        
-
 </body>
 </div>
-
+</x-app-layout>
 @endsection
