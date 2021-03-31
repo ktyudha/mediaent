@@ -28,10 +28,6 @@ Route::get('/', function () {
 
 Route::get('/article/{article}', [ArticleController::class, 'show'])->name('article.show');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
 Route::get('/kategori', function () {
     return view('kategori');
 })->name('kategori');
@@ -49,5 +45,9 @@ Route::get('/category/{category}', function (Category $category) {
 
     return view('kategori', compact('articles'));
 })->name('category.show');
+
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 
 require __DIR__ . '/auth.php';

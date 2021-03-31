@@ -11,9 +11,6 @@
     <!-- Tailwind -->
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 
-    <!-- CKEditor 5 -->
-    <script src="https://cdn.ckeditor.com/ckeditor5/26.0.0/classic/ckeditor.js"></script>
-
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
@@ -247,6 +244,13 @@
                                 <x-validation-message name="thumbnail" />
                             </div>
                             <div class="mt-2">
+                                <label class=" block text-sm text-gray-600" for="description">Deskripsi Artikel</label>
+                                <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="description"
+                                    name="description" placeholder="Masukkan deskripsi artikel" aria-label="description"
+                                    required>{{ old('description') }}</textarea>
+                                <x-validation-message name="description" />
+                            </div>
+                            <div class="mt-2">
                                 <label class=" block text-sm text-gray-600" for="body">Isi Artikel</label>
                                 <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="body"
                                     name="body" placeholder="Masukkan isi artikel" aria-label="body"
@@ -270,12 +274,22 @@
 
     </div>
 
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
     <script>
-        ClassicEditor
-            .create( document.querySelector( '#body' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+        };
+    </script>
+    <script>
+        // ClassicEditor
+        //     .create( document.querySelector( '#body' ) )
+        //     .catch( error => {
+        //         console.error( error );
+        //     } );
+        CKEDITOR.replace('body', options);
     </script>
 
     <!-- AlpineJS -->

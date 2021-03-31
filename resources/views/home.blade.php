@@ -12,16 +12,15 @@
             <div id="slider" class="swiper-container w-full">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide bg-cover bg-center"
-                        style="background-image: url('https://www.pens.ac.id/wp-content/uploads/2021/03/PEDDES-WEB.png');">
+                        style="background-image: url({{ Storage::url($articles_recent[0]->thumbnail->url) }});">
                         <div class="mx-auto pt-32 pb-0">
                             <div class="w-full">
                                 <div class="py-20 px-6 md:px-10 md:py-20 mt-32 bg-gray-900 bg-opacity-60">
-                                    <a href="">
+                                    <a href="{{ route('article.show', $articles_recent[0]) }}">
                                         <h2 class="text-2xl text-gray-100 leading-tight"
-                                            style="font-family: Niconne, cursive;">ini adalah judul artikel slider
+                                            style="font-family: Niconne, cursive;">{{ $articles_recent[0]->title }}
                                         </h2>
                                     </a>
-                                    <p class="text-md mt-2 font-light">ini adalah deskripsi singkat judul</p>
                                 </div>
                             </div>
                         </div>
@@ -131,11 +130,11 @@
 
                             <div class="md:flex-row flex-wrap lg:flex-col flex">
                                 <div class="w-full xl:w-full ">
-                                    <a href="#">
+                                    <a href="{{ route('article.show', $articles_lifestyle[0]) }}">
                                         <div
                                             class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
-                                            <img class="h-49 rounded w-full object-cover object-center mb-6"
-                                                src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg"
+                                            <img class="h-56 rounded w-full object-cover object-center mb-6"
+                                                src="{{ Storage::url($articles_lifestyle[0]->thumbnail->url) }}"
                                                 alt="content">
                                             <h3
                                                 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">
@@ -239,16 +238,17 @@
         </a>
 
         <div class="md:flex-row flex-wrap lg:flex-col flex">
-            <div class="w-full xl:w-full ">
-                <a href="#">
+            <div class="w-full xl:w-full">
+                <a href="{{ route('article.show', $articles_hiburan[0]) }}">
                     <div class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
                         <img class="h-49 rounded w-full object-cover object-center mb-6"
-                            src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg" alt="content">
+                            src="{{ Storage::url($articles_hiburan[0]->thumbnail->url) }}" alt="content">
                         <h3 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Hiburan
                         </h3>
-                        <a href="#" class="hover:underline">
-                            <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul
-                                Ini adalah judulIni adalah judul 2 baris 2 baris</h2>
+                        <a href="{{ route('article.show', $articles_hiburan[0]) }}" class="hover:underline">
+                            <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">
+                                {{ $articles_hiburan[0]->title }}
+                            </h2>
                         </a>
                         <p class="leading-relaxed text-lg">Fingerstache flexitarian street art 8-bit
                             waistcoat. Distillery hexagon disrupt edison bulbche.</p>
@@ -338,15 +338,16 @@
 
         <div class="md:flex-row flex-wrap lg:flex-col flex">
             <div class="w-full xl:w-full ">
-                <a href="#">
+                <a href={{ route('article.show', $articles_explore[0]) }}>
                     <div class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
-                        <img class="h-49 rounded w-full object-cover object-center mb-6"
-                            src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg" alt="content">
+                        <img class="h-56 rounded w-full object-cover object-center mb-6"
+                            src="{{ Storage::url($articles_explore[0]->thumbnail->url) }}" alt="content">
                         <h3 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Explore
                         </h3>
-                        <a href="#" class="hover:underline">
-                            <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul
-                                Ini adalah judulIni adalah judul 2 baris 2 baris</h2>
+                        <a href="{{ route('article.show', $articles_explore[0]) }}" class="hover:underline">
+                            <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">
+                                {{ $articles_explore[0]->title }}
+                            </h2>
                         </a>
                         <p class="leading-relaxed text-lg">Fingerstache flexitarian street art 8-bit
                             waistcoat. Distillery hexagon disrupt edison bulbche.</p>
@@ -437,15 +438,16 @@
 
         <div class="md:flex-row flex-wrap lg:flex-col flex">
             <div class="w-full xl:w-full ">
-                <a href="#">
+                <a href="{{ route('article.show', $articles_teknologi[0]) }}">
                     <div class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
-                        <img class="h-49 rounded w-full object-cover object-center mb-6"
-                            src="https://www.pens.ac.id/wp-content/uploads/2021/02/WEB-KBRI.jpg" alt="content">
+                        <img class="h-56 rounded w-full object-cover object-center mb-6"
+                            src="{{ Storage::url($articles_teknologi[0]->thumbnail->url) }}" alt="content">
                         <h3 class="tracking-widest text-indigo-500 text-xs font-semibold title-font uppercase">Teknologi
                         </h3>
-                        <a href="#" class="hover:underline">
-                            <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">Ini adalah judul
-                                Ini adalah judulIni adalah judul 2 baris 2 baris</h2>
+                        <a href="{{ route('article.show', $articles_teknologi[0]) }}" class="hover:underline">
+                            <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">
+                                {{ $articles_teknologi[0]->title }}
+                            </h2>
                         </a>
                         <p class="leading-relaxed text-lg">Fingerstache flexitarian street art 8-bit
                             waistcoat. Distillery hexagon disrupt edison bulbche.</p>
