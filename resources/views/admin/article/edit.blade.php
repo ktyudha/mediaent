@@ -262,7 +262,7 @@
                                 <label class=" block text-sm text-gray-600" for="description">Deskripsi Artikel</label>
                                 <textarea class="w-full px-5 py-2 text-gray-700 bg-gray-200 rounded" id="description"
                                     name="description" placeholder="Masukkan deskripsi artikel" aria-label="description"
-                                    required>{{ old('description') }}</textarea>
+                                    required>{{ old('description') ?? $article->description }}</textarea>
                                 <x-validation-message name="description" />
                             </div>
                             <div class="mt-2">

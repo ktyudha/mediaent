@@ -213,14 +213,14 @@
                     <h1 class="text-3xl text-black pb-6"><i class="fas fa-table mr-3"></i>Table Article</h1>
 
                     <div class="bg-white shadow-md rounded my-6">
-                        <table class="min-w-max w-full table-auto">
+                        <table class="w-full">
                             <thead>
                                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                    <th class="py-3 px-6 text-center">No.</th>
-                                    <th class="py-3 px-6 text-center">Title</th>
-                                    <th class="py-3 px-6 text-center">Tanggal</th>
-                                    <th class="py-3 px-6 text-center">Kategori</th>
-                                    <th class="py-3 px-6 text-center">Actions</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">No.</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">Title</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">Tanggal</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">Kategori</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 text-sm font-light">
@@ -229,7 +229,7 @@
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         {{ $loop->iteration }}
                                     </td>
-                                    <td class="py-3 px-6 text-center">
+                                    <td class="py-3 px-6 text-left">
                                         <a href="{{ route('article.show', $article) }}" class="hover:underline">
                                             <i class="fas fa-angle-right"></i>
                                             {{ $article->title }}

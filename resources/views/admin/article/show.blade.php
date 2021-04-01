@@ -32,11 +32,12 @@
     </div>
 
     <!--image-->
-    <div class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded"
-        style="background-image:url('{{ Storage::url($article->thumbnail->url) }}'); height: 75vh;"></div>
+    {{-- <div class="container w-full max-w-6xl mx-auto bg-white bg-cover object-cover mt-8 rounded"
+        style="background-image:url('{{ asset('bg_about.png') }}'); height: 75vh;">
+    </div> --}}
 
     <!--Container-->
-    <div class="container max-w-5xl mx-auto -mt-32">
+    <div class="container max-w-5xl mx-auto mt-8">
 
         <div class="mx-0 sm:mx-6">
 

@@ -289,6 +289,7 @@
         //     .catch( error => {
         //         console.error( error );
         //     } );
+        CKEDITOR.plugins.addExternal( 'justify', '/ckeditor/plugins/justify', 'plugin.js' );
         CKEDITOR.replace('body', options);
     </script>
 

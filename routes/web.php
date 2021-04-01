@@ -17,13 +17,27 @@ use App\Http\Controllers\Admin\ArticleController;
 */
 
 Route::get('/', function () {
-    $articles_recent = Article::with('category', 'thumbnail')->latest()->take(4)->get();
+    $articles_recent = Article::with('category', 'thumbnail')->latest()->take(5)->get();
     $articles_lifestyle = Category::find(1)->articles()->latest()->take(4)->get();
     $articles_hiburan = Category::find(2)->articles()->latest()->take(4)->get();
     $articles_teknologi = Category::find(3)->articles()->latest()->take(4)->get();
     $articles_explore = Category::find(4)->articles()->latest()->take(4)->get();
+    $video_lifestyle = Category::find(1)->videos()->latest()->first();
+    $video_hiburan = Category::find(2)->videos()->latest()->first();
+    $video_teknologi = Category::find(3)->videos()->latest()->first();
+    $video_explore = Category::find(4)->videos()->latest()->first();
 
-    return view('home', compact(['articles_recent', 'articles_lifestyle', 'articles_hiburan', 'articles_teknologi', 'articles_explore']));
+    return view('home', compact([
+        'articles_recent', 
+        'articles_lifestyle', 
+        'articles_hiburan', 
+        'articles_teknologi', 
+        'articles_explore', 
+        'video_lifestyle', 
+        'video_hiburan', 
+        'video_teknologi', 
+        'video_explore',
+]));
 })->name('home');
 
 Route::get('/article/{article}', [ArticleController::class, 'show'])->name('article.show');
@@ -42,8 +56,9 @@ Route::get('/coba', function () {
 
 Route::get('/category/{category}', function (Category $category) {
     $articles = $category->articles()->latest()->get();
+    $videos = $category->videos()->latest()->get();
 
-    return view('kategori', compact('articles'));
+    return view('kategori', compact(['articles', 'videos']));
 })->name('category.show');
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

@@ -39,7 +39,7 @@
         <!--Container-->
         <div class="px-4 md:px-0 max-w-6xl mx-auto -mt-32">
             <div class="mx-0 sm:mx-6">
-                <div class="bg-gray-200 w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
+                <div class="w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
 
                     <!--Lead Card-->
                     <div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
@@ -69,8 +69,8 @@
                                                 class="gradient hover:bg-gray-700 hover:text-indigo-300 inline-flex mx-auto lg:mx-0 hover:no-underline text-gray-300 font-bold rounded-full lg:mt-0 text-center py-1 px-3 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                                 Readmore
                                                 <svg class="w-5 h-5 ml-2 items-center my-auto" viewbox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
-                                                    stroke-linejoin="round">
+                                                    stroke="currentColor" stroke-width="2" fill="none"
+                                                    stroke-linecap="round" stroke-linejoin="round">
                                                     <path d="M5 12h14"></path>
                                                     <path d="M12 5l7 7-7 7"></path>
                                                 </svg>
@@ -110,8 +110,8 @@
                                             class="gradient hover:bg-gray-700 hover:text-indigo-300 inline-flex mx-auto lg:mx-0 hover:no-underline text-gray-300 font-bold rounded-full lg:mt-0 text-center py-1 px-3 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                             Readmore
                                             <svg class="w-5 h-5 ml-2 items-center my-auto" viewbox="0 0 24 24"
-                                                stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
-                                                stroke-linejoin="round">
+                                                stroke="currentColor" stroke-width="2" fill="none"
+                                                stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M5 12h14"></path>
                                                 <path d="M12 5l7 7-7 7"></path>
                                             </svg>
@@ -164,7 +164,28 @@
                             </div> --}}
                     </div>
                     <!--/ Post Content-->
+
                 </div>
+                @if ($videos)
+                <div class="my-3">
+                    <h1 class="text-white font-extrabold text-3xl md:text-5xl">Video</h1>
+                    <div class="flex flex-wrap justify-between -mx-6">
+
+                        {{-- @foreach ($articles->slice(1) as $article) --}}
+                        <!--1/3 col -->
+                        @foreach ($videos as $video)
+                        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+                            <iframe width="560" height="315" src="{{ $video->url }}" title="{{ $video->title }}">
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        @endforeach
+
+                        {{-- @endforeach --}}
+                    </div>
+                </div>
+                @endif
             </div>
         </div>
     </body>
