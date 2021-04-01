@@ -295,7 +295,8 @@
             filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
             filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
             filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
+            extraPlugins: 'justify',
         };
     </script>
     <script>
@@ -304,6 +305,7 @@
         //     .catch( error => {
         //         console.error( error );
         //     } );
+        CKEDITOR.plugins.addExternal('justify', '/ckeditor/plugins/justify/', 'plugin.js');
         CKEDITOR.replace('body', options);
     </script>
 
