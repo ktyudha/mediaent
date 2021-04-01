@@ -10,15 +10,27 @@ class Video extends Model
     use HasFactory;
 
     protected $fillable = [
-        'url',
+        'user_id',
+        'category_id',
         'title',
         'slug',
+        'url',
         'description',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
     public function comments()

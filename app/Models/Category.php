@@ -9,13 +9,17 @@ class Category extends Model
 {
     use HasFactory;
 
-    const LIFESTYLE = 1;
-    const HIBURAN = 2;
-
     protected $fillable = ['name'];
+
+    public $timestamps = false;
 
     public function articles()
     {
         return $this->hasMany(Article::class);
+    }
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
     }
 }

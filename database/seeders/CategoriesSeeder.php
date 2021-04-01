@@ -14,9 +14,11 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        Category::create(
+        Category::insert([
             ['name' => 'Lifestyle'],
             ['name' => 'Hiburan'],
-        );
+            ['name' => 'Teknologi'],
+            ['name' => 'Explore'],
+        ]);
     }
 }
