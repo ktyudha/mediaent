@@ -120,7 +120,7 @@
 
                             {{-- kategori lifestyle --}}
 
-                            @if($articles_lifestyle)
+                            @if (empty($articles_lifestyle) || $video_lifestyle)
                             <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                                 <div class="w-full h-2 rounded-t-md bg-blue-500"></div>
                                 {{-- link kategori --}}
@@ -144,7 +144,7 @@
                                     <div class="w-full xl:w-full ">
                                         <div
                                             class="md:flex-row duration-700 bg-white p-4 group-hover:shadow-2xl shadow-md">
-                                            @if($video_lifestyle)
+                                            @if ($video_lifestyle)
                                             <iframe class="h-96 mb-6 rounded w-full" src="{{ $video_lifestyle->url }}"
                                                 title="{{ $video_lifestyle->title }}" frameborder="0"
                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -176,8 +176,8 @@
                                     </div>
 
                                     {{-- second card kategori max 3 posts --}}
-
-                                    @foreach ($articles_lifestyle->slice(1) as $article)
+                                    <?php $articles = $video_lifestyle ? $articles_lifestyle : $articles_lifestyle->slice(1) ?>
+                                    @foreach ($articles as $article)
                                     <div class="w-full mx-auto bg-white rounded-b-lg text-gray-600 body-font">
 
                                         <div class="flex relative py-2 items-center border-t w-full mx-auto">
@@ -212,7 +212,7 @@
 
                     {{-- kategori hiburan --}}
 
-                    @if($articles_hiburan)
+                    @if (empty($articles_hiburan) || $video_hiburan)
                     <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                         <div class="w-full h-2 rounded-t-md bg-pink-500"></div>
                         {{-- link kategori --}}
@@ -266,7 +266,8 @@
 
                             {{-- second card kategori max 3 posts --}}
 
-                            @foreach ($articles_hiburan->slice(1) as $article)
+                            <?php $articles = $video_hiburan ? $articles_hiburan : $articles_hiburan->slice(1) ?>
+                            @foreach ($articles as $article)
                             <div class="w-full mx-auto bg-white rounded-b-lg text-gray-600 body-font">
 
                                 <div class="flex relative py-2 items-center border-t w-full mx-auto">
@@ -298,9 +299,9 @@
         </div>
         @endif
 
-        {{-- kategori tekno --}}
+        {{-- kategori teknologi --}}
 
-        @if($articles_teknologi)
+        @if (empty($articles_teknologi) || $video_teknologi)
         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
             <div class="w-full h-2 rounded-t-md bg-green-500"></div>
             {{-- link kategori --}}
@@ -353,7 +354,8 @@
 
                 {{-- second card kategori max 3 posts --}}
 
-                @foreach ($articles_teknologi->slice(1) as $article)
+                <?php $articles = $video_teknologi ? $articles_teknologi : $articles_teknologi->slice(1) ?>
+                @foreach ($articles as $article)
                 <div class="w-full mx-auto bg-white rounded-b-lg text-gray-600 body-font">
 
                     <div class="flex relative py-2 items-center border-t w-full mx-auto">
@@ -385,7 +387,7 @@
 
         {{-- kategori explore --}}
 
-        @if($articles_explore)
+        @if (empty($articles_explore) || $video_explore)
         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
             <div class="w-full h-2 rounded-t-md bg-yellow-500"></div>
             {{-- link kategori --}}
@@ -437,7 +439,8 @@
 
                 {{-- second card kategori max 3 posts --}}
 
-                @foreach ($articles_explore->slice(1) as $article)
+                <?php $articles = $video_explore ? $articles_explore : $articles_explore->slice(1) ?>
+                @foreach ($articles as $article)
                 <div class="w-full mx-auto bg-white rounded-b-lg text-gray-600 body-font">
 
                     <div class="flex relative py-2 items-center border-t w-full mx-auto">
