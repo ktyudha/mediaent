@@ -63,34 +63,29 @@
         <!--Footer-->
         <footer>
             <div class="gradient h-6 w-full rounded-t"></div>
-            <div class="mx-auto lg:px-48 px-6 bg-gray-800">
+            <div class="lg:px-48 px-6 bg-gray-800">
                 <div class="w-full flex flex-col md:flex-row py-6">
                     <div class="flex-2 mb-6 text-black flex md:px-10 flex-row">
-                        <a class="text-blue-600 no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
-                            href="#">
-                                <!-- <img src="{{ asset('ent.png') }}" /> -->
-                                <img class="md:h-48 md:mx-auto" src="https://ent.pens.ac.id/img/logos/LogoENTs2.png" />
-                        </a>
-                        <div class="px-4 text-2xl md:text-4xl sm:text-4xl text-gray-300 my-auto font-bold"><a href="">Media ENT</a></div>
+                        <div class="pr-4 text-2xl md:text-4xl sm:text-4xl text-gray-300 my-auto font-bold"><a href="{{ route('home') }}">Media ENT</a></div>
                     </div>
                     <div class="flex-1">
                         <p class="uppercase text-gray-300 font-bold text-2xl md:mb-6">KATEGORI</p>
                         <ul class="list-reset mb-6 ">
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
+                                <a href="{{ route('category.show', 1) }}"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Lifestyle</a>
                             </li>
 
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
+                                <a href="{{ route('category.show', 2) }}"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Hiburan</a>
                             </li>
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
+                                <a href="{{ route('category.show', 3) }}"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Teknologi</a>
                             </li>
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
+                                <a href="{{ route('category.show', 4) }}"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Explore</a>
                             </li>
                         </ul>
@@ -99,21 +94,17 @@
                         <p class="uppercase  text-gray-300 text-2xl font-bold md:mb-6">Social</p>
                         <ul class="list-reset mb-6">
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
-                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Facebook</a>
+                                <a href="https://ent.pens.ac.id/" 
+                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">ENT PENS</a>
                             </li>
 
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
+                                <a href="https://www.youtube.com/channel/UCgCH04Vjy22hnfTZBTMDccQ"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Youtube</a>
                             </li>
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
+                                <a href="https://www.instagram.com/entcrews/"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Instagram</a>
-                            </li>
-                            <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="#"
-                                    class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">Twitter</a>
                             </li>
                         </ul>
                     </div>
@@ -139,7 +130,7 @@
         <!-- end Vue JS -->
 
         {{-- script --}}
-        @include('layouts.script');
+        @include('layouts.script')
     </body>
 
 
