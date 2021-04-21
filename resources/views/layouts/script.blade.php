@@ -1,5 +1,5 @@
 <script>
-    var scrollpos = window.scrollY;
+var scrollpos = window.scrollY;
 var header = document.getElementById("header");
 var navcontent = document.getElementById("nav-content");
 var navaction = document.getElementById("navAction");

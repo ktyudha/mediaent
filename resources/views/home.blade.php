@@ -1,6 +1,6 @@
 @extends('layouts.master') @section('konten')
 <x-app-layout>
-    <div class="leading-normal tracking-normal text-white -m-6 gradient rounded-b-3xl"
+    <div class="leading-normal w-screen md:w-full tracking-normal text-white -m-6 gradient rounded-b-3xl"
         style="font-family: 'Source Sans Pro', sans-serif;">
 
         <!--Hero-->
@@ -17,10 +17,10 @@
                                 <div class="w-full">
                                     <div class="py-20 px-6 md:px-10 md:py-20 mt-32 bg-gray-900 bg-opacity-60">
                                         <a href="{{ route('article.show', $article) }}">
-                                            <h2 class="text-2xl text-gray-100 leading-tight"
-                                                style="font-family: Niconne, cursive;">{{ $article->title }}
+                                            <h2 class="text-2xl text-gray-100 leading-tight">{{ $article->title }}
                                             </h2>
                                         </a>
+                                        <p>{{ $article->description }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                     <h1 class="title-font text-lg font-medium text-xl text-gray-900 mb-3">
                                         {{ $article->title }}</h1>
                                 </a>
-                                <p class="leading-relaxed mb-3 group-hover:text-gray-600 text-md">Photo booth
+                                <p class="leading-relaxed mb-3 group-hover:text-gray-600 text-md">
                                     {{ $article->description }}
                                 </p>
                                 <div class="flex items-center flex-wrap ">
@@ -162,7 +162,7 @@
                                             <img class="h-49 rounded w-full object-cover object-center mb-6"
                                                 src="{{ Storage::url($articles_lifestyle[0]->thumbnail->url) }}"
                                                 alt="content">
-                                            <a href="#" class="hover:underline">
+                                            <a href="{{ route('article.show', $articles_lifestyle[0]) }}" class="hover:underline">
                                                 <h2
                                                     class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">
                                                     {{ $articles_lifestyle[0]->title }}
@@ -181,7 +181,7 @@
                                     <div class="w-full mx-auto bg-white rounded-b-lg text-gray-600 body-font">
 
                                         <div class="flex relative py-2 items-center border-t w-full mx-auto">
-                                            <a href="">
+                                            <a href="{{ route('article.show', $article) }}">
                                                 <div class="flex-grow flex items-center flex-row md:px-4 px-4">
                                                     <div
                                                         class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 my-auto text-indigo-500 rounded-md inline-flex items-center justify-center">
@@ -212,7 +212,6 @@
 
                     {{-- kategori hiburan --}}
 
-                    @if (empty($articles_hiburan) || $video_hiburan)
                     <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                         <div class="w-full h-2 rounded-t-md bg-pink-500"></div>
                         {{-- link kategori --}}
@@ -252,7 +251,7 @@
                                     @else
                                     <img class="h-49 rounded w-full object-cover object-center mb-6"
                                         src="{{ Storage::url($articles_hiburan[0]->thumbnail->url) }}" alt="content">
-                                    <a href="#" class="hover:underline">
+                                    <a href="{{ route('article.show', $articles_hiburan[0]) }}" class="hover:underline">
                                         <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">
                                             {{ $articles_hiburan[0]->title }}
                                         </h2>
@@ -271,7 +270,7 @@
                             <div class="w-full mx-auto bg-white rounded-b-lg text-gray-600 body-font">
 
                                 <div class="flex relative py-2 items-center border-t w-full mx-auto">
-                                    <a href="">
+                                    <a href="{{ route('article.show', $article) }}">
                                         <div class="flex-grow flex items-center flex-row md:px-4 px-4">
                                             <div
                                                 class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 my-auto text-indigo-500 rounded-md inline-flex items-center justify-center">
@@ -297,11 +296,9 @@
 
             </div>
         </div>
-        @endif
 
         {{-- kategori teknologi --}}
 
-        @if (empty($articles_teknologi) || $video_teknologi)
         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
             <div class="w-full h-2 rounded-t-md bg-green-500"></div>
             {{-- link kategori --}}
@@ -340,7 +337,7 @@
                         @else
                         <img class="h-49 rounded w-full object-cover object-center mb-6"
                             src="{{ Storage::url($articles_teknologi[0]->thumbnail->url) }}" alt="content">
-                        <a href="#" class="hover:underline">
+                        <a href="{{ route('article.show', $articles_teknologi[0]) }}" class="hover:underline">
                             <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">
                                 {{ $articles_teknologi[0]->title }}
                             </h2>
@@ -359,7 +356,7 @@
                 <div class="w-full mx-auto bg-white rounded-b-lg text-gray-600 body-font">
 
                     <div class="flex relative py-2 items-center border-t w-full mx-auto">
-                        <a href="">
+                        <a href="{{ route('article.show', $article) }}">
                             <div class="flex-grow flex items-center flex-row md:px-4 px-4">
                                 <div
                                     class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 my-auto text-indigo-500 rounded-md inline-flex items-center justify-center">
@@ -383,7 +380,6 @@
         @endforeach
         </div>
         </div>
-        @endif
 
         {{-- kategori explore --}}
 
@@ -425,7 +421,7 @@
                         @else
                         <img class="h-49 rounded w-full object-cover object-center mb-6"
                             src="{{ Storage::url($articles_explore[0]->thumbnail->url) }}" alt="content">
-                        <a href="#" class="hover:underline">
+                        <a href="{{ route('article.show', $articles_explore[0]) }}" class="hover:underline">
                             <h2 class="duration-700 text-2xl text-gray-800 font-bold title-font mb-2">
                                 {{ $articles_explore[0]->title }}
                             </h2>
@@ -444,7 +440,7 @@
                 <div class="w-full mx-auto bg-white rounded-b-lg text-gray-600 body-font">
 
                     <div class="flex relative py-2 items-center border-t w-full mx-auto">
-                        <a href="">
+                        <a href="{{ route('article.show', $article) }}">
                             <div class="flex-grow flex items-center flex-row md:px-4 px-4">
                                 <div
                                     class="flex-shrink-0 w-24 h-24 my-auto bg-indigo-100 my-auto text-indigo-500 rounded-md inline-flex items-center justify-center">
@@ -480,10 +476,10 @@
         </div>
 
         {{-- 1/4 sidebar  --}}
-        <div class="w-full xl:w-1/4 py-7 px-5">
+        <div class="w-full xl:w-1/4 px-5">
             {{-- <input type="text" id="" name="" placeholder="Search . ."
             class="px-4 py-2 shadow-lg w-full bg-white rounded-lg border-none focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"> --}}
-            <div class="my-5">
+            <div class="mb-5 mt-2">
                 <div class="gradient rounded-lg py-2 px-4 shadow-lg text-gray-100 font-bold text-2xl text-center">
                     Recents Posts
                 </div>
