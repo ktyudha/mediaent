@@ -119,8 +119,7 @@
                         <div class="w-full p-4 md:p-2 group flex flex-wrap sm:flex-col md:flex-col lg:flex-row">
 
                             {{-- kategori lifestyle --}}
-
-                            @if (empty($articles_lifestyle) || $video_lifestyle)
+                            @if ($articles_lifestyle->isNotEmpty() || $video_lifestyle)
                             <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                                 <div class="w-full h-2 rounded-t-md bg-blue-500"></div>
                                 {{-- link kategori --}}
@@ -211,7 +210,7 @@
                     @endif
 
                     {{-- kategori hiburan --}}
-
+                    @if ($articles_hiburan->isNotEmpty() || $video_hiburan)
                     <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
                         <div class="w-full h-2 rounded-t-md bg-pink-500"></div>
                         {{-- link kategori --}}
@@ -296,9 +295,10 @@
 
             </div>
         </div>
+        @endif
 
         {{-- kategori teknologi --}}
-
+        @if ($articles_teknologi->isNotEmpty() || $video_teknologi)
         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
             <div class="w-full h-2 rounded-t-md bg-green-500"></div>
             {{-- link kategori --}}
@@ -380,10 +380,10 @@
         @endforeach
         </div>
         </div>
+        @endif
 
         {{-- kategori explore --}}
-
-        @if (empty($articles_explore) || $video_explore)
+        @if ($articles_explore->isNotEmpty() || $video_explore)
         <div class="xl:w-1/2 sm:w-full lg:w-1/2 w-full px-2 pb-5">
             <div class="w-full h-2 rounded-t-md bg-yellow-500"></div>
             {{-- link kategori --}}
