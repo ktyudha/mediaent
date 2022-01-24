@@ -8,15 +8,12 @@ var toToggle = document.querySelectorAll(".toggleColour");
 var navlogo = document.getElementById("navlogo");
 var navtitle = document.getElementById("navtitle");
 var navbody = document.getElementById("navbody");
-var btn_selengkapnya = document.getElementById("btn-selengkapnya");
 
 document.addEventListener("scroll", function() {
     /*Apply classes for slide in bar*/
     scrollpos = window.scrollY;
 
     if (scrollpos > 10) {
-        btn_selengkapnya.classList.remove("gradient");
-        btn_selengkapnya.classList.add("hover-gradient");
         header
             .classList
             .add("bg-white");
@@ -250,5 +247,5 @@ function checkParent(t, elm) {
     scrollbar: {
         el: '.swiper-scrollbar',
     },
-})
+});
 </script>

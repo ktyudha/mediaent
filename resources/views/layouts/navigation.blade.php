@@ -1,4 +1,4 @@
-<div class="leading-normal tracking-normal text-white gradient rounded-b-3xl"
+{{-- <div class="leading-normal tracking-normal text-white gradient rounded-b-3xl"
     style="font-family: 'Source Sans Pro', sans-serif;">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/tailwind.css">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
@@ -127,8 +127,10 @@
         </div>
         <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
     </nav>
+</div> --}}
 
-    <script>
+
+{{-- <script>
         var scrollpos = window.scrollY;
         var header = document.getElementById("header");
         var navcontent = document.getElementById("nav-content");
@@ -355,4 +357,4 @@
             }
             return false;
         }
-    </script>
+    </script> --}}

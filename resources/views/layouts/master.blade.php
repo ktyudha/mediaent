@@ -2,66 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>
-        MediaEnt
-    </title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
-    <link rel="stylesheet" href="carousel.css">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>
+		MediaEnt
+	</title>
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
 
-    <style>
-        .gradient {
-            background: linear-gradient(90deg, #037e9c 0%, #064ca7 100%);
-        }
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 
-        .hover-gradient {
-            background: linear-gradient(90deg, #064ca7 0%, #037e9c 100%);
-        }
+	{{-- carousel --}}
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
-        .example-slide {
-            align-items: center;
-            background-color: #666;
-            color: #999;
-            display: flex;
-            font-size: 1.5rem;
-            justify-content: center;
-            min-height: 10rem;
-        }
-    </style>
-
-    <script src="tailwind.config.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="carousel.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-
-    {{-- carousel --}}
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Roboto&display=swap" rel="stylesheet">
-
+	<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
-    {{-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Home') }}
-    </h2>
-    </x-slot> --}}
+<body class="bg-gray-100">
+	@include('layouts.components.navbar')
 
- @yield('konten')
+	@yield('content')
 
-        <!--Footer-->
-        <footer>
+	@include('layouts.components.footer')
+
+	{{-- <footer>
             <div class="gradient h-6 w-full rounded-t"></div>
             <div class="lg:px-48 px-6 bg-gray-800">
                 <div class="w-full flex flex-col md:flex-row py-6">
@@ -94,7 +63,7 @@
                         <p class="uppercase  text-gray-300 text-2xl font-bold md:mb-6">Social</p>
                         <ul class="list-reset mb-6">
                             <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                                <a href="https://ent.pens.ac.id/" 
+                                <a href="https://ent.pens.ac.id/"
                                     class="text-xl duration-700 no-underline text-gray-400 hover:text-pink-500">ENT PENS</a>
                             </li>
 
@@ -115,23 +84,35 @@
                 </div>
             </div>
            <div class="py-2 bg-gray-900 text-gray-400 text-center text-md">Copyright &copy 2021 MediaEnt. All Rights Reserved</div>
-        </footer>
-        <!-- Vue JS -->
+        </footer> --}}
 
-        <script>
-            export default {
-            data() {
-                return {
-                    data: ['<div class="example-slide">Slide 1</div>', '<div class="example-slide">Slide 2</div>', '<div class="example-slide">Slide 3</div>']
-                };
-            }
-        };
-        </script>
-        <!-- end Vue JS -->
+	{{-- script --}}
 
-        {{-- script --}}
-        @include('layouts.script')
-    </body>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+	 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script>
+	 $(document).ready(function() {
+        "use strict";
 
+        var c,
+        currentScrollTop = 0,
+        navbar = $("header");
+
+        $(window).scroll(function() {
+        var a = $(window).scrollTop();
+        var b = navbar.height();
+
+        currentScrollTop = a;
+
+        if (c < currentScrollTop && a > b + b) {
+            navbar.addClass("scrollUp");
+        } else if (c > currentScrollTop && !(a <= b)) {
+            navbar.removeClass("scrollUp");
+        }
+            c = currentScrollTop;
+        });
+	 });
+	</script>
+</body>
 
 </html>

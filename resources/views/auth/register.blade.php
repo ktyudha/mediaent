@@ -1,18 +1,16 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <img src="{{ asset('ent.png') }}" />
+	<x-auth-card>
+		<x-slot name="logo">
+			<a href="/">
+				<img src="{{ asset('ent.png') }}" />
+			</a>
+		</x-slot>
 
-            </a>
-        </x-slot>
-
-        <!-- Validation Errors -->
-        {{-- <x-auth-validation-errors class="mb-4" :errors="$errors" /> --}}
-        <div class="text-black">
+		<!-- Validation Errors -->
+		{{-- <div class="text-black">
             <form method="POST" action="{{ route('register') }}" novalidate>
                 @csrf
-                {{-- title --}}
+
                 <div class="items-center text-center text-xl font-bold">
                     REGISTER
                 </div>
@@ -60,6 +58,101 @@
                     </x-button>
                 </div>
             </form>
-        </div>
-    </x-auth-card>
+        </div> --}}
+		<div>
+			<div class="m-auto py-12 xl:w-10/12">
+				<div class="block space-y-4 text-center">
+					<a class="items-center" href="">
+						<img src="{{ asset('ent.png') }}" class="m-auto w-16 items-center" alt="ENT" />
+					</a>
+					<p class="font-medium text-lg text-gray-600">Register Here</p>
+				</div>
+
+				<form method="POST" action="{{ route('register') }}" class="space-y-6 py-6">
+					<div>
+						<input type="text" placeholder="Name"
+							class="
+                                w-full
+                                py-3
+                                px-6
+                                ring-1 ring-gray-300
+                                rounded-xl
+                                placeholder-gray-600
+                                bg-transparent
+                                transition
+                                disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400
+                                @error('name')
+                                    invalid:ring-red-400
+                                    focus:invalid:outline-none
+                                @enderror
+                            "
+							name="name" value="{{ old('name') }}" />
+                            @error('name')
+                                <span class="ml-2 text-red-500">{{ $message }}</span>
+                            @enderror
+					</div>
+
+					<div>
+						<input type="email" placeholder="Email"
+							class="
+                                w-full
+                                py-3
+                                px-6
+                                ring-1 ring-gray-300
+                                rounded-xl
+                                placeholder-gray-600
+                                bg-transparent
+                                transition
+                                disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400
+                                invalid:ring-red-400
+                                focus:invalid:outline-none
+                            "
+							name="email" value="{{ old('email') }}" />
+					</div>
+
+					<div>
+						<input type="password" placeholder="Password"
+							class="
+                                    w-full
+                                    py-3
+                                    px-6
+                                    ring-1 ring-gray-300
+                                    rounded-xl
+                                    placeholder-gray-600
+                                    bg-transparent
+                                    transition
+                                    disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400
+                                "
+							name="password" autocomplete="off" required />
+					</div>
+
+					<div>
+						<input type="password" placeholder="Confirm Password"
+							class="
+								w-full
+								py-3
+								px-6
+								ring-1 ring-gray-300
+								rounded-xl
+								placeholder-gray-600
+								bg-transparent
+								transition
+								disabled:ring-gray-200 disabled:bg-gray-100 disabled:placeholder-gray-400
+							"
+							name="password_confirmation" autocomplete="off" required />
+					</div>
+
+					<button type="submit"
+						class="w-full px-6 py-3 rounded-xl bg-sky-500 transition hover:bg-sky-600 focus:bg-sky-600 active:bg-sky-800">
+						Register
+					</button>
+				</form>
+
+				<div class="text-center text-sm py-4">
+					<span>Have an account?</span>
+					<a href="{{ route('login') }}" class="text-blue-400">Login here</a>
+				</div>
+			</div>
+		</div>
+	</x-auth-card>
 </x-guest-layout>
