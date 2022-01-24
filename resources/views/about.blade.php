@@ -96,7 +96,7 @@
         <!--Left Col-->
         <div class="ml-0 mt-5 flex flex-col w-full md:w-1/3 justify-center items-start text-center md:text-left">
             <div
-                class="bg-white mb-2 ml-5 sm:ml-10 sm:mr-3 mr-5 max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md">
+                class="bg-white mb-2 ml-5 sm:ml-10 sm:mr-3 mr-5 max-w-2xl mx-auto overflow-hidden rounded-lg shadow-md">
                 <img class="object-cover w-full h-41" src="gen15.png" alt="ENT Crews">
                 <div class="p-6">
                     <div>

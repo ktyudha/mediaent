@@ -32,7 +32,7 @@
                     <p class="text-white font-extrabold text-3xl md:text-5xl">
                         NEW ARTIKEL
                     </p>
-                    <p class="text-xl md:text-2xl text-gray-200">Of {{ $articles[0]->category->name }}</p>
+                    <p class="text-xl md:text-2xl text-gray-200">Of {{ request()->route('category')->name }}</p>
                 </div>
             </div>
         </div>
@@ -40,10 +40,11 @@
         <div class="px-4 md:px-0 max-w-6xl mx-auto -mt-32">
             <div class="mx-0 sm:mx-6">
                 <div class="w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
-
                     <!--Lead Card-->
+                    @if ($articles->isNotEmpty())
                     <div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
-                        <a href="post.html" class="flex flex-wrap no-underline hover:no-underline">
+                        <a href="{{ route('article.show', $articles[0]) }}"
+                            class="flex flex-wrap no-underline hover:no-underline">
                             <div class="w-full md:w-2/3 rounded-t">
                                 <img src="{{ Storage::url($articles[0]->thumbnail->url) }}"
                                     class="h-full w-full shadow object-cover">
@@ -55,9 +56,7 @@
                                     <div class="tracking-widest w-full font-bold text-xl text-gray-900 px-6">
                                         {{ $articles[0]->title }}</div>
                                     <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Aliquam at ip Aliquam at ipsum eu nunc commodo
-                                        posuere et sit amet ligula.
+                                        {{ $articles[0]->description }}
                                     </p>
                                 </div>
 
@@ -81,6 +80,7 @@
                             </div>
                         </a>
                     </div>
+                    @endif
 
                     <!--Posts Container-->
                     <div class="flex flex-wrap justify-between pt-12 -mx-6">
@@ -177,7 +177,8 @@
                         <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
                             <iframe width="560" height="315" src="{{ $video->url }}" title="{{ $video->title }}">
                                 frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+                                picture-in-picture"
                                 allowfullscreen></iframe>
                         </div>
                         @endforeach
