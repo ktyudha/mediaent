@@ -8,6 +8,7 @@
     <meta name="description" content="">
 
     <!-- Tailwind -->
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');

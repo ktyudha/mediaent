@@ -24,14 +24,14 @@
 							class="origin-top-right absolute mt-2 w-52 shadow-lg bg-accent ring-1 ring-black ring-opacity-5 focus:outline-none"
 							role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
 							<div class="py-1" role="none">
-								<a href="category.html" class="text-accent3 hover:text-gray-400 block px-4 py-2 text-sm" role="menuitem"
-									tabindex="-1" id="menu-item-0">category 1</a>
-								<a href="category.html" class="text-accent3 hover:text-gray-400 block px-4 py-2 text-sm" role="menuitem"
-									tabindex="-1" id="menu-item-1">category 2</a>
-								<a href="category.html" class="text-accent3 hover:text-gray-400 block px-4 py-2 text-sm" role="menuitem"
-									tabindex="-1" id="menu-item-2">category 3</a>
-								<a href="category.html" class="text-accent3 hover:text-gray-400 block px-4 py-2 text-sm" role="menuitem"
-									tabindex="-1" id="menu-item-2">category 4</a>
+								<a href="{{ route('category.show', 1) }}" class="text-accent3 hover:text-gray-400 block px-4 py-2 text-sm" role="menuitem"
+									tabindex="-1" id="menu-item-0">Lifestyle</a>
+								<a href="{{ route('category.show', 2) }}" class="text-accent3 hover:text-gray-400 block px-4 py-2 text-sm" role="menuitem"
+									tabindex="-1" id="menu-item-1">Hiburan</a>
+								<a href="{{ route('category.show', 3) }}" class="text-accent3 hover:text-gray-400 block px-4 py-2 text-sm" role="menuitem"
+									tabindex="-1" id="menu-item-2">Teknologi</a>
+								<a href="{{ route('category.show', 4) }}" class="text-accent3 hover:text-gray-400 block px-4 py-2 text-sm" role="menuitem"
+									tabindex="-1" id="menu-item-2">Explore</a>
 							</div>
 						</div>
 					</div>
@@ -40,7 +40,7 @@
 					<a href="videos.html" class="font-semibold text-accent3 hover:text-gray-800">Videos</a>
 				</li>
 				<li>
-					<a href="about.html" class="font-semibold text-accent3 hover:text-gray-800">About</a>
+					<a href="{{ route('about') }}" class="font-semibold text-accent3 hover:text-gray-800">About</a>
 				</li>
 			</ul>
 			<div class="hidden md:flex space-x-3">

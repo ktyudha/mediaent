@@ -57,8 +57,8 @@
 										</div>
 										<div class="flex items-center">
 											<div class="text-sm">
-												<span class="text-gray-900 font-semibold leading-none">Categories</span>
-												<span class="mx-2 text-gray-600">Aug 18</span>
+												<span class="text-gray-900 font-semibold leading-none">{{ $item->category->name }}</span>
+												<span class="mx-2 text-gray-600"> {{ $item->created_at }}</span>
 											</div>
 										</div>
 									</div>

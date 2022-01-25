@@ -1,195 +1,160 @@
 @extends('layouts.master')
-@section('konten')
+@section('content')
 
 <x-app-layout>
 
     <!--Left Col-->
-    <div class="ml-0 flex flex-col w-full md:w-1/2 justify-center items-start text-center md:text-left">
-
-    </div>
-    <!--Right Col-->
-    <div class="text-white md:w-1/2 md:text-left text-center md:overflow-auto h-90">
-        <div>
-            <a href="#" class="block text-3xl font-semibold "></a>
-            <p class="text-sm"></p>
-            <div class="mx-auto">
-                <div class="font-bold text-white text-1xl">
-                    <button id="btn-selengkapnya" class="" type="button" style="transition: all .15s ease"
-                        onclick="toggleModal('modal-id')">
-                    </button>
-                </div>
+    <main class="container flex flex-col min-h-screen mt-36 md:mt-40">
+        <div class="py-7">
+            <div class="py-5 border-b-4 mx-auto mb-8">
+                <h2 class="font-bold text-2xl text-center tracking-widest uppercase">{{ request()->route('category')->name }}</h2>
             </div>
-        </div>
-    </div>
 
-    <body class="leading-normal tracking-normal text-white -m-6 gradient rounded-b-3xl"
-        style="font-family: 'Source Sans Pro', sans-serif;">
-        <div class="gradient -m-6 h-96 rounded-b-3xl">
-            <div class="w-full m-0 p-0 bg-bottom"
-                style="background-image:url('cover.jpg'); height: 60vh; max-height:460px;">
-                <div class="mx-auto pt-16 md:pt-32 text-center break-normal">
-                    <!--Title-->
-                    <p class="text-white font-extrabold text-3xl md:text-5xl">
-                        NEW ARTIKEL
-                    </p>
-                    <p class="text-xl md:text-2xl text-gray-200">Of {{ request()->route('category')->name }}</p>
+            <section class="flex flex-col md:flex-row justify-center gap-10 pb-10 border-b-4">
+
+                <div class="w-full space-y-3">
+                    <h3 class="text-center font-semibold text-xl uppercase tracking-wide">Latest Article</h3>
+                <a href="{{ route('article.show', $articles[0]) }}">
+                    <div class="h-96 w-full bg-cover bg-center flex justify-center items-center"
+                    style="background-image: url('https://ent.pens.ac.id{{ Storage::url($articles[0]->thumbnail->url) }}');">
+                        <h3 class="text-3xl font-semibold text-slate-400">  {{ $articles[0]->title }}</h3>
+                    </div>
+                </a>
                 </div>
-            </div>
-        </div>
-        <!--Container-->
-        <div class="px-4 md:px-0 max-w-6xl mx-auto -mt-32">
-            <div class="mx-0 sm:mx-6">
-                <div class="w-full text-xl md:text-2xl text-gray-800 leading-normal rounded-t">
-                    <!--Lead Card-->
-                    @if ($articles->isNotEmpty())
-                    <div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
-                        <a href="{{ route('article.show', $articles[0]) }}"
-                            class="flex flex-wrap no-underline hover:no-underline">
-                            <div class="w-full md:w-2/3 rounded-t">
-                                <img src="{{ Storage::url($articles[0]->thumbnail->url) }}"
-                                    class="h-full w-full shadow object-cover">
-                            </div>
 
-                            <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
-                                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                                    <p class="uppercase w-full text-gray-600 text-xs md:text-sm pt-6 px-6">surabaya</p>
-                                    <div class="tracking-widest w-full font-bold text-xl text-gray-900 px-6">
-                                        {{ $articles[0]->title }}</div>
-                                    <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                        {{ $articles[0]->description }}
-                                    </p>
+
+                <div class="w-full space-y-3">
+
+                    <h3 class="text-center font-semibold text-xl uppercase tracking-wide">Video on Youtube</h3>
+                    <a href="">
+                    @foreach ($videos as $video)
+                        <iframe width="520" height="383" src="{{ $video->url }}" title="{{ $video->title }}">
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
+                            picture-in-picture"
+                            allowfullscreen></iframe>
+                    @endforeach
+                </div>
+            </a>
+            </section>
+
+            <div class="flex flex-col lg:flex-row justify-between items-start space-x-12 mb-4 py-8">
+                <section class="w-full lg:w-full">
+                    <div class="py-2 mx-auto mb-8">
+                        <h2 class="font-bold text-2xl text-center tracking-widest uppercase">Articles</h2>
+                    </div>
+
+                    <div class="w-9/12 flex flex-col space-y-5 mx-auto">
+                        <!--Card 1-->
+                        <a href="preview.html">
+                            <div class="w-full lg:max-w-full lg:flex">
+                                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden flex justify-center items-center bg-slate-300">
+                                    <h4>Image placeholder</h4>
                                 </div>
+                                <div class="p-4 flex flex-col justify-between leading-normal">
+                                    <div class="mb-8">
+                                        <div class="text-gray-900 font-bold text-xl mb-2">Title</div>
+                                        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="text-sm">
+                                            <span class="text-gray-900 font-semibold leading-none">Categories</span>
+                                            <span class="mx-2 text-gray-600">Aug 18</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
 
-                                <div
-                                    class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                                    <div class="flex items-center justify-between">
-                                        <a href="{{ route('article.show', $articles[0]) }}">
-                                            <button id="btn-selengkapnya"
-                                                class="gradient hover:bg-gray-700 hover:text-indigo-300 inline-flex mx-auto lg:mx-0 hover:no-underline text-gray-300 font-bold rounded-full lg:mt-0 text-center py-1 px-3 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                                                Readmore
-                                                <svg class="w-5 h-5 ml-2 items-center my-auto" viewbox="0 0 24 24"
-                                                    stroke="currentColor" stroke-width="2" fill="none"
-                                                    stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M5 12h14"></path>
-                                                    <path d="M12 5l7 7-7 7"></path>
-                                                </svg>
-                                            </button>
-                                        </a>
+                        <!--Card 1-->
+                        <a href="preview.html">
+                            <div class="w-full lg:max-w-full lg:flex">
+                                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden flex justify-center items-center bg-slate-300">
+                                    <h4>Image placeholder</h4>
+                                </div>
+                                <div class="p-4 flex flex-col justify-between leading-normal">
+                                    <div class="mb-8">
+                                        <div class="text-gray-900 font-bold text-xl mb-2">Title</div>
+                                        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="text-sm">
+                                            <span class="text-gray-900 font-semibold leading-none">Categories</span>
+                                            <span class="mx-2 text-gray-600">Aug 18</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!--Card 1-->
+                        <a href="preview.html">
+                            <div class="w-full lg:max-w-full lg:flex">
+                                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden flex justify-center items-center bg-slate-300">
+                                    <h4>Image placeholder</h4>
+                                </div>
+                                <div class="p-4 flex flex-col justify-between leading-normal">
+                                    <div class="mb-8">
+                                        <div class="text-gray-900 font-bold text-xl mb-2">Title</div>
+                                        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="text-sm">
+                                            <span class="text-gray-900 font-semibold leading-none">Categories</span>
+                                            <span class="mx-2 text-gray-600">Aug 18</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!--Card 1-->
+                        <a href="preview.html">
+                            <div class="w-full lg:max-w-full lg:flex">
+                                <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden flex justify-center items-center bg-slate-300">
+                                    <h4>Image placeholder</h4>
+                                </div>
+                                <div class="p-4 flex flex-col justify-between leading-normal">
+                                    <div class="mb-8">
+                                        <div class="text-gray-900 font-bold text-xl mb-2">Title</div>
+                                        <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, Nonea! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div class="text-sm">
+                                            <span class="text-gray-900 font-semibold leading-none">Categories</span>
+                                            <span class="mx-2 text-gray-600">Aug 18</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    @endif
 
-                    <!--Posts Container-->
-                    <div class="flex flex-wrap justify-between pt-12 -mx-6">
-
-                        @foreach ($articles->slice(1) as $article)
-                        <!--1/3 col -->
-                        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-                            <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                                <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                    <img src="{{ Storage::url($article->thumbnail->url) }}"
-                                        class="h-64 w-full object-cover rounded-t pb-6">
-                                    <p class="tracking-widest uppercase w-full text-gray-600 text-xs md:text-sm px-6">
-                                        surabaya</p>
-                                    <div class="w-full font-bold text-xl text-gray-900 px-6">{{ $article->title }}</div>
-                                    <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. ipsum dolor sit amet,
-                                        consectetur adipiscing elit. Aliquam at ip Aliquam at ipsum eu nunc commodo
-                                        posuere et sit amet ligula.
-                                    </p>
-                                </a>
-                            </div>
-                            <div
-                                class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                                <div class="flex items-center justify-between">
-                                    <a href="{{ route('article.show', $article) }}">
-                                        <button id="btn-selengkapnya"
-                                            class="gradient hover:bg-gray-700 hover:text-indigo-300 inline-flex mx-auto lg:mx-0 hover:no-underline text-gray-300 font-bold rounded-full lg:mt-0 text-center py-1 px-3 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                                            Readmore
-                                            <svg class="w-5 h-5 ml-2 items-center my-auto" viewbox="0 0 24 24"
-                                                stroke="currentColor" stroke-width="2" fill="none"
-                                                stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M5 12h14"></path>
-                                                <path d="M12 5l7 7-7 7"></path>
-                                            </svg>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach
-
-                        <!-- yang paling lama sementara di comment -->
-
-                        <!--1/2 col -->
-                        {{-- <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
-                                <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                        <img src="https://source.unsplash.com/collection/3657445/800x600" class="h-full w-full rounded-t pb-6">
-                                        <p class="uppercase w-full text-gray-600 text-xs md:text-sm px-6">surabaya</p>
-                                        <div class="w-full font-bold text-xl text-gray-900 px-6">Disini 2 Judulnya dari yang paling lama Ya Ron</div>
-                                        <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                            Lorem ipsum eu nunc commodo posuere et sit amet ligula.
-                                        </p>
-                                    </a>
-                                </div>
-                                <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                                    <div class="flex items-center justify-between">
-                                        <img class="w-8 h-8 rounded-full mr-4 avatar" data-tippy-content="Author Name" src="http://i.pravatar.cc/300" alt="Avatar of Author">
-                                        <p class="text-gray-600 text-xs md:text-sm">READ MORE</p>
-                                    </div>
-                                </div>
-                            </div> --}}
-
-                        <!--1/2 col -->
-                        {{-- <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
-                                <div class="flex-1 flex-row bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
-                                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                                        <img src="https://source.unsplash.com/collection/764827/800x600" class="h-full w-full rounded-t pb-6">
-                                        <p class="uppercase w-full text-gray-600 text-xs md:text-sm px-6">surabaya</p>
-                                        <div class="w-full font-bold text-xl text-gray-900 px-6">Disini 2 Judulnya dari yang paling lama Ya Ron</div>
-                                        <p class="text-gray-800 font-serif text-base px-6 mb-5">
-                                            Lorem ipsum eu nunc commodo posuere et sit amet ligula.
-                                        </p>
-                                    </a>
-                                </div>
-                                <div class="flex-none mt-auto bg-white rounded-b rounded-t-none overflow-hidden shadow-lg p-6">
-                                    <div class="flex items-center justify-between">
-                                        <p class="text-gray-600 text-xs md:text-sm">READ MORE</p>
-                                    </div>
-                                </div>
-                            </div> --}}
-                    </div>
-                    <!--/ Post Content-->
-
-                </div>
-                @if ($videos)
-                <div class="my-3">
-                    <h1 class="text-white font-extrabold text-3xl md:text-5xl">Video</h1>
-                    <div class="flex flex-wrap justify-between -mx-6">
-
-                        {{-- @foreach ($articles->slice(1) as $article) --}}
-                        <!--1/3 col -->
-                        @foreach ($videos as $video)
-                        <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
-                            <iframe width="560" height="315" src="{{ $video->url }}" title="{{ $video->title }}">
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;
-                                picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
-                        @endforeach
-
-                        {{-- @endforeach --}}
-                    </div>
-                </div>
-                @endif
+                    <!-- pagination example -->
+                    <nav class="w-full py-7 inline-flex justify-center rounded-md" aria-label="Pagination">
+                        <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Previous</span>
+                            <!-- Heroicon name: solid/chevron-left -->
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                        <!-- Current: "z-10 bg-indigo-50 border-indigo-500 text-indigo-600", Default: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50" -->
+                        <a href="#" aria-current="page" class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium"> 1 </a>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"> 2 </a>
+                        <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium"> 3 </a>
+                        <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">Next</span>
+                            <!-- Heroicon name: solid/chevron-right -->
+                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </nav>
+                    <!-- end of pagination example -->
+                </section>
             </div>
         </div>
-    </body>
-    </div>
+    </main>
 </x-app-layout>
 @endsection
