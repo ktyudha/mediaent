@@ -4,6 +4,10 @@
     </div>
     <div
         class="w-full sm:max-w-md">
+        <a href="/" class="flex justify-center mb-4">
+            <img src="{{ asset('ent.png') }}" class="w-16"/>
+        </a>
+
         {{ $slot }}
     </div>
 </div>

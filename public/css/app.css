@@ -781,6 +781,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .top-60{
   top: 15rem;
 }
+.bottom-5{
+  bottom: 1.25rem;
+}
 .z-10{
   z-index: 10;
 }
@@ -993,6 +996,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .aspect-square{
   aspect-ratio: 1 / 1;
 }
+.aspect-video{
+  aspect-ratio: 16 / 9;
+}
 .h-96{
   height: 24rem;
 }
@@ -1049,6 +1055,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-auto{
   height: auto;
+}
+.h-fit{
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.h-9{
+  height: 2.25rem;
 }
 .min-h-screen{
   min-height: 100vh;
@@ -1314,6 +1328,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-space-x-reverse: 0;
   margin-right: calc(0.75rem * var(--tw-space-x-reverse));
   margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.space-y-10 > :not([hidden]) ~ :not([hidden]){
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 .divide-x-2 > :not([hidden]) ~ :not([hidden]){
   --tw-divide-x-reverse: 0;
@@ -1647,6 +1666,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-16{
   padding: 4rem;
+}
+.p-12{
+  padding: 3rem;
+}
+.p-3{
+  padding: 0.75rem;
 }
 .py-7{
   padding-top: 1.75rem;
@@ -2039,6 +2064,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(250 245 239 / var(--tw-text-opacity));
 }
+.text-slate-100{
+  --tw-text-opacity: 1;
+  color: rgb(241 245 249 / var(--tw-text-opacity));
+}
 .underline{
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -2130,6 +2159,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .filter{
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+.backdrop-brightness-75{
+  --tw-backdrop-brightness: brightness(.75);
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+          backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 .transition{
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;

@@ -7,7 +7,7 @@
 			</a>
 			<ul class="hidden md:flex items-center gap-7">
 				<li>
-					<a href="index.html" class="font-semibold text-accent3 hover:text-gray-800">Home</a>
+					<a href="{{ url('/') }}" class="font-semibold text-accent3 hover:text-gray-800">Home</a>
 				</li>
 				<li class="flex items-center">
 					<div x-data="{isOpen: false}" @click.away="isOpen = false">
@@ -78,7 +78,7 @@
 									@csrf
 
 									<x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
-																																						this.closest('form').submit();">
+                                        this.closest('form').submit();">
 										{{ __('Log out') }}
 									</x-dropdown-link>
 								</form>
@@ -102,7 +102,7 @@
 			<!-- navbar wrapper -->
 			<div class="md:hidden w-full h-auto p-5 text-center items-center" x-show="isOpen" @click.away="isOpen = false">
 				<div class="flex flex-col space-y-6 items-center text-center">
-					<a href="index.html" class="py-3 font-semibold text-accent hover:text-gray-800">Home</a>
+					<a href="{{ url('/') }}" class="py-3 font-semibold text-accent hover:text-gray-800">Home</a>
 					<div x-data="{isOpen: false}" @click.away="isOpen = false">
 						<div class="flex items-center text-center">
 							<a href="index.html" class="py-3 font-semibold text-accent hover:text-gray-800">Article</a>
