@@ -37,7 +37,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="videos.html" class="font-semibold text-accent3 hover:text-gray-800">Videos</a>
+					<a href="{{ route('video') }}" class="font-semibold text-accent3 hover:text-gray-800">Videos</a>
 				</li>
 				<li>
 					<a href="{{ route('about') }}" class="font-semibold text-accent3 hover:text-gray-800">About</a>

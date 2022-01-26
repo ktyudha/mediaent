@@ -105,8 +105,12 @@
 							<h2 class="font-bold text-2xl tracking-widest uppercase">Latest video on youtube</h2>
 						</div>
 
-						<div class="h-80 w-full bg-slate-300 flex justify-center items-center">
-							<h3 class="text-3xl font-semibold text-slate-400">Latest video</h3>
+						<div class="h-96 w-full  flex justify-center items-center">
+							@foreach ($latest_videos as $vid)
+                            <iframe src="{{ $vid->url }}" title="{{ $vid->title }}" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                                class="w-full aspect-video"></iframe
+                            @endforeach
 						</div>
 					</section>
 					<!-- end of latest video on youtube -->

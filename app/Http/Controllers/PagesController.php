@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\{Article, Category};
+use App\Models\{Article, Category, Video};
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -11,10 +11,12 @@ class PagesController extends Controller
     {
         $latest_articles = Article::with('category', 'thumbnail')->latest()->take(5)->get();
         $articles = Article::latest()->paginate(10);
+        $latest_videos = Video::with('category')->latest()->take(2)->get();
 
         return view('home', compact([
             'latest_articles',
-            'articles'
+            'articles',
+            'latest_videos'
         ]));
     }
 

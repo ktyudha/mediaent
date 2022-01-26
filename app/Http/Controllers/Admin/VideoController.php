@@ -21,6 +21,16 @@ class VideoController extends Controller
 
         return view('admin.video.index', compact('videos'));
     }
+    public function index2()
+    {
+        $videos = Video::all();
+        $latest_videos = Video::with('category')->latest()->take(1)->get();
+
+        return view('video', compact([
+            'videos',
+            'latest_videos'
+        ]));
+    }
 
     /**
      * Show the form for creating a new resource.

@@ -113,7 +113,7 @@
 												<img src="assets/images/Foto/lily.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Lily</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -140,7 +140,7 @@
 												<img src="assets/images/Foto/rizky.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Rizky</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -167,7 +167,7 @@
 												<img src="assets/images/Foto/johan.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Johan</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -194,7 +194,7 @@
 												<img src="assets/images/Foto/karina.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Karina</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -250,7 +250,7 @@
 												<img src="assets/images/Foto/yoga.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Yoga</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -277,7 +277,7 @@
 												<img src="assets/images/Foto/rasyid.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Rasyid</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -304,7 +304,7 @@
 												<img src="assets/images/Foto/diva.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Diva</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -360,7 +360,7 @@
 												<img src="assets/images/Foto/suci.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Suci</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -387,7 +387,7 @@
 												<img src="assets/images/Foto/rifda.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Rifda</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -414,7 +414,7 @@
 												<img src="assets/images/Foto/hera.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Hera</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -470,7 +470,7 @@
 												<img src="assets/images/Foto/destyo.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Destyo</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -497,7 +497,7 @@
 												<img src="assets/images/Foto/burhan.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Burhan</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -524,7 +524,7 @@
 												<img src="assets/images/Foto/iqbal.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Iqbal</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -577,10 +577,10 @@
 										<!-- person -->
 										<div class="flex flex-col justify-center space-y-6 lg:my-0">
 											<div class="w-32 aspect-square bg-slate-300 flex justify-center items-center">
-												<img src="assets/images/Foto/suci.png" alt="">
+												<img src="assets/images/Foto/althaf.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Althaf</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -607,7 +607,7 @@
 												<img src="assets/images/Foto/nabila.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Nabila</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>
@@ -634,7 +634,7 @@
 												<img src="assets/images/Foto/khoirul.png" alt="">
 											</div>
 											<div x-data="{isOpen: false}" @click.away="isOpen = false" class="w-max container mx-auto px-10">
-												<h3 class="text-center font-semibold mt-2">Name</h3>
+												<h3 class="text-center font-semibold mt-2">Khoirul</h3>
 												<button @click="isOpen = !isOpen" class="w-full">
 													<span class="text-gray-400 underline">details</span>
 												</button>

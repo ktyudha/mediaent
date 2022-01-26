@@ -32,7 +32,10 @@ class Article extends Model
     {
         return $this->morphOne(Image::class, 'imageable');
     }
-
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
     public function images()
     {
         return $this->morphMany(Image::class, 'imageable');

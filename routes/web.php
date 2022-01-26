@@ -2,9 +2,11 @@
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Video;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\Admin\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,8 @@ Route::get('/kategori', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+Route::get('/video', [VideoController::class, 'index2'])->name('video');
 
 Route::get('/coba', function () {
     return view('coba');
