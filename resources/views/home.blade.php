@@ -8,7 +8,7 @@
 				<section>
 					<div class="swiper">
 						<div class="swiper-wrapper">
-							@foreach ($articles_recent as $article)
+							@foreach ($latest_articles as $article)
 								<div class="swiper-slide bg-cover bg-center"
 									style="background-image: url('https://ent.pens.ac.id{{ Storage::url($article->thumbnail->url) }}');">
 									<div class="mx-auto pt-32 pb-0">
@@ -118,7 +118,7 @@
 						</div>
 
 						<div class="py-3 flex flex-row lg:flex-col gap-3">
-							@foreach ($articles_recent as $article)
+							@foreach ($latest_articles as $article)
 								<a href="{{ route('article.show', $article) }}">
 									<div class="lg:border-l-2 w-full lg:max-w-full lg:flex items-center gap-3">
 										<div class="flex-shrink-0 w-24 h-24">
