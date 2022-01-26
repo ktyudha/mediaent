@@ -118,7 +118,9 @@
 					<div class="pb-3">
 						<h2 class="text-lg font-semibold uppercase tracking-wide">Write comment</h2>
 
-						<form class="w-full rounded-lg mt-2">
+						<form enctype="multipart/form-data"
+                        novalidate class="w-full rounded-lg mt-2" method="POST" action="{{ route('admin.comment.store') }}" >
+                            @csrf
 							<div class="flex flex-wrap -mx-3 mb-6">
 								<div class="w-full md:w-full px-3 mb-2 mt-2">
 									<textarea

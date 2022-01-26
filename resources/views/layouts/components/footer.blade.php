@@ -16,10 +16,10 @@
             <div class="w-full px-4 md:w-1/4">
                 <h2 class="mb-2 font-bold tracking-widest text-accent">Navigation</h2>
                 <ul class="mb-8 space-y-2 text-sm list-none">
-                    <li><a href="#" class="text-accent hover:text-gray-100 p-2">Home</a></li>
-                    <li><a href="blog.html" class="text-accent hover:text-gray-100 p-2">Blog</a></li>
-                    <li><a href="" class="text-accent hover:text-gray-100 p-2">Portfolio</a></li>
-                    <li><a href="" class="text-accent hover:text-gray-100 p-2">About me</a></li>
+                    <li><a href="{{ url('/') }}" class="text-accent hover:text-gray-100 p-2">Home</a></li>
+                    <li><a href="blog.html" class="text-accent hover:text-gray-100 p-2">Article</a></li>
+                    <li><a href="{{ route('video') }}" class="text-accent hover:text-gray-100 p-2">Video</a></li>
+                    <li><a href="{{ route('about') }}" class="text-accent hover:text-gray-100 p-2">About</a></li>
                     <li><a href="" class="text-accent hover:text-gray-100 p-2">Contact</a></li>
                 </ul>
             </div>
