@@ -47,4 +47,12 @@ class Article extends Model
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+
+    public function relatedArticleByCategories()
+    {
+        return Article::whereHas('category', function ($query) {
+            $categoryIds = $this->category()->pluck('categories.id')->all();
+            $query->whereIn('categories.id', $categoryIds);
+        })->where('id', '<>', $this->id)->take(4)->get();
+    }
 }

@@ -75,20 +75,24 @@
 						</article>
 
 						<!-- next and previous post -->
-						<div class="w-full flex flex-row space-x-5 mx-auto my-20 md:mb-0">
-							<div class="text-left space-y-2">
-								<a href="#" class="font-semibold hover:text-blue-500">
-									<span>Previous Post</span>
-									<p class="font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-								</a>
-							</div>
+						<div class="w-full flex flex-row items-start space-x-5 mx-auto my-20 md:mb-0">
+                            @if ($previous)
+                                <div class="w-1/2 text-left space-y-2">
+                                    <a href="{{ $previous->slug }}" class="font-semibold hover:text-blue-500">
+                                        <span>Previous Post</span>
+                                        <p class="font-normal">{{ $previous->title }}</p>
+                                    </a>
+                                </div>
+                            @endif
 
-							<div class="text-right space-y-2">
-								<a href="#" class="font-semibold hover:text-blue-500">
-									<span>Next Post</span>
-									<p class="font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-								</a>
-							</div>
+                            @if ($next)
+                                <div class="w-1/2 text-right space-y-2">
+                                    <a href="{{ $next->slug }}" class="font-semibold hover:text-blue-500">
+                                        <span>Next Post</span>
+                                        <p class="font-normal">{{ $next->title }}</p>
+                                    </a>
+                                </div>
+                            @endif
 						</div>
 						<!-- end of next and previous post -->
 					</section>
@@ -99,14 +103,9 @@
 						<h2 class="font-semibold text-lg font-serif text-accent3">Similar posts</h2>
 
 						<div class="w-full flex flex-col space-y-2 md:space-y-4 mt-5">
-							<a href="" class="text-gray-600 hover:text-blue-500 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing
-								elit.</a>
-							<a href="" class="text-gray-600 hover:text-blue-500 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing
-								elit.</a>
-							<a href="" class="text-gray-600 hover:text-blue-500 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing
-								elit.</a>
-							<a href="" class="text-gray-600 hover:text-blue-500 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing
-								elit.</a>
+                            @foreach ($similar_articles as $similar_article)
+                                <a href="" class="text-gray-600 hover:text-blue-500 text-sm">{{ $similar_article->title }}</a>
+                            @endforeach
 						</div>
 					</div>
 					<!-- end of similar post -->

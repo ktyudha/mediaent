@@ -20,7 +20,12 @@ class PagesController extends Controller
 
     public function show(Article $article)
     {
-        return view('admin.article.show', compact('article'));
+        return view('admin.article.show', [
+            'article' => $article,
+            'next' => Article::where('id', '>', $article->id)->orderBy('id')->first(),
+			'previous' => Article::where('id', '<', $article->id)->orderBy('id', 'desc')->first(),
+            'similar_articles' => $article->relatedArticleByCategories()
+        ]);
     }
 
     public function categories(Category $category)
