@@ -144,7 +144,7 @@
 								<div class="w-full md:w-full px-3 mb-2 mt-2">
 									<textarea
 										class="bg-gray-100 border border-gray-400 leading-normal resize-none w-full h-32 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
-										name="body" placeholder="Type Your Comment" required disabled></textarea>
+										name="body" placeholder="Login to write a comment" required disabled></textarea>
 								</div>
 								<div class="w-full md:w-full flex justify-end px-3">
 									<button type="submit" class="font-medium py-2 px-5 bg-accent3 text-accent tracking-wide" disabled>
@@ -165,13 +165,11 @@
 									<div class="w-16 aspect-square bg-slate-200 rounded-full"></div>
 									<div class="w-full space-y-4 pb-5 border-b">
 										<div class="flex justify-between">
-											<h4 class="font-semibold uppercase tracking-wide">John Doe</h4>
-											<span class="text-gray-400">10 January</span>
+											<h4 class="font-semibold uppercase tracking-wide">{{ $comment->user->name }}</h4>
+											<span class="text-gray-400">{{ $comment->created_at->format('d M Y') }}</span>
 										</div>
 										<p class="text-sm">
-											Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, recusandae debitis non quasi modi obcaecati
-											deleniti quia sed totam harum magnam? Eum optio maxime aperiam quam impedit obcaecati, libero
-											soluta?
+											{{ $comment->body }}
 										</p>
 									</div>
 								</div>
