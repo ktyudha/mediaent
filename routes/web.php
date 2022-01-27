@@ -24,7 +24,7 @@ use App\Http\Controllers\Admin\CommentController;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/article/{article}', [PagesController::class, 'show'])->name('article.show');
 Route::post('comment/store', [CommentController::class, 'store'])->name('comment.store');
-Route::get('/video', [PagesController::class, 'index2'])->name('video');
+Route::get('/video', [PagesController::class, 'videos'])->name('video');
 Route::get('/category/{category}',[PagesController::class, 'categories'])->name('category.show');
 Route::get('/about', [PagesController::class, 'about'])->name('about');
 

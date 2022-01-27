@@ -52,9 +52,10 @@
 						<!-- header -->
 						<div class="mb-14 space-y-7">
 							<div class="space-y-4">
-								<h1 class="font-bold text-4xl text-accent3">
-									{{ $article->title }}
+                                <h1 class="font-bold text-4xl text-accent3">
+                                    {{ $article->title }}
 								</h1>
+                                <img class="w-full h-96 flex justify-center items-center bg-slate-200" src="{{ Storage::url($article->thumbnail->url) }}"/>
 								<div class="flex flex-row gap-4 text-sm divide-x-2">
 									<h5 class="underline uppercase tracking-wide text-gray-400">{{ $article->category->name }}</h5>
 									<span class="px-4">{{ Carbon\Carbon::parse($article->created_at)->format('d M Y') }}</span>

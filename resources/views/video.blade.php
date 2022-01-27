@@ -27,11 +27,11 @@
 						<h2 class="font-bold text-2xl text-center tracking-widest uppercase">Our Videos</h2>
 					</div>
 
-					<div class="flex flex-col md:flex-row justify-center gap-6">
+					<div class="flex flex-wrap -mx-3 overflow-hidden sm:-mx-3 md:-mx-5 lg:-mx-6 xl:-mx-6">
 						<!-- video example -->
-						<div class="w-full flex md:flex-row justify-center items-start gap-10">
+						<div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-2 md:-mx-4 lg:-mx-6 xl:-mx-6">
 							@foreach ($videos as $video)
-								<div class="w-1/3 flex flex-col justify-center items-center">
+								<div class="my-3 px-3 w-1/2 overflow-hidden sm:my-3 sm:px-3 sm:w-1/2 md:my-5 md:px-5 md:w-1/3 lg:my-6 lg:px-6 lg:w-1/3 xl:my-6 xl:px-6 xl:w-1/3">
 									<iframe src="{{ $video->url }}" title="{{ $video->title }}" frameborder="0"
 										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 										allowfullscreen class="w-full aspect-video"></iframe>

@@ -30,7 +30,7 @@
             </div>
         </div>
     </div>
-    <div class="flex justify-center py-5 bg-gray-100">
-        <p class="text-base text-gray-400">Copyright@2021</p>
+    <div class="flex justify-center py-5 bg-accent2">
+        <p class="text-accent3">Copyright@2021</p>
     </div>
 </footer>
