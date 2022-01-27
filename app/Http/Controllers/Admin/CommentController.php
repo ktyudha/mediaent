@@ -38,18 +38,17 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request);
         $request->validate([
             'body' => 'required|string|max:5000'
         ]);
 
-        $comment = Comment::create([
+        Comment::create([
             'user_id' => auth()->user()->id,
-            'article_id' => $request->article,
+            'commentable_id' => $request->article_id,
             'body' => $request->body,
         ]);
-        $comment->create([
-            'url' => route('article.show')
-        ]);
+
         return redirect()->route('article.show', compact('article'));
 
     }

@@ -75,24 +75,26 @@
 						</article>
 
 						<!-- next and previous post -->
-						<div class="w-full flex flex-row items-start space-x-5 mx-auto my-20 md:mb-0">
-                            @if ($previous)
-                                <div class="w-1/2 text-left space-y-2">
-                                    <a href="{{ $previous->slug }}" class="font-semibold hover:text-blue-500">
-                                        <span>Previous Post</span>
-                                        <p class="font-normal">{{ $previous->title }}</p>
-                                    </a>
-                                </div>
-                            @endif
+						<div class="w-full grid columns-3 space-x-5 mx-auto my-20 md:mb-0">
+							<div class="row-auto">
+								@if ($previous)
+									<div class="w-1/2 text-left space-y-2 float-left">
+										<a href="{{ $previous->slug }}" class="font-semibold hover:text-blue-500">
+											<span>Previous Post</span>
+											<p class="font-normal">{{ $previous->title }}</p>
+										</a>
+									</div>
+								@endif
 
-                            @if ($next)
-                                <div class="w-1/2 text-right space-y-2">
-                                    <a href="{{ $next->slug }}" class="font-semibold hover:text-blue-500">
-                                        <span>Next Post</span>
-                                        <p class="font-normal">{{ $next->title }}</p>
-                                    </a>
-                                </div>
-                            @endif
+								@if ($next)
+									<div class="w-1/2 text-right space-y-2 float-right">
+										<a href="{{ $next->slug }}" class="font-semibold hover:text-blue-500">
+											<span>Next Post</span>
+											<p class="font-normal">{{ $next->title }}</p>
+										</a>
+									</div>
+								@endif
+							</div>
 						</div>
 						<!-- end of next and previous post -->
 					</section>
@@ -100,13 +102,15 @@
 
 					<!-- similar post -->
 					<div class="w-1/4 hidden md:block sticky top-60">
-						<h2 class="font-semibold text-lg font-serif text-accent3">Similar posts</h2>
+						@if ($similar_articles->count() > 0)
+							<h2 class="font-semibold text-lg font-serif text-accent3">Similar posts</h2>
 
-						<div class="w-full flex flex-col space-y-2 md:space-y-4 mt-5">
-                            @foreach ($similar_articles as $similar_article)
-                                <a href="" class="text-gray-600 hover:text-blue-500 text-sm">{{ $similar_article->title }}</a>
-                            @endforeach
-						</div>
+							<div class="w-full flex flex-col space-y-2 md:space-y-4 mt-5">
+								@foreach ($similar_articles as $similar_article)
+									<a href="" class="text-gray-600 hover:text-blue-500 text-sm">{{ $similar_article->title }}</a>
+								@endforeach
+							</div>
+						@endif
 					</div>
 					<!-- end of similar post -->
 				</div>
@@ -118,22 +122,37 @@
 					<div class="pb-3">
 						<h2 class="text-lg font-semibold uppercase tracking-wide">Write comment</h2>
 
-						<form enctype="multipart/form-data"
-                        novalidate class="w-full rounded-lg mt-2" method="POST" action="{{ route('admin.comment.store') }}" >
-                            @csrf
+						@if (auth()->user())
+							<form class="w-full mt-2" method="POST" action="{{ route('comment.store') }}">
+								@csrf
+								<input type="text" value="{{ $article->id }}" name="article_id" class="hidden">
+								<div class="flex flex-wrap -mx-3 mb-6">
+									<div class="w-full md:w-full px-3 mb-2 mt-2">
+										<textarea
+											class="bg-gray-100 border border-gray-400 leading-normal resize-none w-full h-32 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
+											name="body" placeholder="Type Your Comment" required></textarea>
+									</div>
+									<div class="w-full md:w-full flex justify-end px-3">
+										<button type="submit"
+											class="font-medium py-2 px-5 bg-accent3 text-accent tracking-wide hover:bg-accent hover:text-accent3">Post
+											comment</button>
+									</div>
+								</div>
+							</form>
+						@else
 							<div class="flex flex-wrap -mx-3 mb-6">
 								<div class="w-full md:w-full px-3 mb-2 mt-2">
 									<textarea
 										class="bg-gray-100 border border-gray-400 leading-normal resize-none w-full h-32 py-2 px-3 font-medium placeholder-gray-700 focus:outline-none focus:bg-white"
-										name="body" placeholder="Type Your Comment" required></textarea>
+										name="body" placeholder="Type Your Comment" required disabled></textarea>
 								</div>
 								<div class="w-full md:w-full flex justify-end px-3">
-									<button type="submit"
-										class="font-medium py-2 px-5 bg-accent3 text-accent tracking-wide hover:bg-accent hover:text-accent3">Post
-										comment</button>
+									<button type="submit" class="font-medium py-2 px-5 bg-accent3 text-accent tracking-wide" disabled>
+										Post comment
+									</button>
 								</div>
 							</div>
-						</form>
+						@endif
 					</div>
 					<!-- end of comments form -->
 					<!-- comments rows -->
@@ -141,86 +160,26 @@
 						<h2 class="text-xl font-semibold uppercase tracking-wide">Comments</h2>
 
 						<div class="mt-4 space-y-6">
-							<!-- comment example -->
-							<div class="flex flex-row items-start gap-5">
-								<div class="w-16 aspect-square bg-slate-200 rounded-full"></div>
-								<div class="w-full space-y-4 pb-5 border-b">
-									<div class="flex justify-between">
-										<h4 class="font-semibold uppercase tracking-wide">John Doe</h4>
-										<span class="text-gray-400">10 January</span>
+							@forelse ($article->comments as $comment)
+								<div class="flex flex-row items-start gap-5">
+									<div class="w-16 aspect-square bg-slate-200 rounded-full"></div>
+									<div class="w-full space-y-4 pb-5 border-b">
+										<div class="flex justify-between">
+											<h4 class="font-semibold uppercase tracking-wide">John Doe</h4>
+											<span class="text-gray-400">10 January</span>
+										</div>
+										<p class="text-sm">
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, recusandae debitis non quasi modi obcaecati
+											deleniti quia sed totam harum magnam? Eum optio maxime aperiam quam impedit obcaecati, libero
+											soluta?
+										</p>
 									</div>
-									<p class="text-sm">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, recusandae debitis non quasi modi obcaecati
-										deleniti quia sed totam harum magnam? Eum optio maxime aperiam quam impedit obcaecati, libero
-										soluta?
-									</p>
 								</div>
-							</div>
-							<!-- end ofcomment example -->
-							<!-- comment example -->
-							<div class="flex flex-row items-start gap-5">
-								<div class="w-16 aspect-square bg-slate-200 rounded-full"></div>
-								<div class="w-full space-y-4 pb-5 border-b">
-									<div class="flex justify-between">
-										<h4 class="font-semibold uppercase tracking-wide">John Doe</h4>
-										<span class="text-gray-400">10 January</span>
-									</div>
-									<p class="text-sm">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, recusandae debitis non quasi modi obcaecati
-										deleniti quia sed totam harum magnam? Eum optio maxime aperiam quam impedit obcaecati, libero
-										soluta?
-									</p>
+							@empty
+								<div class="flex justify-center">
+									<h1 class="text-lg text-slate-600">No comment yet</h1>
 								</div>
-							</div>
-							<!-- end ofcomment example -->
-							<!-- comment example -->
-							<div class="flex flex-row items-start gap-5">
-								<div class="w-16 aspect-square bg-slate-200 rounded-full"></div>
-								<div class="w-full space-y-4 pb-5 border-b">
-									<div class="flex justify-between">
-										<h4 class="font-semibold uppercase tracking-wide">John Doe</h4>
-										<span class="text-gray-400">10 January</span>
-									</div>
-									<p class="text-sm">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, recusandae debitis non quasi modi obcaecati
-										deleniti quia sed totam harum magnam? Eum optio maxime aperiam quam impedit obcaecati, libero
-										soluta?
-									</p>
-								</div>
-							</div>
-							<!-- end ofcomment example -->
-							<!-- comment example -->
-							<div class="flex flex-row items-start gap-5">
-								<div class="w-16 aspect-square bg-slate-200 rounded-full"></div>
-								<div class="w-full space-y-4 pb-5 border-b">
-									<div class="flex justify-between">
-										<h4 class="font-semibold uppercase tracking-wide">John Doe</h4>
-										<span class="text-gray-400">10 January</span>
-									</div>
-									<p class="text-sm">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, recusandae debitis non quasi modi obcaecati
-										deleniti quia sed totam harum magnam? Eum optio maxime aperiam quam impedit obcaecati, libero
-										soluta?
-									</p>
-								</div>
-							</div>
-							<!-- end ofcomment example -->
-							<!-- comment example -->
-							<div class="flex flex-row items-start gap-5">
-								<div class="w-16 aspect-square bg-slate-200 rounded-full"></div>
-								<div class="w-full space-y-4 pb-5 border-b">
-									<div class="flex justify-between">
-										<h4 class="font-semibold uppercase tracking-wide">John Doe</h4>
-										<span class="text-gray-400">10 January</span>
-									</div>
-									<p class="text-sm">
-										Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, recusandae debitis non quasi modi obcaecati
-										deleniti quia sed totam harum magnam? Eum optio maxime aperiam quam impedit obcaecati, libero
-										soluta?
-									</p>
-								</div>
-							</div>
-							<!-- end ofcomment example -->
+							@endforelse
 						</div>
 					</div>
 					<!-- end of comments rows -->

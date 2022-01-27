@@ -58,7 +58,7 @@
 										<div class="flex items-center">
 											<div class="text-sm">
 												<span class="text-gray-900 font-semibold leading-none">{{ $item->category->name }}</span>
-												<span class="mx-2 text-gray-600"> {{ $item->created_at }}</span>
+												<span class="mx-2 text-gray-600"> {{ $item->created_at->format('d M Y') }}</span>
 											</div>
 										</div>
 									</div>
@@ -105,12 +105,12 @@
 							<h2 class="font-bold text-2xl tracking-widest uppercase">Latest video on youtube</h2>
 						</div>
 
-						<div class="h-96 w-full  flex justify-center items-center">
-							@foreach ($latest_videos as $vid)
-                            <iframe src="{{ $vid->url }}" title="{{ $vid->title }}" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                                class="w-full aspect-video"></iframe
-                            @endforeach
+						<div class="w-full flex justify-center items-center">
+							@foreach ($latest_video as $vid)
+								<iframe src="{{ $vid->url }}" title="{{ $vid->title }}" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+									class="w-full aspect-video"></iframe>
+							@endforeach
 						</div>
 					</section>
 					<!-- end of latest video on youtube -->
@@ -126,8 +126,8 @@
 								<a href="{{ route('article.show', $article) }}">
 									<div class="lg:border-l-2 w-full lg:max-w-full lg:flex items-center gap-3">
 										<div class="flex-shrink-0 w-24 h-24">
-											<img src="https://ent.pens.ac.id{{ Storage::url($article->thumbnail->url) }}" alt="{{ $article->title }}"
-												class="w-full h-full object-cover" />
+											<img src="https://ent.pens.ac.id{{ Storage::url($article->thumbnail->url) }}"
+												alt="{{ $article->title }}" class="w-full h-full object-cover" />
 										</div>
 										<h1 class="text-gray-900 text-sm mb-2 line-clamp-3">
 											{{ $article->title }}

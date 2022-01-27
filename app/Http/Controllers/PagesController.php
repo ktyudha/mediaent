@@ -11,12 +11,12 @@ class PagesController extends Controller
     {
         $latest_articles = Article::with('category', 'thumbnail')->latest()->take(5)->get();
         $articles = Article::latest()->paginate(10);
-        $latest_videos = Video::with('category')->latest()->take(2)->get();
+        $latest_video = Video::with('category')->latest()->take(1)->get();
 
         return view('home', compact([
             'latest_articles',
             'articles',
-            'latest_videos'
+            'latest_video'
         ]));
     }
 
@@ -36,5 +36,21 @@ class PagesController extends Controller
         $videos = $category->videos()->latest()->get();
 
         return view('kategori', compact(['articles', 'videos']));
+    }
+
+    public function videos()
+    {
+        $videos = Video::latest()->get();
+        $latest_videos = Video::with('category')->latest()->take(1)->get();
+
+        return view('video', compact([
+            'videos',
+            'latest_videos'
+        ]));
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 }
