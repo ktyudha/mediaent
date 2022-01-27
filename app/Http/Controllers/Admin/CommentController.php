@@ -15,7 +15,7 @@ class CommentController extends Controller
         ]);
 
         $article->comments()->create([
-            'user_id' => auth()->id,
+            'user_id' => auth()->user()->id,
             'commentable_id' => $request->article_id,
             'body' => $request->body,
         ]);
