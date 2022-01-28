@@ -10,13 +10,11 @@
 						<h3 class="text-left font-bold text-2xl uppercase tracking-wide">Latest video on youtube</h3>
 					</div>
 					<div class="w-full space-y-3">
-						@foreach ($latest_videos as $vid)
-							<div class="h-96 w-full flex justify-center items-center">
-								<iframe src="{{ $vid->url }}" title="{{ $vid->title }}" frameborder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-									class="w-full aspect-video"></iframe>
-							</div>
-						@endforeach
+                        <div class="h-96 w-full flex justify-center items-center">
+                            <iframe src="{{ $latest_video->url }}" title="{{ $latest_video->title }}" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                                class="w-full aspect-video"></iframe>
+                        </div>
 					</div>
 				</section>
 				<!-- end of latest video on youtube -->
@@ -48,8 +46,5 @@
 				<!-- end of our videos -->
 			</div>
 		</main>
-
-
-
 	</x-app-layout>
 @endsection

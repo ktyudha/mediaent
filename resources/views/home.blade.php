@@ -37,35 +37,8 @@
 					</div>
 
 					<!-- articles example -->
-					<div class="py-5 flex flex-col space-y-5 ">
-						@foreach ($articles as $item)
-							<a href="{{ route('article.show', $item) }}">
-								<div class="w-full lg:max-w-full lg:flex items-center sm:items-center">
-									{{-- <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden flex justify-center items-center bg-slate-300">
-                                        <h4>Image placeholder</h4>
-                                    </div> --}}
-									<div class="flex-shrink-0 w-36 aspect-square">
-										<img src="https://ent.pens.ac.id{{ Storage::url($item->thumbnail->url) }}" alt="{{ $item->title }}"
-											class="w-full h-full object-cover" />
-									</div>
-									<div class="px-0 py-4 md:p-4 flex flex-col justify-between leading-normal">
-										<div class="mb-8">
-											<div class="text-gray-900 font-bold text-xl mb-2 sm:text-center">{{ $item->title }}</div>
-											<p class="text-gray-700 text-base sm:text-center">
-												{{ $item->description }}
-											</p>
-										</div>
-										<div class="flex items-center">
-											<div class="text-sm">
-												<span class="text-gray-900 font-semibold leading-none">{{ $item->category->name }}</span>
-												<span class="mx-2 text-gray-600"> {{ $item->created_at->format('d M Y') }}</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</a>
-						@endforeach
-
+					<div class="py-5 flex flex-col space-y-8">
+						@include('components.article-list')
 					</div>
 					<!-- end of articles example -->
 
@@ -122,15 +95,15 @@
 						</div>
 
 						<div class="py-3 flex flex-row lg:flex-col gap-3">
-							@foreach ($latest_articles as $article)
-								<a href="{{ route('article.show', $article) }}">
+							@foreach ($latest_articles as $latest_article)
+								<a href="{{ route('article.show', $latest_article) }}">
 									<div class="lg:border-l-2 w-full lg:max-w-full lg:flex items-center gap-3">
 										<div class="flex-shrink-0 w-24 h-24">
-											<img src="https://ent.pens.ac.id{{ Storage::url($article->thumbnail->url) }}"
-												alt="{{ $article->title }}" class="w-full h-full object-cover" />
+											<img src="https://ent.pens.ac.id{{ Storage::url($latest_article->thumbnail->url) }}"
+												alt="{{ $latest_article->title }}" class="w-full h-full object-cover" />
 										</div>
 										<h1 class="text-gray-900 text-sm mb-2 line-clamp-3">
-											{{ $article->title }}
+											{{ $latest_article->title }}
 										</h1>
 									</div>
 								</a>
@@ -149,7 +122,7 @@
 							<div class="space-y-2">
 								<label for="name" class="block text-lg">Name</label>
 								<input name="name" type="text" id="name" class="w-full p-2" placeholder="John Doe" />
-                                @csrf
+								@csrf
 							</div>
 							<div class="space-y-2">
 								<label for="email" class="block text-lg">Email</label>
@@ -159,7 +132,7 @@
 								<label for="message" class="block text-lg">Message</label>
 								<textarea name="message" id="message" class="w-full p-2 resize-none h-32"></textarea>
 							</div>
-							<button
+							<button type="submit"
 								class="py-3 bg-accent3 text-gray-100 hover:bg-accent2 hover:text-accent3 font-semibold text-lg">Send</button>
 						</form>
 					</section>

@@ -252,7 +252,7 @@
                                     </td>
                                     <td class="py-3 px-6 text-center">
                                         <div class="flex item-center justify-center">
-                                            <form method="POST" action="{{ route('admin.suggestbox.destroy', $box) }}"
+                                            <form method="POST" action="{{ route('admin.suggestbox.destroy', ['suggest' => $box->id]) }}"
                                                 onclick="return confirm('Are you sure?')" novalidate>
                                                 @csrf
                                                 @method('DELETE')

@@ -95,10 +95,9 @@ class SuggestBoxController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SuggestBox $suggest )
+    public function destroy(SuggestBox $suggest)
     {
-
-       $suggest->delete();
+        $suggest->delete();
         return redirect()->back();
     }
 }

@@ -55,7 +55,7 @@
                                 <h1 class="font-bold text-4xl text-accent3">
                                     {{ $article->title }}
 								</h1>
-                                <img class="w-full h-96 flex justify-center items-center bg-slate-200" src="{{ Storage::url($article->thumbnail->url) }}"/>
+                                {{-- <img class="w-full h-96 flex justify-center items-center bg-slate-200" src="{{ Storage::url($article->thumbnail->url) }}"/> --}}
 								<div class="flex flex-row gap-4 text-sm divide-x-2">
 									<h5 class="underline uppercase tracking-wide text-gray-400">{{ $article->category->name }}</h5>
 									<span class="px-4">{{ Carbon\Carbon::parse($article->created_at)->format('d M Y') }}</span>
@@ -163,7 +163,9 @@
 						<div class="mt-4 space-y-6">
 							@forelse ($article->comments as $comment)
 								<div class="flex flex-row items-start gap-5">
-									<div class="w-16 aspect-square bg-slate-200 rounded-full"></div>
+									<div class="w-16 flex items-center justify-center aspect-square bg-slate-200 rounded-full">
+                                        <span class="text-semibold">{{ substr($comment->user->name, 0, 1) }}</span>
+                                    </div>
 									<div class="w-full space-y-4 pb-5 border-b">
 										<div class="flex justify-between">
 											<h4 class="font-semibold uppercase tracking-wide">{{ $comment->user->name }}</h4>
