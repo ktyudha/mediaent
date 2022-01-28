@@ -33,7 +33,7 @@ class PagesController extends Controller
     public function categories(Category $category)
     {
         $articles = $category->articles()->latest()->get();
-        $videos = $category->videos()->latest()->get();
+        $videos = $category->videos()->latest()->take(1)->get();
 
         return view('kategori', compact(['articles', 'videos']));
     }

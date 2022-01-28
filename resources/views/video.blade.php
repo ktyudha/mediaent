@@ -10,11 +10,13 @@
 						<h3 class="text-left font-bold text-2xl uppercase tracking-wide">Latest video on youtube</h3>
 					</div>
 					<div class="w-full space-y-3">
-                        <div class="h-96 w-full flex justify-center items-center">
-                            <iframe src="{{ $latest_video->url }}" title="{{ $latest_video->title }}" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                                class="w-full aspect-video"></iframe>
-                        </div>
+						@foreach ($latest_videos as $latest_video)
+							<div class="h-96 w-full flex justify-center items-center">
+								<iframe src="{{ $latest_video->url }}" title="{{ $latest_video->title }}" frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+									class="w-full aspect-video"></iframe>
+							</div>
+						@endforeach
 					</div>
 				</section>
 				<!-- end of latest video on youtube -->
@@ -29,7 +31,8 @@
 						<!-- video example -->
 						<div class="flex flex-wrap -mx-2 overflow-hidden sm:-mx-2 md:-mx-4 lg:-mx-6 xl:-mx-6">
 							@foreach ($videos as $video)
-								<div class="my-3 px-3 w-1/2 overflow-hidden sm:my-3 sm:px-3 sm:w-1/2 md:my-5 md:px-5 md:w-1/3 lg:my-6 lg:px-6 lg:w-1/3 xl:my-6 xl:px-6 xl:w-1/3">
+								<div
+									class="my-3 px-3 w-1/2 overflow-hidden sm:my-3 sm:px-3 sm:w-1/2 md:my-5 md:px-5 md:w-1/3 lg:my-6 lg:px-6 lg:w-1/3 xl:my-6 xl:px-6 xl:w-1/3">
 									<iframe src="{{ $video->url }}" title="{{ $video->title }}" frameborder="0"
 										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 										allowfullscreen class="w-full aspect-video"></iframe>
