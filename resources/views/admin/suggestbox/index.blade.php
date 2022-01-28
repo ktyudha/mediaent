@@ -9,8 +9,8 @@
     <meta name="description" content="">
 
     <!-- Tailwind -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap');
 
@@ -81,18 +81,19 @@
                 Manage Author
             </a>
             @endrole
-            <a href="{{ route('admin.article.index') }}" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ route('admin.article.index') }}" class="flex items-center text-white py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Article
             </a>
-            <a href="{{ route('admin.video.index') }}" class="active-nav-link flex items-center text-white py-4 pl-6 nav-item">
+            <a href="{{ route('admin.video.index') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
                 Table Video
             </a>
             <a href="{{ route('admin.suggestbox.index') }}"
-            class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-            <i class="fas fa-table mr-3"></i>
-            Table Suggest
+                class="active-nav-link flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <i class="fas fa-table mr-1"></i>
+                Suggest
             </a>
             <a href="{{ route('admin.calendar') }}"
                 class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
@@ -173,11 +174,6 @@
                     <i class="fas fa-video mr-3"></i>
                     New Video
                 </a>
-                <a href="{{ route('admin.suggestbox.index') }}"
-                class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
-                <i class="fas fa-table mr-3"></i>
-                Table Suggest
-                </a>
                 @role('admin')
                 <a href="{{ route('admin.author') }}"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
@@ -186,14 +182,19 @@
                 </a>
                 @endrole
                 <a href="{{ route('admin.article.index') }}"
-                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                    class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
                     <i class="fas fa-table mr-3"></i>
                     Table Article
                 </a>
                 <a href="{{ route('admin.video.index') }}"
-                    class="flex items-center active-nav-link text-white py-4 pl-6 nav-item">
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-table mr-3"></i>
                     Table video
+                </a>
+                <a href="{{ route('admin.suggestbox.index') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
+                <i class="fas fa-table mr-3"></i>
+                Table Suggest
                 </a>
                 <a href="{{ route('admin.calendar') }}"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
@@ -220,42 +221,38 @@
         <div class="w-full h-screen overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
                 <div class="w-full mt-6">
-                    <h1 class="text-3xl text-black pb-6"><i class="fas fa-table mr-3"></i>Table Video</h1>
+                    <h1 class="text-3xl text-black pb-6"><i class="fas fa-table mr-3"></i>Table Article</h1>
 
                     <div class="bg-white shadow-md rounded my-6">
-                        <table class="min-w-max w-full table-auto">
+                        <table class="w-full">
                             <thead>
                                 <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                                    <th class="py-3 px-6 text-center">No.</th>
-                                    <th class="py-3 px-6 text-center">Title</th>
-                                    <th class="py-3 px-6 text-center">Tanggal</th>
-                                    <th class="py-3 px-6 text-center">Kategori</th>
-                                    <th class="py-3 px-6 text-center">Actions</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">No.</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">Nama</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">Email</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">Suggest</th>
+                                    <th class="py-3 px-2 md:px-6 text-center">Actions</th>
                                 </tr>
                             </thead>
                             <tbody class="text-gray-600 text-sm font-light">
-                                @foreach($videos as $video)
+                                @foreach($suggest as $box)
                                 <tr class="border-b border-gray-200 hover:bg-gray-100">
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         {{ $loop->iteration }}
                                     </td>
-                                    <td class="py-3 px-6 text-center">
-                                        <a href="" class="hover:underline">
+                                    <td class="py-3 px-6 text-left">
                                             <i class="fas fa-angle-right"></i>
-                                            {{ $video->title }}
-                                        </a>
+                                            {{ $box->name }}
                                     </td>
                                     <td class="py-3 px-6 text-center">
-                                        {{ $video->created_at }}
+                                        {{ $box->email }}
                                     </td>
                                     <td class="py-3 px-6 text-center">
-                                        {{ $video->category->name }}
+                                        {{ $box->message }}
                                     </td>
                                     <td class="py-3 px-6 text-center">
                                         <div class="flex item-center justify-center">
-                                            <a href="{{ route('admin.video.edit', $video) }}"
-                                                class="inline-flex items-center px-4 py-2 mr-1 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">Edit</a>
-                                            <form method="POST" action="{{ route('admin.video.destroy', $video) }}"
+                                            <form method="POST" action="{{ route('admin.suggestbox.destroy', $box) }}"
                                                 onclick="return confirm('Are you sure?')" novalidate>
                                                 @csrf
                                                 @method('DELETE')

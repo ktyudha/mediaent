@@ -97,11 +97,11 @@
 		<div class="mobile-navbar">
 			<!-- navbar wrapper -->
 			<div class="md:hidden w-full h-auto p-5 text-center items-center" x-show="isOpen" @click.away="isOpen = false">
-				<div class="flex flex-col space-y-6 items-center text-center">
-					<a href="{{ url('/') }}" class="py-3 font-semibold text-accent hover:text-gray-800">Home</a>
+				<div class="flex flex-col space-y-6 items-center text-center mb-6">
+					<a href="{{ url('/') }}" class="py-3 font-semibold text-accent3 hover:text-gray-800">Home</a>
 					<div x-data="{isOpen: false}" @click.away="isOpen = false">
 						<div class="flex items-center text-center">
-							<a href="index.html" class="py-3 font-semibold text-accent hover:text-gray-800">Article</a>
+							<a href="index.html" class="py-3 font-semibold text-accent3 hover:text-gray-800">Article</a>
 							<button @click="isOpen = !isOpen">
 								<svg class="h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
 									<path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
@@ -112,20 +112,63 @@
 						<div :class="{'showpopup': isOpen, 'hidden': !isOpen}" class="w-full" role="menu"
 							aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
 							<div class="py-1 flex flex-col" role="none">
-								<a href="category.html" class="w-full py-3 text-accent hover:text-gray-400 text-sm" role="menuitem"
+								<a href="{{ route('category.show', 1) }}" class="w-full py-3 text-accent3 hover:text-gray-400 text-sm" role="menuitem"
 									tabindex="-1" id="menu-item-0">category 1</a>
-								<a href="category.html" class="w-full py-3 text-accent hover:text-gray-400 text-sm" role="menuitem"
+								<a href="{{ route('category.show', 2) }}" class="w-full py-3 text-accent3 hover:text-gray-400 text-sm" role="menuitem"
 									tabindex="-1" id="menu-item-1">category 2</a>
-								<a href="category.html" class="w-full py-3 text-accent hover:text-gray-400 text-sm" role="menuitem"
+								<a href="{{ route('category.show', 3) }}" class="w-full py-3 text-accent3 hover:text-gray-400 text-sm" role="menuitem"
 									tabindex="-1" id="menu-item-2">category 3</a>
-								<a href="category.html" class="w-full py-3 text-accent hover:text-gray-400 text-sm" role="menuitem"
+								<a href="{{ route('category.show', 4) }}" class="w-full py-3 text-accent3 hover:text-gray-400 text-sm" role="menuitem"
 									tabindex="-1" id="menu-item-2">category 4</a>
 							</div>
 						</div>
 					</div>
-					<a href="videos.html" class="py-3 font-semibold text-accent hover:text-gray-800">Video</a>
-					<a href="about.html" class="py-3 font-semibold text-accent hover:text-gray-800">About</a>
+					<a href="{{ route('video') }}" class="py-3 font-semibold text-accent3 hover:text-gray-800">Video</a>
+					<a href="{{ route('about') }}" class="py-3 font-semibold text-accent3 hover:text-gray-800 mb-4">About</a>
 				</div>
+                <div class="md:flex items-center space-x-3">
+                    @auth
+                        @hasanyrole('admin|author')
+                            <x-nav-link :href="route('admin.home')" :active="request()->routeIs('login')">
+                                <button id="navAction"
+                                    class="mx-auto lg:mx-0 bg-primary text-gray-100 font-bold mt-4 mb-4 lg:mt-0 px-8 py-3 opacity-75 focus:outline-none transform transition hover:scale-105 duration-300 ease-in-out">
+                                    Dashboard
+                                </button>
+                            </x-nav-link>
+                        @endhasanyrole
+                        <x-dropdown class="px-5 py-3" width="48">
+                            <x-slot name="trigger">
+                                <button
+                                    class="mx-auto px-5 py-3 text-sm font-medium text-white focus:outline-none focus:text-gray-300 transition duration-150 ease-in-out">
+                                    <div class="text-slate-700 text-center items-center">{{ Auth::user()->name }}</div>
+
+                                    <div class="ml-1">
+                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </button>
+                            </x-slot>
+
+                            <x-slot name="content">
+                                <!-- Authentication -->
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                    this.closest('form').submit();">
+                                        {{ __('Log out') }}
+                                    </x-dropdown-link>
+                                </form>
+                            </x-slot>
+                        </x-dropdown>
+                    @else
+                        <a href="{{ route('register') }}"
+                            class="px-5 py-3 bg-primary text-accent font-semibold tracking-wide">Register</a>
+                        <a href="{{ route('login') }}" class="px-5 py-3 bg-accent3 text-accent font-semibold tracking-wide">Login</a>
+                    @endauth
+                </div>
 			</div>
 		</div>
 	</nav>

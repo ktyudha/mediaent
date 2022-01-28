@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\CommentController;
+use App\Http\Controllers\Admin\SuggestBoxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ use App\Http\Controllers\Admin\CommentController;
 Route::get('/', [PagesController::class, 'home'])->name('home');
 Route::get('/article/{article}', [PagesController::class, 'show'])->name('article.show');
 Route::post('comment/store', [CommentController::class, 'store'])->name('comment.store');
+Route::post('suggestbox/store', [SuggestBoxController::class, 'store'])->name('suggestbox.store');
+Route::delete('suggestbox/destroy', [SuggestBoxController::class, 'destroy'])->name('admin.suggestbox.destroy');
+Route::get('suggestbox/index', [SuggestBoxController::class, 'index'])->name('admin.suggestbox.index');
 Route::get('/video', [PagesController::class, 'videos'])->name('video');
 Route::get('/category/{category}',[PagesController::class, 'categories'])->name('category.show');
 Route::get('/about', [PagesController::class, 'about'])->name('about');

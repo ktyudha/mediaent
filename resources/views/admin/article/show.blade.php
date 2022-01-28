@@ -167,7 +167,7 @@
 									<div class="w-full space-y-4 pb-5 border-b">
 										<div class="flex justify-between">
 											<h4 class="font-semibold uppercase tracking-wide">{{ $comment->user->name }}</h4>
-											<span class="text-gray-400">{{ $comment->created_at->format('d M Y') }}</span>
+											<span class="text-gray-400">{{ $comment->created_at->diffForHumans() }}</span>
 										</div>
 										<p class="text-sm">
 											{{ $comment->body }}

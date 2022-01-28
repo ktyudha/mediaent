@@ -9,7 +9,7 @@
 					<div class="swiper">
 						<div class="swiper-wrapper">
 							@foreach ($latest_articles as $article)
-								<div class="swiper-slide bg-cover bg-center"
+								<div class="swiper-slide bg-cover bg-center sm:bg-1/2"
 									style="background-image: url('https://ent.pens.ac.id{{ Storage::url($article->thumbnail->url) }}');">
 									<div class="mx-auto pt-32 pb-0">
 										<div class="w-full">
@@ -37,10 +37,10 @@
 					</div>
 
 					<!-- articles example -->
-					<div class="py-5 flex flex-col space-y-5">
+					<div class="py-5 flex flex-col space-y-5 ">
 						@foreach ($articles as $item)
 							<a href="{{ route('article.show', $item) }}">
-								<div class="w-full lg:max-w-full lg:flex items-center">
+								<div class="w-full lg:max-w-full lg:flex items-center sm:items-center">
 									{{-- <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden flex justify-center items-center bg-slate-300">
                                         <h4>Image placeholder</h4>
                                     </div> --}}
@@ -50,8 +50,8 @@
 									</div>
 									<div class="px-0 py-4 md:p-4 flex flex-col justify-between leading-normal">
 										<div class="mb-8">
-											<div class="text-gray-900 font-bold text-xl mb-2">{{ $item->title }}</div>
-											<p class="text-gray-700 text-base">
+											<div class="text-gray-900 font-bold text-xl mb-2 sm:text-center">{{ $item->title }}</div>
+											<p class="text-gray-700 text-base sm:text-center">
 												{{ $item->description }}
 											</p>
 										</div>
@@ -145,18 +145,19 @@
 							<h2 class="font-bold text-2xl tracking-widest uppercase">Suggestion box</h2>
 						</div>
 
-						<form class="py-3 flex flex-col gap-4">
+						<form class="py-3 flex flex-col gap-4" method="POST" action="{{ route('suggestbox.store') }}">
 							<div class="space-y-2">
 								<label for="name" class="block text-lg">Name</label>
-								<input type="text" id="name" class="w-full p-2" placeholder="John Doe" />
+								<input name="name" type="text" id="name" class="w-full p-2" placeholder="John Doe" />
+                                @csrf
 							</div>
 							<div class="space-y-2">
 								<label for="email" class="block text-lg">Email</label>
-								<input type="email" id="email" class="w-full p-2" placeholder="johndoe@example.com" />
+								<input name="email" type="email" id="email" class="w-full p-2" placeholder="johndoe@example.com" />
 							</div>
 							<div class="space-y-2">
 								<label for="message" class="block text-lg">Message</label>
-								<textarea id="message" class="w-full p-2 resize-none h-32"></textarea>
+								<textarea name="message" id="message" class="w-full p-2 resize-none h-32"></textarea>
 							</div>
 							<button
 								class="py-3 bg-accent3 text-gray-100 hover:bg-accent2 hover:text-accent3 font-semibold text-lg">Send</button>
