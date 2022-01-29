@@ -33,11 +33,6 @@ class Video extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function videos()
-    {
-        return $this->hasMany(Video::class);
-    }
-
     public function comments()
     {
         return $this->morphMany(Comment::class, 'commentable');

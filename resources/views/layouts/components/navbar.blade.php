@@ -113,13 +113,13 @@
 							aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
 							<div class="py-1 flex flex-col" role="none">
 								<a href="{{ route('category.show', 1) }}" class="w-full py-3 text-accent3 hover:text-gray-400 text-sm" role="menuitem"
-									tabindex="-1" id="menu-item-0">category 1</a>
+									tabindex="-1" id="menu-item-0">Lifestyle</a>
 								<a href="{{ route('category.show', 2) }}" class="w-full py-3 text-accent3 hover:text-gray-400 text-sm" role="menuitem"
-									tabindex="-1" id="menu-item-1">category 2</a>
+									tabindex="-1" id="menu-item-1">Hiburan</a>
 								<a href="{{ route('category.show', 3) }}" class="w-full py-3 text-accent3 hover:text-gray-400 text-sm" role="menuitem"
-									tabindex="-1" id="menu-item-2">category 3</a>
+									tabindex="-1" id="menu-item-2">Teknologi</a>
 								<a href="{{ route('category.show', 4) }}" class="w-full py-3 text-accent3 hover:text-gray-400 text-sm" role="menuitem"
-									tabindex="-1" id="menu-item-2">category 4</a>
+									tabindex="-1" id="menu-item-2">Explore</a>
 							</div>
 						</div>
 					</div>

@@ -7,10 +7,10 @@
             <div class="w-full px-4 md:w-1/4">
                 <h2 class="mb-2 font-bold tracking-widest text-accent">Social media links</h2>
                 <ul class="mb-8 space-y-2 text-sm list-none">
-                    <li><a href="#" class="text-accent hover:text-gray-400 p-2">Facebook</a></li>
-                    <li><a href="#" class="text-accent hover:text-gray-400 p-2">Instagram</a></li>
-                    <li><a href="#" class="text-accent hover:text-gray-400 p-2">Twitter</a></li>
-                    <li><a href="#" class="text-accent hover:text-gray-400 p-2">Youtube</a></li>
+                    <li><a href="https://www.facebook.com/Entcrews" class="text-accent hover:text-gray-400 p-2">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/entcrews" class="text-accent hover:text-gray-400 p-2">Instagram</a></li>
+                    <li><a href="https://www.youtube.com/c/PENSTV" class="text-accent hover:text-gray-400 p-2">Twitter</a></li>
+                    <li><a href="https://www.youtube.com/c/PENSTV" class="text-accent hover:text-gray-400 p-2">Youtube</a></li>
                 </ul>
             </div>
             <div class="w-full px-4 md:w-1/4">
