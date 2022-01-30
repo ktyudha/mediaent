@@ -17,9 +17,7 @@ use App\Http\Controllers\Admin\ArticleController;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('admin.home');
-})->name('home');
+Route::get('/dashboard', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['role:admin'])->group(function () {
     Route::get('/author', [AuthorController::class, 'index'])->name('author');
